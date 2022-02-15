@@ -1,0 +1,81 @@
+chmod -R a+x ./
+
+adb shell setenforce 1
+adb shell debuggerd -b processId
+adb shell screencap -p | sed 's/\r$//' > screen.png
+adb shell screencap -p /sdcard/screen.png
+adb logcat -b all 2>&1 | tee log.txt
+adb shell setprop persist.sys.hilog.debug.on true
+adb shell settings get secure 
+adb shell setprop log.tag.Main D
+adb shell setprop persist.log.tag M
+adb shell setprop log.tag.TelecomFramework V
+adb shell setprop log.tag.Dialer V
+adb shell stop
+adb shell start
+adb shell am startservice -n com.android.phone/com.android.phone.TelephonyDebugService --user 0 -a <action>
+adb shell am broadcast -a delete.siminfo
+
+data/system/users/0
+data/user/0/com.android.providers.telephony/
+
+import android.util.Log;
+Entered the Android system server
+
+DcTracker
+DCT.constructor
+
+数据
+updateDataActivity
+trySetupData for APN type|setupData: apnContext=|setupData: dc=|setupData: initing|trySetupData failed|connect: carrier=|bringUp: apnContext=|SETUP_DATA_CALL|setupDataCall
+
+
+挂断电话
+endCallClicked|TelecomAdapter: disconnectCall|InCallAdapter: disconnectCall|REQUEST_DISCONNECT|CallsManager: disconnectCall|Call: Send disconnect to connection service for call|: disconnect|InCallController: Sending updateCall|TelephonyConnectionService: disconnect|onDisconnect|ImsCall : terminate|ImsCallSessionImpl : terminate|> HANGUP|< HANGUP
+
+拒接
+Decline
+
+主叫
+UNSOL_RESPONSE_CALL_STATE_CHANGED|CALLOUT from|onCreateOutgoingConnection,subId|placeOutgoingConnection|setCallState|UserCallIntentProcessor: processOutgoingCallIntent|TelephonyConnectionService: createConnection|> DIAL|< DIAL|Dial Request - address|Telecom: UserCallIntentProcessor: handleOutgoingCall|onTransact add new outgoing call|handle MSG_NEW_OUTGOING_CALL|processOutgoingCallIntent -> subId=|processOutgoingCallIntent -> slotId=|sosEmergencyDialType = |startOutgoingCall|CallsManager: addCall|onCallAdded|defaultDialer: |Skipping binding to|handleCreateConnectionSuccessful|Sending updateCall|Components updated:|onUpdate -|onCallListChange|startOrFinishUi|Broadcasting intent:|Received new-outgoing-call-broadcast|attemptNextPhoneAccount|Trying attempt|telecom.*?createConnection|Service bound|RecordServiceClient: onServiceConnected|TelecomCallCallback onStateChanged call=|ringState|CallCardFragment: videoState
+01FF5.*?DisconnectCause|01FF5.*?gateway|01FF5.*?callForwardState
+
+CALLOUT from|UserCallIntentProcessor: processOutgoingCallIntent|UserCallIntentProcessor: handleOutgoingCall|TelecomServiceImpl: handle MSG_NEW_OUTGOING_CALL|CallIntentProcessor: processOutgoingCallIntent|CallsManager: addCall|InCallController: onCallAdded|InCallController: mInCallServiceConnection isConnected|startOutgoingCall
+
+（1）Telephony
+onCreateOutgoingConnection,subId|placeOutgoingConnection|MSG_PRECISE_CALL_STATE_CHANGED|Update state from|onStateChanged, state: |setCallState
+（2）Telecom
+showDisableVolteHdCallsDialog|processOutgoingCallIntent videoState = |handleOutgoingCall|CallForward onTransact|onTransact add new outgoing call|handle MSG_NEW_OUTGOING_CALL|dual number is not support in roaming, stop call|processOutgoingCallIntent -> subId=|processOutgoingCallIntent -> slotId=|processOutgoingCallIntent - phoneAccountHandleId is valid, set subId to|deviceType = |sosEmergencyDialType = |startOutgoingCall|CallsManager: addCall|onCallAdded|defaultDialer: |Attempting to bind to InCall|Skipping binding to|onConnected|handleCreateConnectionComplete|handleCreateConnectionSuccessful|setCallState|Sending updateCall|Components updated:
+（3）InCallUI
+onCallAdded|onUpdate - |onCallListChange|startOrFinishUi|showInCall|onCreate()... this =|Broadcasting intent:|Received new-outgoing-call-broadcast|attemptNextPhoneAccount|Trying attempt|createConnection|Service bound|onServiceConnected|TelecomCallCallback onStateChanged call=|ringState|videoState|DisconnectCause|gateway|callForwardState
+
+被叫
+handleNewRingingConnection|UNSOL_RESPONSE_CALL_STATE_CHANGED|complete Relayout Window.*?InCallActivity|_start_.*?InCallActivity|_resume.*?InCallActivity|InCallActivity: onStart|InCallActivity: onResume|WindowManager: addWindow: Window.*InCallActivity|startActivityMayWait.*?InCallActivity|GET_CURRENT_CALLS|CallList: onIncoming
+Telecom: CallsManager: addCall|Attempting to bind to InCall.*?InCallServiceImpl|FILTERING_COMPLETED
+
+UNSOL_RESPONSE_CALL_STATE_CHANGED|ImsServiceSubHandler : Message received: what =|Event EVENT_POLL_CALLS_RESULT|Adding new incoming call with phoneAccountHandle|createConnection, callManagerAccount|FILTERING_|CallsManager: setCallState|Call added with id|InCallPresenter: onIncomingCall
+
+发送短信
+content://sms|SMSDispatcher: sendText|ImsSmsDispatcher.*sendSms:|onSendSmsResult|SEND_SMS
+
+接收短信
+UNSOL_INCOMING_IMS_SMS|UNSOL_RESPONSE_NEW_SMS|SMS_DELIVER|addTrackerToRawTable|Delivering SMS to
+ notification_
+
+
+接听
+REQUEST_ANSWER|GlowPadAnswerFragment: onClick|Telecom: ActionAnswerCall: perform answer call for|CallsManager: answerCall: Incoming call
+
+信号强度
+RIL_UNSOL_HW_SIGNAL_STRENGTH
+
+亮屏
+窗口绘制  finishKeyguardDrawn -> waitForAllWindowsDrawn|All windows ready for display
+LCD上电  screen state: state   Setting power mode
+计算背光  Enable LightSensor  Animating brightness: target
+Unblocked screen on after|screen turning on|complete Relayout Window.*?InCallActivity|onWakeUp: reason|Waking up from|RingerDecodeUtil.*?Duration|All windows ready for display
+viewVisibilityChanged changed reason
+run cts -m CtsTelecomTestCases -t android.telecom.cts.PhoneAccountSuggestionServiceTest#testPartialSuggestions
+
+
+ 
