@@ -6,21 +6,21 @@ adb shell screencap -p | sed 's/\r$//' > screen.png
 adb shell screencap -p /sdcard/screen.png
 adb logcat -b all 2>&1 | tee log.txt
 adb shell setprop persist.sys.hilog.debug.on true
-adb shell settings get secure 
-adb shell setprop log.tag.Main D
-adb shell setprop persist.log.tag M
-adb shell setprop log.tag.TelecomFramework V
-adb shell setprop log.tag.Dialer V
+adb shell settings get secure
+data/system/users/0
+adb shell setprop persist.log.tag.Dialer V
+adb shell setprop persist.log.tag.TelecomFramework V
+adb shell setprop persist.log.tag.Telephony V
 adb shell stop
 adb shell start
 adb shell am startservice -n com.android.phone/com.android.phone.TelephonyDebugService --user 0 -a <action>
 adb shell am broadcast -a delete.siminfo
-
-data/system/users/0
-data/user/0/com.android.providers.telephony/
-
-import android.util.Log;
-Entered the Android system server
+adb shell dumpsys -l
+adb shell service list
+adb shell dumpsys activity service com.android.phone.TelephonyDebugService
+adb pull data/user_de/0/com.android.providers.telephony/databases
+adb shell pm clear com.android.providers.telephony
+adb shell pm list packages
 
 DcTracker
 DCT.constructor
@@ -28,10 +28,14 @@ DCT.constructor
 数据
 updateDataActivity
 trySetupData for APN type|setupData: apnContext=|setupData: dc=|setupData: initing|trySetupData failed|connect: carrier=|bringUp: apnContext=|SETUP_DATA_CALL|setupDataCall
+关闭数据业务
+UserDataEnabled|EVENT_DATA_ENABLED_CHANGED|onDataEnabledChanged|cleanUpAllConnectionsInternal: |teardownForDun: APNs|cleanUpConnectionInternal|EVENT_DISCONNECT|deactivateDataCall|DEACTIVATE_DATA_CALL
+开启数据业务
+UserDataEnabled|EVENT_DATA_ENABLED_CHANGED|onDataEnabledChanged|reevaluate restricted state|setupDataOnAllConnectableApns|tearDown: apnContext|trySetupData|SETUP_DATA_CALL|getPreferredApn|onDataSetupComplete
 
 
 挂断电话
-endCallClicked|TelecomAdapter: disconnectCall|InCallAdapter: disconnectCall|REQUEST_DISCONNECT|CallsManager: disconnectCall|Call: Send disconnect to connection service for call|: disconnect|InCallController: Sending updateCall|TelephonyConnectionService: disconnect|onDisconnect|ImsCall : terminate|ImsCallSessionImpl : terminate|> HANGUP|< HANGUP
+end call button clicked|endCallClicked|TelecomAdapter: disconnectCall|InCallAdapter: disconnectCall|REQUEST_DISCONNECT|CallsManager: disconnectCall|Call: Send disconnect to connection service for call|: disconnect|InCallController: Sending updateCall|TelephonyConnectionService: disconnect|onDisconnect|ImsCall : terminate|ImsCallSessionImpl : terminate|> HANGUP|< HANGUP
 
 拒接
 Decline
