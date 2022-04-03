@@ -8,9 +8,10 @@ adb logcat -b all 2>&1 | tee log.txt
 adb shell setprop persist.sys.hilog.debug.on true
 adb shell settings get secure
 data/system/users/0
-adb shell setprop persist.log.tag.Dialer V
-adb shell setprop persist.log.tag.TelecomFramework V
-adb shell setprop persist.log.tag.Telephony V
+adb shell setprop persist.log.tag.Dialer V & adb shell setprop persist.log.tag.TelecomFramework V  & adb shell setprop persist.log.tag.Telecom V & adb shell setprop persist.log.tag.Telephony V  & adb shell setprop persist.log.tag.SubscriptionController V
+adb shell setprop persist.log.tag.NotificationService V  & adb shell setprop persist.log.tag.NotificationRecord V & adb shell setprop persist.log.tag.notification_assistant V
+adb shell setprop persist.log.tag.Tile V & adb shell setprop persist.log.tag.volume V
+adb shell setprop persist.log.tag.SQLiteQueryBuilder V
 adb shell stop
 adb shell start
 adb shell am startservice -n com.android.phone/com.android.phone.TelephonyDebugService --user 0 -a <action>
@@ -19,6 +20,8 @@ adb shell dumpsys -l
 adb shell service list
 adb shell dumpsys activity service com.android.phone.TelephonyDebugService
 adb pull data/user_de/0/com.android.providers.telephony/databases
+adb pull data/data/com.android.providers.contacts/databases
+adb pull data/data/com.android.providers.media/databases
 adb shell pm clear com.android.providers.telephony
 adb shell pm list packages
 
@@ -27,7 +30,7 @@ DCT.constructor
 
 数据
 updateDataActivity
-trySetupData for APN type|setupData: apnContext=|setupData: dc=|setupData: initing|trySetupData failed|connect: carrier=|bringUp: apnContext=|SETUP_DATA_CALL|setupDataCall
+SETUP_DATA_CALL|trySetupData for APN type|setupData: apnContext=|setupData: dc=|setupData: initing|trySetupData failed|connect: carrier=|bringUp: apnContext=|setupDataCall
 关闭数据业务
 UserDataEnabled|EVENT_DATA_ENABLED_CHANGED|onDataEnabledChanged|cleanUpAllConnectionsInternal: |teardownForDun: APNs|cleanUpConnectionInternal|EVENT_DISCONNECT|deactivateDataCall|DEACTIVATE_DATA_CALL
 开启数据业务
@@ -35,6 +38,7 @@ UserDataEnabled|EVENT_DATA_ENABLED_CHANGED|onDataEnabledChanged|reevaluate restr
 
 
 挂断电话
+end call button clicked|endCallClicked|REQUEST_DISCONNECT|TelephonyConnectionService: disconnect|> HANGUP|< HANGUP|< GET_CURRENT_CALLS|ImsCallSessionImpl : terminate|GsmCdmaConnection: onDisconnect|UNSOL_RESPONSE_CALL_STATE_CHANGED|handleCalls|callSessionTerminated
 end call button clicked|endCallClicked|TelecomAdapter: disconnectCall|InCallAdapter: disconnectCall|REQUEST_DISCONNECT|CallsManager: disconnectCall|Call: Send disconnect to connection service for call|: disconnect|InCallController: Sending updateCall|TelephonyConnectionService: disconnect|onDisconnect|ImsCall : terminate|ImsCallSessionImpl : terminate|> HANGUP|< HANGUP
 
 拒接
@@ -59,6 +63,9 @@ Telecom: CallsManager: addCall|Attempting to bind to InCall.*?InCallServiceImpl|
 
 UNSOL_RESPONSE_CALL_STATE_CHANGED|ImsServiceSubHandler : Message received: what =|Event EVENT_POLL_CALLS_RESULT|Adding new incoming call with phoneAccountHandle|createConnection, callManagerAccount|FILTERING_|CallsManager: setCallState|Call added with id|InCallPresenter: onIncomingCall
 
+CS通话
+UNSOL_RESPONSE_CALL_STATE_CHANGED|GET_CURRENT_CALLS|handlePollCalls|, newParent= 
+
 发送短信
 content://sms|SMSDispatcher: sendText|ImsSmsDispatcher.*sendSms:|onSendSmsResult|SEND_SMS
 
@@ -82,4 +89,3 @@ viewVisibilityChanged changed reason
 run cts -m CtsTelecomTestCases -t android.telecom.cts.PhoneAccountSuggestionServiceTest#testPartialSuggestions
 
 
- 
