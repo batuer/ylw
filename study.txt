@@ -9,7 +9,8 @@ adb shell setprop persist.sys.hilog.debug.on true
 adb shell settings get secure
 data/system/users/0
 adb shell setprop persist.log.tag.Dialer V & adb shell setprop persist.log.tag.TelecomFramework V  & adb shell setprop persist.log.tag.Telecom V & adb shell setprop persist.log.tag.Telephony V  & adb shell setprop persist.log.tag.SubscriptionController V
-adb shell setprop persist.log.tag.NotificationService V  & adb shell setprop persist.log.tag.NotificationRecord V & adb shell setprop persist.log.tag.notification_assistant V
+adb shell setprop persist.log.tag.MmsService V
+adb shell setprop persist.log.tag.NotificationService V  & adb shell setprop persist.log.tag.NotificationRecord V & adb shell setprop persist.log.tag.notification_assistant V & adb shell setprop persist.log.tag.AlertNotifManager V
 adb shell setprop persist.log.tag.Tile V & adb shell setprop persist.log.tag.volume V
 adb shell setprop persist.log.tag.SQLiteQueryBuilder V
 adb shell stop
@@ -24,9 +25,9 @@ adb pull data/data/com.android.providers.contacts/databases
 adb pull data/data/com.android.providers.media/databases
 adb shell pm clear com.android.providers.telephony
 adb shell pm list packages
+adb shell am broadcast -a REFLECT_CHANGE_FILED --es CLASS_NAME "com.android.server.pm.PackageManagerService" --es FILED_NAME "DEBUG_INSTALL" --ez FILED_VALUE false
 
 DcTracker
-DCT.constructor
 
 数据
 updateDataActivity
@@ -36,7 +37,6 @@ UserDataEnabled|EVENT_DATA_ENABLED_CHANGED|onDataEnabledChanged|cleanUpAllConnec
 开启数据业务
 UserDataEnabled|EVENT_DATA_ENABLED_CHANGED|onDataEnabledChanged|reevaluate restricted state|setupDataOnAllConnectableApns|tearDown: apnContext|trySetupData|SETUP_DATA_CALL|getPreferredApn|onDataSetupComplete
 
-
 挂断电话
 end call button clicked|endCallClicked|REQUEST_DISCONNECT|TelephonyConnectionService: disconnect|> HANGUP|< HANGUP|< GET_CURRENT_CALLS|ImsCallSessionImpl : terminate|GsmCdmaConnection: onDisconnect|UNSOL_RESPONSE_CALL_STATE_CHANGED|handleCalls|callSessionTerminated
 end call button clicked|endCallClicked|TelecomAdapter: disconnectCall|InCallAdapter: disconnectCall|REQUEST_DISCONNECT|CallsManager: disconnectCall|Call: Send disconnect to connection service for call|: disconnect|InCallController: Sending updateCall|TelephonyConnectionService: disconnect|onDisconnect|ImsCall : terminate|ImsCallSessionImpl : terminate|> HANGUP|< HANGUP
@@ -45,7 +45,7 @@ end call button clicked|endCallClicked|TelecomAdapter: disconnectCall|InCallAdap
 Decline
 
 主叫
-UNSOL_RESPONSE_CALL_STATE_CHANGED|CALLOUT from|onCreateOutgoingConnection,subId|placeOutgoingConnection|setCallState|UserCallIntentProcessor: processOutgoingCallIntent|TelephonyConnectionService: createConnection|> DIAL|< DIAL|Dial Request - address|Telecom: UserCallIntentProcessor: handleOutgoingCall|onTransact add new outgoing call|handle MSG_NEW_OUTGOING_CALL|processOutgoingCallIntent -> subId=|processOutgoingCallIntent -> slotId=|sosEmergencyDialType = |startOutgoingCall|CallsManager: addCall|onCallAdded|defaultDialer: |Skipping binding to|handleCreateConnectionSuccessful|Sending updateCall|Components updated:|onUpdate -|onCallListChange|startOrFinishUi|Broadcasting intent:|Received new-outgoing-call-broadcast|attemptNextPhoneAccount|Trying attempt|telecom.*?createConnection|Service bound|RecordServiceClient: onServiceConnected|TelecomCallCallback onStateChanged call=|ringState|CallCardFragment: videoState
+UNSOL_RESPONSE_CALL_STATE_CHANGED|CALLOUT from|onCreateOutgoingConnection,subId|placeOutgoingConnection|UserCallIntentProcessor: processOutgoingCallIntent|TelephonyConnectionService: createConnection|> DIAL|< DIAL|Dial Request - address|Telecom: UserCallIntentProcessor: handleOutgoingCall|onTransact add new outgoing call|handle MSG_NEW_OUTGOING_CALL|processOutgoingCallIntent -> subId=|processOutgoingCallIntent -> slotId=|sosEmergencyDialType = |startOutgoingCall|CallsManager: addCall|onCallAdded|defaultDialer: |Skipping binding to|handleCreateConnectionSuccessful|onUpdate -|startOrFinishUi|Broadcasting intent:|Received new-outgoing-call-broadcast|attemptNextPhoneAccount|Trying attempt|telecom.*?createConnection|Service bound|RecordServiceClient: onServiceConnected|TelecomCallCallback onStateChanged call=|ringState|CallCardFragment: videoState
 01FF5.*?DisconnectCause|01FF5.*?gateway|01FF5.*?callForwardState
 
 CALLOUT from|UserCallIntentProcessor: processOutgoingCallIntent|UserCallIntentProcessor: handleOutgoingCall|TelecomServiceImpl: handle MSG_NEW_OUTGOING_CALL|CallIntentProcessor: processOutgoingCallIntent|CallsManager: addCall|InCallController: onCallAdded|InCallController: mInCallServiceConnection isConnected|startOutgoingCall
@@ -67,13 +67,15 @@ CS通话
 UNSOL_RESPONSE_CALL_STATE_CHANGED|GET_CURRENT_CALLS|handlePollCalls|, newParent= 
 
 发送短信
-content://sms|SMSDispatcher: sendText|ImsSmsDispatcher.*sendSms:|onSendSmsResult|SEND_SMS
-
+content://sms|SMSDispatcher: sendText|ImsSmsDispatcher.*sendSms:|onSendSmsResult|_SMS
 接收短信
 UNSOL_INCOMING_IMS_SMS|UNSOL_RESPONSE_NEW_SMS|SMS_DELIVER|addTrackerToRawTable|Delivering SMS to
  notification_
-
-
+ 发送彩信
+ MmsService: onCreate|MmsSender: Sending MMS|MmsService: sendMessage|MmsNetworkManager: start new network request|trySetupData for APN type mms|SETUP_DATA_CALL|MmsService: NetworkCallbackListener|HTTP: .*PDU size|content://mms
+ 接收彩信
+ _SMS|WAP_PUSH_DELIVER_ACTION|ReceiveMmsMessageAction: Received MMS message
+ 
 接听
 REQUEST_ANSWER|GlowPadAnswerFragment: onClick|Telecom: ActionAnswerCall: perform answer call for|CallsManager: answerCall: Incoming call
 
@@ -88,4 +90,4 @@ Unblocked screen on after|screen turning on|complete Relayout Window.*?InCallAct
 viewVisibilityChanged changed reason
 run cts -m CtsTelecomTestCases -t android.telecom.cts.PhoneAccountSuggestionServiceTest#testPartialSuggestions
 
-
+PowerManagerService.*Sleep|ActivityTaskManager: START|AmDialogActivity:|UNSOL_RESPONSE_CALL_STATE_CHANGED|sysui_heads_up_escalation|releaseWakeLock|acquireWakeLock|stopForegroundNotification|notification_.*dialer|REQUEST_ANSWER|GlowPadAnswerFragment: onClick|StatusBarNotifier.buildAndSendNotification - notificationType=2
