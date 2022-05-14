@@ -91,3 +91,7 @@ viewVisibilityChanged changed reason
 run cts -m CtsTelecomTestCases -t android.telecom.cts.PhoneAccountSuggestionServiceTest#testPartialSuggestions
 
 PowerManagerService.*Sleep|ActivityTaskManager: START|AmDialogActivity:|UNSOL_RESPONSE_CALL_STATE_CHANGED|sysui_heads_up_escalation|releaseWakeLock|acquireWakeLock|stopForegroundNotification|notification_.*dialer|REQUEST_ANSWER|GlowPadAnswerFragment: onClick|StatusBarNotifier.buildAndSendNotification - notificationType=2
+
+开机流程
+entered the android system|boot_progress|start proc.*systemui|start proc.*launcher|RIL Daemon Started|wm_create_activity|init first stage started
+
