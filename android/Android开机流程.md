@@ -28,7 +28,7 @@
 
 桌面应用显示，启动完成。
 
-![Android启动流程](https://upload-images.jianshu.io/upload_images/2088926-26aaa0be71533a5c.png)
+![Android启动流程](https://upload-images.jianshu.io/upload_images/2088926-e3c5437343298ad4.png)
 
 ![Android启动流程](https://upload-images.jianshu.io/upload_images/2088926-3d981b715f121499.png)
 
