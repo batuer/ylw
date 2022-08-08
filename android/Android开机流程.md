@@ -34,3 +34,12 @@
 
 
 
+
+
+### init进程启动
+
+### Zygote进程启动
+
+### SystemServer进程启动
+
+### Launcher进程启动
