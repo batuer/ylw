@@ -8,7 +8,7 @@ adb logcat -b all 2>&1 | tee log.txt
 adb shell setprop persist.sys.hilog.debug.on true
 adb shell settings get secure
 data/system/users/0
-adb shell setprop persist.log.tag.Dialer V & adb shell setprop persist.log.tag.TelecomFramework V  & adb shell setprop persist.log.tag.Telecom V & adb shell setprop persist.log.tag.Telephony V  & adb shell setprop persist.log.tag.SubscriptionController V
+adb shell setprop persist.log.tag.Dialer V & adb shell setprop persist.log.tag.TelecomFramework V  & adb shell setprop persist.log.tag.Telecom V & adb shell setprop persist.log.tag.Telephony V  & adb shell setprop persist.log.tag.SubscriptionController V & adb shell setprop persist.log.tag.SIMRecords V & adb shell setprop persist.log.tag.AdnRecord V
 adb shell setprop persist.log.tag.MmsService V
 adb shell setprop persist.log.tag.NotificationService V  & adb shell setprop persist.log.tag.NotificationRecord V & adb shell setprop persist.log.tag.notification_assistant V & adb shell setprop persist.log.tag.AlertNotifManager V
 adb shell setprop persist.log.tag.Tile V & adb shell setprop persist.log.tag.volume V
