@@ -1,0 +1,907 @@
+--------- beginning of kernel
+11-06 10:51:10.092     0     0 D logd    : Skipping 18446744073709550508 entries from slow reader, pid 334, from LogBuffer::kickMe()
+--------- beginning of radio
+11-06 10:51:11.088  5391  5391 D DCT-C-0 : updateDataActivity: curTxRxSum={txSum=3815 rxSum=2906} preTxRxSum={txSum=3815 rxSum=2906}
+11-06 10:51:11.088  5391  5391 D DCT-C-0 : updateDataActivity: sent=0 received=0
+11-06 10:51:12.094  5391  5391 D DCT-C-0 : updateDataActivity: curTxRxSum={txSum=3815 rxSum=2906} preTxRxSum={txSum=3815 rxSum=2906}
+11-06 10:51:12.094  5391  5391 D DCT-C-0 : updateDataActivity: sent=0 received=0
+11-06 10:51:13.098  5391  5391 D DCT-C-0 : updateDataActivity: curTxRxSum={txSum=3815 rxSum=2906} preTxRxSum={txSum=3815 rxSum=2906}
+11-06 10:51:13.098  5391  5391 D DCT-C-0 : updateDataActivity: sent=0 received=0
+11-06 10:51:14.102  5391  5391 D DCT-C-0 : updateDataActivity: curTxRxSum={txSum=3815 rxSum=2906} preTxRxSum={txSum=3815 rxSum=2906}
+11-06 10:51:14.102  5391  5391 D DCT-C-0 : updateDataActivity: sent=0 received=0
+11-06 10:51:15.106  5391  5391 D DCT-C-0 : updateDataActivity: curTxRxSum={txSum=3815 rxSum=2906} preTxRxSum={txSum=3815 rxSum=2906}
+11-06 10:51:15.106  5391  5391 D DCT-C-0 : updateDataActivity: sent=0 received=0
+11-06 10:51:16.111  5391  5391 D DCT-C-0 : updateDataActivity: curTxRxSum={txSum=3815 rxSum=2906} preTxRxSum={txSum=3815 rxSum=2906}
+11-06 10:51:16.111  5391  5391 D DCT-C-0 : updateDataActivity: sent=0 received=0
+11-06 10:51:17.132     0     0 D logd    : logdr: UID=0 GID=0 PID=6431 b tail=0 logMask=ff pid=0 start=0ns timeout=0ns
+11-06 10:51:17.115  5391  5391 D DCT-C-0 : updateDataActivity: curTxRxSum={txSum=3815 rxSum=2906} preTxRxSum={txSum=3815 rxSum=2906}
+11-06 10:51:17.115  5391  5391 D DCT-C-0 : updateDataActivity: sent=0 received=0
+11-06 10:51:18.120  5391  5391 D DCT-C-0 : updateDataActivity: curTxRxSum={txSum=3815 rxSum=2906} preTxRxSum={txSum=3815 rxSum=2906}
+11-06 10:51:18.120  5391  5391 D DCT-C-0 : updateDataActivity: sent=0 received=0
+11-06 10:51:19.124  5391  5391 D DCT-C-0 : updateDataActivity: curTxRxSum={txSum=3815 rxSum=2906} preTxRxSum={txSum=3815 rxSum=2906}
+11-06 10:51:19.124  5391  5391 D DCT-C-0 : updateDataActivity: sent=0 received=0
+11-06 10:51:20.127  5391  5391 D DCT-C-0 : updateDataActivity: curTxRxSum={txSum=3815 rxSum=2906} preTxRxSum={txSum=3815 rxSum=2906}
+11-06 10:51:20.127  5391  5391 D DCT-C-0 : updateDataActivity: sent=0 received=0
+11-06 10:51:21.131  5391  5391 D DCT-C-0 : updateDataActivity: curTxRxSum={txSum=3815 rxSum=2906} preTxRxSum={txSum=3815 rxSum=2906}
+11-06 10:51:21.131  5391  5391 D DCT-C-0 : updateDataActivity: sent=0 received=0
+11-06 10:51:22.134  5391  5391 D DCT-C-0 : updateDataActivity: curTxRxSum={txSum=3815 rxSum=2906} preTxRxSum={txSum=3815 rxSum=2906}
+11-06 10:51:22.135  5391  5391 D DCT-C-0 : updateDataActivity: sent=0 received=0
+11-06 10:51:23.139  5391  5391 D DCT-C-0 : updateDataActivity: curTxRxSum={txSum=3815 rxSum=2906} preTxRxSum={txSum=3815 rxSum=2906}
+11-06 10:51:23.139  5391  5391 D DCT-C-0 : updateDataActivity: sent=0 received=0
+11-06 10:51:24.145  5391  5391 D DCT-C-0 : updateDataActivity: curTxRxSum={txSum=3815 rxSum=2906} preTxRxSum={txSum=3815 rxSum=2906}
+11-06 10:51:24.145  5391  5391 D DCT-C-0 : updateDataActivity: sent=0 received=0
+--------- beginning of system
+11-06 10:51:25.143  5071  6417 D PowerManagerService: acquireWakeLockInternal: lock=5774919, flags=0x1, tag="*telephony-radio*", ws=WorkSource{1001 com.android.phone}, uid=1001, pid=5391
+11-06 10:51:25.143  5071  6417 D PowerManagerService: updateWakeLockSummaryLocked: mWakefulness=Awake, mWakeLockSummary=0x1
+11-06 10:51:25.283     0     0 I init    : processing action (sys.sysctl.tcp_def_init_rwnd=*) from (/system/etc/init/hw/init.rc:994)
+11-06 10:51:25.145  5071  6417 D PowerManagerService: updateUserActivitySummaryLocked: mWakefulness=Awake, mUserActivitySummary=0x1, nextTimeout=2230759999 (in 2147000104 ms)
+11-06 10:51:25.145  5071  6417 D PowerManagerService: updateDisplayPowerStateLocked: mDisplayReady=true, policy=3, mWakefulness=1, mWakeLockSummary=0x1, mUserActivitySummary=0x1, mBootCompleted=true, screenBrightnessOverride=NaN, useAutoBrightness=false, mScreenBrightnessBoostInProgress=false, mIsVrModeEnabled= false, sQuiescent=false
+11-06 10:51:25.146  5391  5391 D RILJ    : [0240]> SIGNAL_STRENGTH [PHONE0]
+11-06 10:51:25.146   388   388 D RIL     : onRequest: SIGNAL_STRENGTH
+11-06 10:51:25.146   388   388 D AT      : AT> AT+CSQ
+11-06 10:51:25.147   388   453 D AT      : AT< %CGFPCCFG: 1,50000,20,4,1
+11-06 10:51:25.147   388   453 D RIL     : got CGFPCCFG line %CGFPCCFG: 1,50000,20,4,1 and %CGFPCCFG: 1,50000,20,4,1
+11-06 10:51:25.147   388   453 D RIL     : got i 0, val = 1
+11-06 10:51:25.147   388   453 D RIL     : got i 1, val = 50000
+11-06 10:51:25.147   388   453 D RIL     : got i 2, val = 20
+11-06 10:51:25.147   388   453 D RIL     : got i 3, val = 4
+11-06 10:51:25.147   388   453 D RIL     : got i 4, val = 1
+11-06 10:51:25.147   388   453 D RILC    : reportPhysicalChannelConfigs: 1 50000 20 4 1
+11-06 10:51:25.147   388   453 D AT      : AT< %CGFPCCFG: 2,50000,20,4,1
+11-06 10:51:25.147   388   453 D RIL     : got CGFPCCFG line %CGFPCCFG: 2,50000,20,4,1 and %CGFPCCFG: 2,50000,20,4,1
+11-06 10:51:25.147   388   453 D RIL     : got i 0, val = 2
+11-06 10:51:25.147   388   453 D RIL     : got i 1, val = 50000
+11-06 10:51:25.147   388   453 D RIL     : got i 2, val = 20
+11-06 10:51:25.147   388   453 D RIL     : got i 3, val = 4
+11-06 10:51:25.147   388   453 D RIL     : got i 4, val = 1
+11-06 10:51:25.148   388   453 D RILC    : reportPhysicalChannelConfigs: 2 50000 20 4 1
+11-06 10:51:25.148   388   453 D AT      : AT< +CSQ: 30,0,70,80,60,80,7,60,80,20,200,15,50
+11-06 10:51:25.148   388   453 D AT      : AT< OK
+11-06 10:51:25.148  5391  5497 D RILJ    : [UNSL]< RIL_UNSOL_PHYSICAL_CHANNEL_CONFIG [{mConnectionStatus=PrimaryServing,mCellBandwidthDownlinkKhz=50000,mRat=NR,mFrequencyRange=MMWAVE,mChannelNumber=2147483647,mContextIds=[1],mPhysicalCellId=0}] [PHONE0]
+11-06 10:51:25.150  5391  5497 W CellSignalStrengthCdma: getCdmaLevel=0
+11-06 10:51:25.150  5391  5497 W CellSignalStrengthCdma: getEvdoLevel=0
+11-06 10:51:25.150  5391  5497 W CellSignalStrengthCdma: getCdmaLevel=0
+11-06 10:51:25.150  5391  5497 E CellSignalStrengthLte: convertRssiAsuToDBm: invalid RSSI in ASU=60
+11-06 10:51:25.150  5391  5497 I CellSignalStrengthLte: Updated 4G LTE RSRP Level: 4
+11-06 10:51:25.150  5391  5497 D RILJ    : [0240]< SIGNAL_STRENGTH SignalStrength:{mCdma=CellSignalStrengthCdma: cdmaDbm=2147483647 cdmaEcio=2147483647 evdoDbm=2147483647 evdoEcio=2147483647 evdoSnr=2147483647 level=0,mGsm=CellSignalStrengthGsm: rssi=2147483647 ber=2147483647 mTa=2147483647 mLevel=0,mWcdma=CellSignalStrengthWcdma: ss=2147483647 ber=2147483647 rscp=2147483647 ecno=2147483647 level=0,mTdscdma=CellSignalStrengthTdscdma: rssi=2147483647 ber=2147483647 rscp=2147483647 level=0,mLte=CellSignalStrengthLte: rssi=2147483647 rsrp=-80 rsrq=-20 rssnr=20 cqi=15 ta=50 level=4 parametersUseForLevel=1,mNr=CellSignalStrengthNr:{ csiRsrp = 2147483647 csiRsrq = 2147483647 csiSinr = 2147483647 ssRsrp = 2147483647 ssRsrq = 2147483647 ssSinr = 2147483647 level = 0 parametersUseForLevel = 1 },primary=CellSignalStrengthLte} [PHONE0]
+11-06 10:51:25.151  5391  5497 D RILJ    : [UNSL]< RIL_UNSOL_PHYSICAL_CHANNEL_CONFIG [{mConnectionStatus=SecondaryServing,mCellBandwidthDownlinkKhz=50000,mRat=NR,mFrequencyRange=MMWAVE,mChannelNumber=2147483647,mContextIds=[1],mPhysicalCellId=0}] [PHONE0]
+11-06 10:51:25.153  5391  5391 D DCT-C-0 : updateDataActivity: curTxRxSum={txSum=3815 rxSum=2906} preTxRxSum={txSum=3815 rxSum=2906}
+11-06 10:51:25.153  5391  5391 D DCT-C-0 : updateDataActivity: sent=0 received=0
+11-06 10:51:25.153  5391  5546 D DC-C-1  : updateTcpBufferSizes: lte_ca
+11-06 10:51:25.153  5391  5546 D DC-C-1  : updateLinkBandwidthsFromCarrierConfig: LTE
+11-06 10:51:25.154  5391  5546 D SubscriptionController: [getSubId]+ slotIndex=0
+11-06 10:51:25.154  5391  5546 D SubscriptionController: [getSubId]- subIdArr=[I@c9d4cab
+11-06 10:51:25.154  5391  5546 D ApnSetting: isMeteredApnType: isRoaming=false
+11-06 10:51:25.155  5071  5174 D ConnectivityService: Update of LinkProperties for [100 CELLULAR]; created=true; everConnected=true
+11-06 10:51:25.155  5071  5174 D ConnectivityService: identical MTU - not setting
+11-06 10:51:25.155  5071  5174 D ConnectivityService: Setting tx/rx TCP buffers to 4096,6291456,12582912,4096,1048576,2097152
+11-06 10:51:25.158  5071  5174 D PowerManagerService: acquireWakeLockInternal: lock=106585726, flags=0x1, tag="NetworkStats", ws=null, uid=1000, pid=5071
+11-06 10:51:25.158  5071  5174 D PowerManagerService: updateWakeLockSummaryLocked: mWakefulness=Awake, mWakeLockSummary=0x1
+11-06 10:51:25.159  5071  5174 D PowerManagerService: updateUserActivitySummaryLocked: mWakefulness=Awake, mUserActivitySummary=0x1, nextTimeout=2230759999 (in 2147000091 ms)
+11-06 10:51:25.159  5071  5174 D PowerManagerService: updateDisplayPowerStateLocked: mDisplayReady=true, policy=3, mWakefulness=1, mWakeLockSummary=0x1, mUserActivitySummary=0x1, mBootCompleted=true, screenBrightnessOverride=NaN, useAutoBrightness=false, mScreenBrightnessBoostInProgress=false, mIsVrModeEnabled= false, sQuiescent=false
+11-06 10:51:25.159  5071  5174 D AppOps  : startOperation: allowing code 40 uid 1000 package android
+--------- beginning of main
+11-06 10:51:25.160  5071  5174 W BestClock: java.time.DateTimeException: Missing NTP fix
+11-06 10:51:25.162  5391  5546 D ApnSetting: For subId = 1, metered APN types are [default, mms, supl, dun]
+11-06 10:51:25.162  5391  5546 D ApnSetting: mms is metered.
+11-06 10:51:25.163  5391  5546 D DcNetworkAgent-100: Changed from [ Transports: CELLULAR Capabilities: MMS&SUPL&DUN&FOTA&IMS&CBS&INTERNET&NOT_RESTRICTED&TRUSTED&NOT_VPN&NOT_ROAMING&NOT_CONGESTED&NOT_SUSPENDED LinkUpBandwidth>=60000Kbps LinkDnBandwidth>=145000Kbps Specifier: <TelephonyNetworkSpecifier [mSubId = 1]> RequestorUid: -1 RequestorPackageName: null] to [ Transports: CELLULAR Capabilities: MMS&SUPL&DUN&FOTA&IMS&CBS&INTERNET&NOT_RESTRICTED&TRUSTED&NOT_VPN&NOT_ROAMING&NOT_CONGESTED&NOT_SUSPENDED LinkUpBandwidth>=15000Kbps LinkDnBandwidth>=30000Kbps Specifier: <TelephonyNetworkSpecifier [mSubId = 1]> RequestorUid: -1 RequestorPackageName: null], Data RAT=14, dc=DC-C-1
+11-06 10:51:25.163  5391  5391 D SubscriptionController: [getSubId]+ slotIndex=0
+11-06 10:51:25.163  5391  5391 D SubscriptionController: [getSubId]- subIdArr=[I@397ef08
+11-06 10:51:25.163  5391  5391 D ApnSetting: isMeteredApnType: isRoaming=false
+11-06 10:51:25.165  5391  5391 D ApnSetting: For subId = 1, metered APN types are [default, mms, supl, dun]
+11-06 10:51:25.165  5391  5391 D ApnSetting: mms is metered.
+11-06 10:51:25.165  5391  5391 D SubscriptionController: [getSubId]+ slotIndex=0
+11-06 10:51:25.165  5391  5391 D SubscriptionController: [getSubId]- subIdArr=[I@ab566a1
+11-06 10:51:25.166  5391  5391 D DefaultPhoneNotifier: notifyServiceStateForSubId: mRegistryMgr=android.telephony.TelephonyRegistryManager@c1dbc9b ss={mVoiceRegState=0(IN_SERVICE), mDataRegState=0(IN_SERVICE), mChannelNumber=-1, duplexMode()=0, mCellBandwidths=[50000], mOperatorAlphaLong=Android, mOperatorAlphaShort=Android, isManualNetworkSelection=false(automatic), getRilVoiceRadioTechnology=0(Unknown), getRilDataRadioTechnology=14(LTE), mCssIndicator=unsupported, mNetworkId=-1, mSystemId=-1, mCdmaRoamingIndicator=-1, mCdmaDefaultRoamingIndicator=-1, mIsEmergencyOnly=false, isUsingCarrierAggregation=true, mLteEarfcnRsrpBoost=0, mNetworkRegistrationInfos=[NetworkRegistrationInfo{ domain=CS transportType=WWAN registrationState=HOME roamingType=NOT_ROAMING accessNetworkTechnology=UNKNOWN rejectCause=0 emergencyEnabled=false availableServices=[VOICE,SMS,VIDEO] cellIdentity=null voiceSpecificInfo=VoiceSpecificRegistrationInfo { mCssSupported=false mRoamingIndicator=-1 mSystemIsInPrl=0 mDefaultRoamingIndicator=0} dataSpecificInfo=null nrState=NONE rRplmn=}, NetworkRegistrationInfo{ domain=PS transportType=WWAN registrationState=HOME roamingType=NOT_ROAMING accessNetworkTechnology=LTE rejectCause=-1 emergencyEnabled=false availableServices=[DATA] cellIdentity=null voiceSpecificInfo=null dataSpecificInfo=android.telephony.DataSpecificRegistrationInfo :{ maxDataCalls = 1 isDcNrRestricted = false isNrAvailable = true isEnDcAvailable = true LteVopsSupportInfo :  mVopsSupport = 1 mEmcBearerSupport = 1 mIsUsingCarrierAggregation = true } nrState=NOT_RESTRICTED rRplmn=}], mNrFrequencyRange=4, mOperatorAlphaLongRaw=Android, mOperatorAlphaShortRaw=Android, mIsDataRoamingFromRegistration=false, mIsIwlanPreferred=false} sender=Handler (com.android.internal.telephony.GsmCdmaPhone) {c0fb2b5} phondId=0 subId=1
+11-06 10:51:25.167  5071  5771 D AppOps  : noteOperation: allowing code 0 uid 10126 package com.android.systemui
+--------- beginning of events
+11-06 10:51:25.170  5071  5174 I netstats_mobile_sample: [13241,130,20320,190,13241,130,20320,190,12054,94,16610,185,1667703085170]
+11-06 10:51:25.170  5071  5174 I netstats_wifi_sample: [0,0,0,0,0,0,0,0,0,0,0,0,1667703085170]
+11-06 10:51:25.170  5071  5174 W BestClock: java.time.DateTimeException: Missing NTP fix
+11-06 10:51:25.170  5071  5167 W BestClock: java.time.DateTimeException: Missing NTP fix
+11-06 10:51:25.171  5071  5174 D PowerManagerService: releaseWakeLockInternal: lock=106585726 [NetworkStats], flags=0x0
+11-06 10:51:25.171  5071  5174 D PowerManagerService: updateWakeLockSummaryLocked: mWakefulness=Awake, mWakeLockSummary=0x1
+11-06 10:51:25.171  5071  5174 D PowerManagerService: updateUserActivitySummaryLocked: mWakefulness=Awake, mUserActivitySummary=0x1, nextTimeout=2230759999 (in 2147000078 ms)
+11-06 10:51:25.171  5071  5174 D PowerManagerService: updateDisplayPowerStateLocked: mDisplayReady=true, policy=3, mWakefulness=1, mWakeLockSummary=0x1, mUserActivitySummary=0x1, mBootCompleted=true, screenBrightnessOverride=NaN, useAutoBrightness=false, mScreenBrightnessBoostInProgress=false, mIsVrModeEnabled= false, sQuiescent=false
+11-06 10:51:25.172  5391  5417 D SubscriptionController: [getPhoneId] subId=1
+11-06 10:51:25.172  5391  5417 D SubscriptionController: [getPhoneId]- found subId=1 phoneId=0
+11-06 10:51:25.172  5391  5417 D PhoneInterfaceManager: [PhoneIntfMgr] isDataEnabled: subId=1 phoneId=0
+11-06 10:51:25.172  5391  5417 D PhoneFactory: getPhone:- phoneId != DEFAULT_PHONE_ID return sPhones[phoneId] phoneId=0 phone=Handler (com.android.internal.telephony.GsmCdmaPhone) {c0fb2b5}
+11-06 10:51:25.172  5391  5417 D PhoneInterfaceManager: [PhoneIntfMgr] isDataEnabled: subId=1 retVal=true
+11-06 10:51:25.173  5391  5653 D PhoneFactory: getPhone:- phoneId != DEFAULT_PHONE_ID return sPhones[phoneId] phoneId=0 phone=Handler (com.android.internal.telephony.GsmCdmaPhone) {c0fb2b5}
+11-06 10:51:25.179  5391  5563 D PhoneFactory: getPhone:- phoneId != DEFAULT_PHONE_ID return sPhones[phoneId] phoneId=0 phone=Handler (com.android.internal.telephony.GsmCdmaPhone) {c0fb2b5}
+11-06 10:51:25.180  5391  5391 D PhoneFactory: getPhone:- phoneId != DEFAULT_PHONE_ID return sPhones[phoneId] phoneId=0 phone=Handler (com.android.internal.telephony.GsmCdmaPhone) {c0fb2b5}
+11-06 10:51:25.180  5391  5391 D SubscriptionController: getSimStateForSlotIndex:  simState=LOADED ordinal=10 slotIndex=0
+11-06 10:51:25.180  5071  5771 E PHONE   : ServiceState.getRadioTechnology() DEPRECATED will be removed *******
+11-06 10:51:25.181  5071  5116 D AppOps  : noteOperation: allowing code 51 uid 10126 package com.android.systemui
+11-06 10:51:25.181  5071  5116 D AppOps  : noteOperation: allowing code 51 uid 1001 package com.android.phone
+11-06 10:51:25.182  5071  5116 D AppOps  : noteOperation: allowing code 51 uid 10127 package com.android.cellbroadcastreceiver.module
+11-06 10:51:25.184  5587  5587 D CellBroadcastReceiver: onReceive Intent { act=android.intent.action.SERVICE_STATE flg=0x1000010 cmp=com.android.cellbroadcastreceiver.module/com.android.cellbroadcastreceiver.CellBroadcastReceiver (has extras) }
+11-06 10:51:25.186  5391  5391 D SubscriptionController: [getSubId]+ slotIndex=0
+11-06 10:51:25.186  5391  5391 D SubscriptionController: [getSubId]- subIdArr=[I@607f0c6
+11-06 10:51:25.186  5071  5174 D ConnectivityService: notifyType CALLBACK_IP_CHANGED for [100 CELLULAR]
+11-06 10:51:25.186  5071  5174 D ConnectivityService:  sending notification for NetworkRequest [ REQUEST id=1, [ Capabilities: INTERNET&NOT_RESTRICTED&TRUSTED&NOT_VPN AdministratorUids: [] RequestorUid: 1000 RequestorPackageName: android] ]
+11-06 10:51:25.186  5071  5174 D ConnectivityService:  sending notification for NetworkRequest [ BACKGROUND_REQUEST id=2, [ Transports: CELLULAR Capabilities: INTERNET&NOT_RESTRICTED&TRUSTED&NOT_VPN AdministratorUids: [] RequestorUid: 1000 RequestorPackageName: android] ]
+11-06 10:51:25.186  5071  5174 D ConnectivityService:  sending notification for NetworkRequest [ LISTEN id=4, [ Capabilities: FOREGROUND AdministratorUids: [] RequestorUid: 1000 RequestorPackageName: android] ]
+11-06 10:51:25.186  5071  5174 D ConnectivityService: sending notification CALLBACK_IP_CHANGED for NetworkRequest [ LISTEN id=4, [ Capabilities: FOREGROUND AdministratorUids: [] RequestorUid: 1000 RequestorPackageName: android] ]
+11-06 10:51:25.187  5071  5174 D ConnectivityService:  sending notification for NetworkRequest [ LISTEN id=5, [ Capabilities: NOT_RESTRICTED&TRUSTED&NOT_VPN&FOREGROUND Uid: 1000 AdministratorUids: [] RequestorUid: 1000 RequestorPackageName: android] ]
+11-06 10:51:25.187  5071  5174 D ConnectivityService: sending notification CALLBACK_IP_CHANGED for NetworkRequest [ LISTEN id=5, [ Capabilities: NOT_RESTRICTED&TRUSTED&NOT_VPN&FOREGROUND Uid: 1000 AdministratorUids: [] RequestorUid: 1000 RequestorPackageName: android] ]
+11-06 10:51:25.187  5071  5174 D ConnectivityService:  sending notification for NetworkRequest [ LISTEN id=6, [ Capabilities: NOT_RESTRICTED&TRUSTED&NOT_VPN Uid: 1000 AdministratorUids: [] RequestorUid: 1000 RequestorPackageName: android] ]
+11-06 10:51:25.187  5071  5174 D ConnectivityService: sending notification CALLBACK_IP_CHANGED for NetworkRequest [ LISTEN id=6, [ Capabilities: NOT_RESTRICTED&TRUSTED&NOT_VPN Uid: 1000 AdministratorUids: [] RequestorUid: 1000 RequestorPackageName: android] ]
+11-06 10:51:25.187  5071  5174 D ConnectivityService:  sending notification for NetworkRequest [ LISTEN id=7, [ Transports: CELLULAR Capabilities: INTERNET&NOT_RESTRICTED&TRUSTED&NOT_VPN Uid: 1000 AdministratorUids: [] RequestorUid: 1000 RequestorPackageName: android] ]
+11-06 10:51:25.187  5071  5174 D ConnectivityService: sending notification CALLBACK_IP_CHANGED for NetworkRequest [ LISTEN id=7, [ Transports: CELLULAR Capabilities: INTERNET&NOT_RESTRICTED&TRUSTED&NOT_VPN Uid: 1000 AdministratorUids: [] RequestorUid: 1000 RequestorPackageName: android] ]
+11-06 10:51:25.187  5071  5174 D ConnectivityService:  sending notification for NetworkRequest [ TRACK_DEFAULT id=9, [ Capabilities: INTERNET&NOT_RESTRICTED&TRUSTED Uid: 1000 AdministratorUids: [] RequestorUid: 1000 RequestorPackageName: android] ]
+11-06 10:51:25.187  5071  5174 D ConnectivityService: sending notification CALLBACK_IP_CHANGED for NetworkRequest [ TRACK_DEFAULT id=9, [ Capabilities: INTERNET&NOT_RESTRICTED&TRUSTED Uid: 1000 AdministratorUids: [] RequestorUid: 1000 RequestorPackageName: android] ]
+11-06 10:51:25.188  5071  5174 D ConnectivityService:  sending notification for NetworkRequest [ TRACK_DEFAULT id=10, [ Capabilities: INTERNET&NOT_RESTRICTED&TRUSTED Uid: 1073 AdministratorUids: [] RequestorUid: 1073 RequestorPackageName: com.android.networkstack] ]
+11-06 10:51:25.188  5071  5174 D ConnectivityService: sending notification CALLBACK_IP_CHANGED for NetworkRequest [ TRACK_DEFAULT id=10, [ Capabilities: INTERNET&NOT_RESTRICTED&TRUSTED Uid: 1073 AdministratorUids: [] RequestorUid: 1073 RequestorPackageName: com.android.networkstack] ]
+11-06 10:51:25.194  5071  5167 W BestClock: java.time.DateTimeException: Missing NTP fix
+11-06 10:51:25.195  5391  5563 D SubscriptionController: [getPhoneId] subId=1
+11-06 10:51:25.195  5391  5563 D SubscriptionController: [getPhoneId]- found subId=1 phoneId=0
+11-06 10:51:25.195  5391  5563 D PhoneFactory: getPhone:- phoneId != DEFAULT_PHONE_ID return sPhones[phoneId] phoneId=0 phone=Handler (com.android.internal.telephony.GsmCdmaPhone) {c0fb2b5}
+11-06 10:51:25.196  5391  5391 W CellSignalStrengthCdma: getCdmaLevel=0
+11-06 10:51:25.197  5391  5391 W CellSignalStrengthCdma: getEvdoLevel=0
+11-06 10:51:25.197  5391  5391 W CellSignalStrengthCdma: getCdmaLevel=0
+11-06 10:51:25.197  5391  5391 I CellSignalStrengthLte: Using signal strength level: 1
+11-06 10:51:25.197  5391  5391 I CellSignalStrengthLte: Applying LTE RSRP Thresholds: [-128, -118, -108, -98]
+11-06 10:51:25.197  5391  5391 I CellSignalStrengthLte: Applying LTE RSRQ Thresholds: [-20, -17, -14, -11]
+11-06 10:51:25.197  5391  5391 I CellSignalStrengthLte: Applying LTE RSSNR Thresholds: [-3, 1, 5, 13]
+11-06 10:51:25.197  5391  5391 I CellSignalStrengthLte: Updated 4G LTE RSRP Level: 4
+11-06 10:51:25.197  5391  5391 I CellSignalStrengthNr: Applying 5G NR SSRSRP Thresholds: [-110, -90, -80, -65]
+11-06 10:51:25.197  5391  5391 I CellSignalStrengthNr: Applying 5G NR SSRSRQ Thresholds: [-31, -19, -7, 6]
+11-06 10:51:25.197  5391  5391 I CellSignalStrengthNr: Applying 5G NR SSSINR Thresholds: [-5, 5, 15, 30]
+11-06 10:51:25.197  5391  5391 I CellSignalStrengthNr: Updated 5G NR SSRSRP Level: 0
+11-06 10:51:25.203  5391  5546 D DC-C-1  : updateTcpBufferSizes: nr
+11-06 10:51:25.203  5391  5546 D DC-C-1  : updateLinkBandwidthsFromCarrierConfig: NR_NSA_MMWAVE
+11-06 10:51:25.204  5391  5546 D SubscriptionController: [getSubId]+ slotIndex=0
+11-06 10:51:25.204  5391  5546 D SubscriptionController: [getSubId]- subIdArr=[I@be20887
+11-06 10:51:25.204  5391  5546 D ApnSetting: isMeteredApnType: isRoaming=false
+11-06 10:51:25.206  5391  5546 D ApnSetting: For subId = 1, metered APN types are [default, mms, supl, dun]
+11-06 10:51:25.206  5391  5546 D ApnSetting: mms is metered.
+11-06 10:51:25.206  5391  5546 D DcNetworkAgent-100: Changed from [ Transports: CELLULAR Capabilities: MMS&SUPL&DUN&FOTA&IMS&CBS&INTERNET&NOT_RESTRICTED&TRUSTED&NOT_VPN&NOT_ROAMING&NOT_CONGESTED&NOT_SUSPENDED LinkUpBandwidth>=15000Kbps LinkDnBandwidth>=30000Kbps Specifier: <TelephonyNetworkSpecifier [mSubId = 1]> RequestorUid: -1 RequestorPackageName: null] to [ Transports: CELLULAR Capabilities: MMS&SUPL&DUN&FOTA&IMS&CBS&INTERNET&NOT_RESTRICTED&TRUSTED&NOT_VPN&NOT_ROAMING&NOT_CONGESTED&NOT_SUSPENDED LinkUpBandwidth>=60000Kbps LinkDnBandwidth>=145000Kbps Specifier: <TelephonyNetworkSpecifier [mSubId = 1]> RequestorUid: -1 RequestorPackageName: null], Data RAT=14, dc=DC-C-1
+11-06 10:51:25.206  5391  5391 D SubscriptionController: [getSubId]+ slotIndex=0
+11-06 10:51:25.206  5391  5391 D SubscriptionController: [getSubId]- subIdArr=[I@d40f3b4
+11-06 10:51:25.206  5391  5391 D ApnSetting: isMeteredApnType: isRoaming=false
+11-06 10:51:25.207  5071  5115 I service_manager_slow: [18,phone]
+11-06 10:51:25.207  5391  5417 D SubscriptionController: [getSubId]+ slotIndex=0
+11-06 10:51:25.207  5391  5417 D SubscriptionController: [getSubId]- subIdArr=[I@20cbdd
+11-06 10:51:25.207  5391  5417 D PhoneFactory: getPhone:- phoneId != DEFAULT_PHONE_ID return sPhones[phoneId] phoneId=0 phone=Handler (com.android.internal.telephony.GsmCdmaPhone) {c0fb2b5}
+11-06 10:51:25.207  5071  5174 D ConnectivityService:  sending notification for NetworkRequest [ REQUEST id=12, [ Capabilities: INTERNET&NOT_RESTRICTED&TRUSTED&NOT_VPN AdministratorUids: [] RequestorUid: 1073 RequestorPackageName: com.android.networkstack] ]
+11-06 10:51:25.207  5071  5174 D ConnectivityService: sending notification CALLBACK_IP_CHANGED for NetworkRequest [ REQUEST id=12, [ Capabilities: INTERNET&NOT_RESTRICTED&TRUSTED&NOT_VPN AdministratorUids: [] RequestorUid: 1073 RequestorPackageName: com.android.networkstack] ]
+11-06 10:51:25.209  5071  5174 D ConnectivityService:  sending notification for NetworkRequest [ TRACK_DEFAULT id=15, [ Capabilities: INTERNET&NOT_RESTRICTED&TRUSTED Uid: 10126 AdministratorUids: [] RequestorUid: 10126 RequestorPackageName: com.android.systemui] ]
+11-06 10:51:25.209  5071  5174 D ConnectivityService: sending notification CALLBACK_IP_CHANGED for NetworkRequest [ TRACK_DEFAULT id=15, [ Capabilities: INTERNET&NOT_RESTRICTED&TRUSTED Uid: 10126 AdministratorUids: [] RequestorUid: 10126 RequestorPackageName: com.android.systemui] ]
+11-06 10:51:25.211  5391  5391 D ApnSetting: For subId = 1, metered APN types are [default, mms, supl, dun]
+11-06 10:51:25.211  5391  5391 D ApnSetting: mms is metered.
+11-06 10:51:25.211  5391  5391 D SubscriptionController: [getSubId]+ slotIndex=0
+11-06 10:51:25.211  5391  5391 D SubscriptionController: [getSubId]- subIdArr=[I@6025352
+11-06 10:51:25.211  5391  5391 D DefaultPhoneNotifier: notifyServiceStateForSubId: mRegistryMgr=android.telephony.TelephonyRegistryManager@c1dbc9b ss={mVoiceRegState=0(IN_SERVICE), mDataRegState=0(IN_SERVICE), mChannelNumber=-1, duplexMode()=0, mCellBandwidths=[50000], mOperatorAlphaLong=Android, mOperatorAlphaShort=Android, isManualNetworkSelection=false(automatic), getRilVoiceRadioTechnology=0(Unknown), getRilDataRadioTechnology=14(LTE), mCssIndicator=unsupported, mNetworkId=-1, mSystemId=-1, mCdmaRoamingIndicator=-1, mCdmaDefaultRoamingIndicator=-1, mIsEmergencyOnly=false, isUsingCarrierAggregation=true, mLteEarfcnRsrpBoost=0, mNetworkRegistrationInfos=[NetworkRegistrationInfo{ domain=CS transportType=WWAN registrationState=HOME roamingType=NOT_ROAMING accessNetworkTechnology=UNKNOWN rejectCause=0 emergencyEnabled=false availableServices=[VOICE,SMS,VIDEO] cellIdentity=null voiceSpecificInfo=VoiceSpecificRegistrationInfo { mCssSupported=false mRoamingIndicator=-1 mSystemIsInPrl=0 mDefaultRoamingIndicator=0} dataSpecificInfo=null nrState=NONE rRplmn=}, NetworkRegistrationInfo{ domain=PS transportType=WWAN registrationState=HOME roamingType=NOT_ROAMING accessNetworkTechnology=LTE rejectCause=-1 emergencyEnabled=false availableServices=[DATA] cellIdentity=null voiceSpecificInfo=null dataSpecificInfo=android.telephony.DataSpecificRegistrationInfo :{ maxDataCalls = 1 isDcNrRestricted = false isNrAvailable = true isEnDcAvailable = true LteVopsSupportInfo :  mVopsSupport = 1 mEmcBearerSupport = 1 mIsUsingCarrierAggregation = true } nrState=CONNECTED rRplmn=}], mNrFrequencyRange=4, mOperatorAlphaLongRaw=Android, mOperatorAlphaShortRaw=Android, mIsDataRoamingFromRegistration=false, mIsIwlanPreferred=false} sender=Handler (com.android.internal.telephony.GsmCdmaPhone) {c0fb2b5} phondId=0 subId=1
+11-06 10:51:25.212  5071  5771 D AppOps  : noteOperation: allowing code 0 uid 10126 package com.android.systemui
+11-06 10:51:25.214  5071  5174 D ConnectivityService:  sending notification for NetworkRequest [ TRACK_DEFAULT id=16, [ Capabilities: INTERNET&NOT_RESTRICTED&TRUSTED Uid: 10126 AdministratorUids: [] RequestorUid: 10126 RequestorPackageName: com.android.systemui] ]
+11-06 10:51:25.214  5071  5174 D ConnectivityService: sending notification CALLBACK_IP_CHANGED for NetworkRequest [ TRACK_DEFAULT id=16, [ Capabilities: INTERNET&NOT_RESTRICTED&TRUSTED Uid: 10126 AdministratorUids: [] RequestorUid: 10126 RequestorPackageName: com.android.systemui] ]
+11-06 10:51:25.215  5391  5391 D PhoneFactory: getPhone:- phoneId != DEFAULT_PHONE_ID return sPhones[phoneId] phoneId=0 phone=Handler (com.android.internal.telephony.GsmCdmaPhone) {c0fb2b5}
+11-06 10:51:25.215  5391  5391 D SubscriptionController: getSimStateForSlotIndex:  simState=LOADED ordinal=10 slotIndex=0
+11-06 10:51:25.215  5071  5771 E PHONE   : ServiceState.getRadioTechnology() DEPRECATED will be removed *******
+11-06 10:51:25.216  5071  5116 D AppOps  : noteOperation: allowing code 51 uid 10126 package com.android.systemui
+11-06 10:51:25.216  5071  5116 D AppOps  : noteOperation: allowing code 51 uid 1001 package com.android.phone
+11-06 10:51:25.217  5071  5116 D AppOps  : noteOperation: allowing code 51 uid 10127 package com.android.cellbroadcastreceiver.module
+11-06 10:51:25.219  5587  5587 D CellBroadcastReceiver: onReceive Intent { act=android.intent.action.SERVICE_STATE flg=0x1000010 cmp=com.android.cellbroadcastreceiver.module/com.android.cellbroadcastreceiver.CellBroadcastReceiver (has extras) }
+11-06 10:51:25.222  5391  5391 D NetworkTypeController: [0] NrConnectedState: process EVENT_NR_STATE_CHANGED
+11-06 10:51:25.222  5391  5391 D NetworkTypeController: [0] Remove all timers
+11-06 10:51:25.222  5391  5391 D LocaleTracker-0: updateLocale: countryIso = us, countryIsoDebugInfo = OperatorNumeric(310260): MccTable.countryCodeForMcc("310")
+11-06 10:51:25.222  5391  5391 D LocaleTracker-0: updateLocale: timeZoneCountryIso = us, timeZoneCountryIsoDebugInfo = OperatorNumeric: MccTable.geoCountryCodeForMccMnc(MccMnc{mcc='310', mnc='260'})
+11-06 10:51:25.222  5391  5391 D NewNitzStateMachineImpl: handleCountryDetected: countryIsoCode=us, mLatestNitzSignal=null
+11-06 10:51:25.222  5391  5391 D CallManager:  handleMessage (EVENT_SERVICE_STATE_CHANGED)
+11-06 10:51:25.222  5391  5391 D SmsDispatchersController: reevaluateTimerStatus: currentTime: 1667703085222 mCurrentWaitElapsedDuration: 510532
+11-06 10:51:25.222  5391  5391 D SmsDispatchersController: handleInService: timer expiry in 85889468ms
+11-06 10:51:25.223  5391  5391 D SubscriptionController: [getSubId]+ slotIndex=0
+11-06 10:51:25.223  5391  5391 D SubscriptionController: [getSubId]- subIdArr=[I@7cca623
+11-06 10:51:25.223  5391  5391 D SubscriptionController: [getPhoneId] subId=1
+11-06 10:51:25.223  5391  5391 D SubscriptionController: [getPhoneId]- found subId=1 phoneId=0
+11-06 10:51:25.223  5391  5391 D PhoneFactory: getPhone:- phoneId != DEFAULT_PHONE_ID return sPhones[phoneId] phoneId=0 phone=Handler (com.android.internal.telephony.GsmCdmaPhone) {c0fb2b5}
+11-06 10:51:25.223  5071  5174 D ConnectivityService:  sending notification for NetworkRequest [ LISTEN id=18, [ AdministratorUids: [] RequestorUid: 10126 RequestorPackageName: com.android.systemui] ]
+11-06 10:51:25.223  5071  5174 D ConnectivityService: sending notification CALLBACK_IP_CHANGED for NetworkRequest [ LISTEN id=18, [ AdministratorUids: [] RequestorUid: 10126 RequestorPackageName: com.android.systemui] ]
+11-06 10:51:25.224  5391  5653 D SubscriptionController: [getPhoneId] subId=1
+11-06 10:51:25.224  5391  5653 D SubscriptionController: [getPhoneId]- found subId=1 phoneId=0
+11-06 10:51:25.225  5391  5653 D PhoneInterfaceManager: [PhoneIntfMgr] isDataEnabled: subId=1 phoneId=0
+11-06 10:51:25.225  5391  5653 D PhoneFactory: getPhone:- phoneId != DEFAULT_PHONE_ID return sPhones[phoneId] phoneId=0 phone=Handler (com.android.internal.telephony.GsmCdmaPhone) {c0fb2b5}
+11-06 10:51:25.225  5391  5653 D PhoneInterfaceManager: [PhoneIntfMgr] isDataEnabled: subId=1 retVal=true
+11-06 10:51:25.225  5071  5174 D ConnectivityService: notifyType CALLBACK_CAP_CHANGED for [100 CELLULAR]
+11-06 10:51:25.225  5071  5174 D ConnectivityService:  sending notification for NetworkRequest [ REQUEST id=1, [ Capabilities: INTERNET&NOT_RESTRICTED&TRUSTED&NOT_VPN AdministratorUids: [] RequestorUid: 1000 RequestorPackageName: android] ]
+11-06 10:51:25.225  5071  5174 D ConnectivityService:  sending notification for NetworkRequest [ BACKGROUND_REQUEST id=2, [ Transports: CELLULAR Capabilities: INTERNET&NOT_RESTRICTED&TRUSTED&NOT_VPN AdministratorUids: [] RequestorUid: 1000 RequestorPackageName: android] ]
+11-06 10:51:25.225  5071  5174 D ConnectivityService:  sending notification for NetworkRequest [ LISTEN id=4, [ Capabilities: FOREGROUND AdministratorUids: [] RequestorUid: 1000 RequestorPackageName: android] ]
+11-06 10:51:25.225  5071  5174 D ConnectivityService: sending notification CALLBACK_CAP_CHANGED for NetworkRequest [ LISTEN id=4, [ Capabilities: FOREGROUND AdministratorUids: [] RequestorUid: 1000 RequestorPackageName: android] ]
+11-06 10:51:25.226  5391  5417 D PhoneFactory: getPhone:- phoneId != DEFAULT_PHONE_ID return sPhones[phoneId] phoneId=0 phone=Handler (com.android.internal.telephony.GsmCdmaPhone) {c0fb2b5}
+11-06 10:51:25.226  5071  5174 D ConnectivityService:  sending notification for NetworkRequest [ LISTEN id=5, [ Capabilities: NOT_RESTRICTED&TRUSTED&NOT_VPN&FOREGROUND Uid: 1000 AdministratorUids: [] RequestorUid: 1000 RequestorPackageName: android] ]
+11-06 10:51:25.227  5071  5174 D ConnectivityService: sending notification CALLBACK_CAP_CHANGED for NetworkRequest [ LISTEN id=5, [ Capabilities: NOT_RESTRICTED&TRUSTED&NOT_VPN&FOREGROUND Uid: 1000 AdministratorUids: [] RequestorUid: 1000 RequestorPackageName: android] ]
+11-06 10:51:25.228  5071  5174 D ConnectivityService:  sending notification for NetworkRequest [ LISTEN id=6, [ Capabilities: NOT_RESTRICTED&TRUSTED&NOT_VPN Uid: 1000 AdministratorUids: [] RequestorUid: 1000 RequestorPackageName: android] ]
+11-06 10:51:25.228  5071  5174 D ConnectivityService: sending notification CALLBACK_CAP_CHANGED for NetworkRequest [ LISTEN id=6, [ Capabilities: NOT_RESTRICTED&TRUSTED&NOT_VPN Uid: 1000 AdministratorUids: [] RequestorUid: 1000 RequestorPackageName: android] ]
+11-06 10:51:25.228  5071  5174 D ConnectivityService:  sending notification for NetworkRequest [ LISTEN id=7, [ Transports: CELLULAR Capabilities: INTERNET&NOT_RESTRICTED&TRUSTED&NOT_VPN Uid: 1000 AdministratorUids: [] RequestorUid: 1000 RequestorPackageName: android] ]
+11-06 10:51:25.229  5071  5174 D ConnectivityService: sending notification CALLBACK_CAP_CHANGED for NetworkRequest [ LISTEN id=7, [ Transports: CELLULAR Capabilities: INTERNET&NOT_RESTRICTED&TRUSTED&NOT_VPN Uid: 1000 AdministratorUids: [] RequestorUid: 1000 RequestorPackageName: android] ]
+11-06 10:51:25.229  5071  5174 D ConnectivityService:  sending notification for NetworkRequest [ TRACK_DEFAULT id=9, [ Capabilities: INTERNET&NOT_RESTRICTED&TRUSTED Uid: 1000 AdministratorUids: [] RequestorUid: 1000 RequestorPackageName: android] ]
+11-06 10:51:25.229  5071  5174 D ConnectivityService: sending notification CALLBACK_CAP_CHANGED for NetworkRequest [ TRACK_DEFAULT id=9, [ Capabilities: INTERNET&NOT_RESTRICTED&TRUSTED Uid: 1000 AdministratorUids: [] RequestorUid: 1000 RequestorPackageName: android] ]
+11-06 10:51:25.230  5071  5174 D ConnectivityService:  sending notification for NetworkRequest [ TRACK_DEFAULT id=10, [ Capabilities: INTERNET&NOT_RESTRICTED&TRUSTED Uid: 1073 AdministratorUids: [] RequestorUid: 1073 RequestorPackageName: com.android.networkstack] ]
+11-06 10:51:25.230  5071  5174 D ConnectivityService: sending notification CALLBACK_CAP_CHANGED for NetworkRequest [ TRACK_DEFAULT id=10, [ Capabilities: INTERNET&NOT_RESTRICTED&TRUSTED Uid: 1073 AdministratorUids: [] RequestorUid: 1073 RequestorPackageName: com.android.networkstack] ]
+11-06 10:51:25.231  5391  5391 D SubscriptionController: [getSubId]+ slotIndex=0
+11-06 10:51:25.231  5391  5391 D SubscriptionController: [getSubId]- subIdArr=[I@ed39720
+11-06 10:51:25.231  5391  5391 D Phone   : getImsRegistrationTechnology =-1
+11-06 10:51:25.231  5391  5391 D SubscriptionController: [getSubId]+ slotIndex=0
+11-06 10:51:25.231  5391  5391 D SubscriptionController: [getSubId]- subIdArr=[I@ae348d9
+11-06 10:51:25.231  5071  5174 D ConnectivityService:  sending notification for NetworkRequest [ REQUEST id=12, [ Capabilities: INTERNET&NOT_RESTRICTED&TRUSTED&NOT_VPN AdministratorUids: [] RequestorUid: 1073 RequestorPackageName: com.android.networkstack] ]
+11-06 10:51:25.231  5071  5174 D ConnectivityService: sending notification CALLBACK_CAP_CHANGED for NetworkRequest [ REQUEST id=12, [ Capabilities: INTERNET&NOT_RESTRICTED&TRUSTED&NOT_VPN AdministratorUids: [] RequestorUid: 1073 RequestorPackageName: com.android.networkstack] ]
+11-06 10:51:25.232  5071  5174 D ConnectivityService:  sending notification for NetworkRequest [ TRACK_DEFAULT id=15, [ Capabilities: INTERNET&NOT_RESTRICTED&TRUSTED Uid: 10126 AdministratorUids: [] RequestorUid: 10126 RequestorPackageName: com.android.systemui] ]
+11-06 10:51:25.232  5071  5174 D ConnectivityService: sending notification CALLBACK_CAP_CHANGED for NetworkRequest [ TRACK_DEFAULT id=15, [ Capabilities: INTERNET&NOT_RESTRICTED&TRUSTED Uid: 10126 AdministratorUids: [] RequestorUid: 10126 RequestorPackageName: com.android.systemui] ]
+11-06 10:51:25.233  5391  5417 D PhoneFactory: getPhone:- phoneId != DEFAULT_PHONE_ID return sPhones[phoneId] phoneId=0 phone=Handler (com.android.internal.telephony.GsmCdmaPhone) {c0fb2b5}
+11-06 10:51:25.234  5391  5391 I Telephony: isRttCurrentlySupported -- regular acct, hasVoiceAvailability: false
+11-06 10:51:25.234  5391  5391 I Telephony:  isRttSupported: false
+11-06 10:51:25.234  5391  5391 I Telephony:  alwaysAllowWhileRoaming: false
+11-06 10:51:25.234  5391  5391 I Telephony:  isRoaming: false
+11-06 10:51:25.234  5391  5391 I Telephony:  isOnWfc: false
+11-06 10:51:25.234  5391  5391 V PhoneGlobals: handleServiceStateChanged
+11-06 10:51:25.234  5391  5391 D PhoneFactory: getPhone:- phoneId != DEFAULT_PHONE_ID return sPhones[phoneId] phoneId=0 phone=Handler (com.android.internal.telephony.GsmCdmaPhone) {c0fb2b5}
+11-06 10:51:25.234  5391  5391 D NotificationMgr: updateNetworkSelection()...state = 0 new network 
+11-06 10:51:25.234  5391  5391 V PhoneGlobals: subId=1,mDefaultDataSubId=1,ss roaming=false
+11-06 10:51:25.234  5391  5391 V PhoneGlobals: updateDataRoamingStatus
+11-06 10:51:25.235  5071  5174 D ConnectivityService:  sending notification for NetworkRequest [ TRACK_DEFAULT id=16, [ Capabilities: INTERNET&NOT_RESTRICTED&TRUSTED Uid: 10126 AdministratorUids: [] RequestorUid: 10126 RequestorPackageName: com.android.systemui] ]
+11-06 10:51:25.235  5071  5174 D ConnectivityService: sending notification CALLBACK_CAP_CHANGED for NetworkRequest [ TRACK_DEFAULT id=16, [ Capabilities: INTERNET&NOT_RESTRICTED&TRUSTED Uid: 10126 AdministratorUids: [] RequestorUid: 10126 RequestorPackageName: com.android.systemui] ]
+11-06 10:51:25.235  5071  5174 D ConnectivityService:  sending notification for NetworkRequest [ LISTEN id=18, [ AdministratorUids: [] RequestorUid: 10126 RequestorPackageName: com.android.systemui] ]
+11-06 10:51:25.235  5071  5174 D ConnectivityService: sending notification CALLBACK_CAP_CHANGED for NetworkRequest [ LISTEN id=18, [ AdministratorUids: [] RequestorUid: 10126 RequestorPackageName: com.android.systemui] ]
+11-06 10:51:25.234  5391  5391 D PhoneFactory: getPhone:- phoneId != DEFAULT_PHONE_ID return sPhones[phoneId] phoneId=0 phone=Handler (com.android.internal.telephony.GsmCdmaPhone) {c0fb2b5}
+11-06 10:51:25.236  5391  5391 D DCT-C-0 : shouldRestrictDataForEcbm: isInEcm=false isInImsEcm=false
+11-06 10:51:25.236  5391  5391 D SubscriptionController: [getSubId]+ slotIndex=0
+11-06 10:51:25.236  5391  5391 D SubscriptionController: [getSubId]- subIdArr=[I@3ce529e
+11-06 10:51:25.237  5071  5174 W BestClock: java.time.DateTimeException: Missing NTP fix
+11-06 10:51:25.237  5071  5174 D ConnectivityService: Update of LinkProperties for [100 CELLULAR]; created=true; everConnected=true
+11-06 10:51:25.237  5071  5174 D ConnectivityService: identical MTU - not setting
+11-06 10:51:25.237  5071  5174 D ConnectivityService: Setting tx/rx TCP buffers to 2097152,6291456,16777216,512000,2097152,8388608
+11-06 10:51:25.238  5391  5391 V PhoneGlobals: dataAllowed=true, reasons=Data allowed, reason: NORMAL
+11-06 10:51:25.238  5391  5391 D PhoneFactory: getPhone:- phoneId != DEFAULT_PHONE_ID return sPhones[phoneId] phoneId=0 phone=Handler (com.android.internal.telephony.GsmCdmaPhone) {c0fb2b5}
+11-06 10:51:25.238  5391  5391 D NetworkTypeController: [0] NrConnectedState: process EVENT_NR_STATE_CHANGED
+11-06 10:51:25.238  5391  5391 D NetworkTypeController: [0] Remove all timers
+11-06 10:51:25.238  5391  5391 D LocaleTracker-0: updateLocale: countryIso = us, countryIsoDebugInfo = OperatorNumeric(310260): MccTable.countryCodeForMcc("310")
+11-06 10:51:25.238  5391  5391 D LocaleTracker-0: updateLocale: timeZoneCountryIso = us, timeZoneCountryIsoDebugInfo = OperatorNumeric: MccTable.geoCountryCodeForMccMnc(MccMnc{mcc='310', mnc='260'})
+11-06 10:51:25.238  5391  5391 D NewNitzStateMachineImpl: handleCountryDetected: countryIsoCode=us, mLatestNitzSignal=null
+11-06 10:51:25.238  5391  5391 D CallManager:  handleMessage (EVENT_SERVICE_STATE_CHANGED)
+11-06 10:51:25.238  5391  5391 D SmsDispatchersController: reevaluateTimerStatus: currentTime: 1667703085238 mCurrentWaitElapsedDuration: 510548
+11-06 10:51:25.238  5391  5391 D SmsDispatchersController: handleInService: timer expiry in 85889452ms
+11-06 10:51:25.238  5391  5391 D SubscriptionController: [getSubId]+ slotIndex=0
+11-06 10:51:25.238  5391  5391 D SubscriptionController: [getSubId]- subIdArr=[I@39817f
+11-06 10:51:25.238  5391  5391 D SubscriptionController: [getPhoneId] subId=1
+11-06 10:51:25.238  5391  5391 D SubscriptionController: [getPhoneId]- found subId=1 phoneId=0
+11-06 10:51:25.238  5391  5391 D PhoneFactory: getPhone:- phoneId != DEFAULT_PHONE_ID return sPhones[phoneId] phoneId=0 phone=Handler (com.android.internal.telephony.GsmCdmaPhone) {c0fb2b5}
+11-06 10:51:25.241  5071  5174 D PowerManagerService: acquireWakeLockInternal: lock=106585726, flags=0x1, tag="NetworkStats", ws=null, uid=1000, pid=5071
+11-06 10:51:25.241  5071  5174 D PowerManagerService: updateWakeLockSummaryLocked: mWakefulness=Awake, mWakeLockSummary=0x1
+11-06 10:51:25.241  5071  5174 D PowerManagerService: updateUserActivitySummaryLocked: mWakefulness=Awake, mUserActivitySummary=0x1, nextTimeout=2230759999 (in 2147000008 ms)
+11-06 10:51:25.241  5071  5174 D PowerManagerService: updateDisplayPowerStateLocked: mDisplayReady=true, policy=3, mWakefulness=1, mWakeLockSummary=0x1, mUserActivitySummary=0x1, mBootCompleted=true, screenBrightnessOverride=NaN, useAutoBrightness=false, mScreenBrightnessBoostInProgress=false, mIsVrModeEnabled= false, sQuiescent=false
+11-06 10:51:25.241  5391  5653 D SubscriptionController: [getSubId]+ slotIndex=0
+11-06 10:51:25.241  5391  5653 D SubscriptionController: [getSubId]- subIdArr=[I@52b054c
+11-06 10:51:25.241  5391  5653 D PhoneFactory: getPhone:- phoneId != DEFAULT_PHONE_ID return sPhones[phoneId] phoneId=0 phone=Handler (com.android.internal.telephony.GsmCdmaPhone) {c0fb2b5}
+11-06 10:51:25.242  5071  5174 D AppOps  : startOperation: allowing code 40 uid 1000 package android
+11-06 10:51:25.243  5071  5174 W BestClock: java.time.DateTimeException: Missing NTP fix
+11-06 10:51:25.247  5391  5391 D SubscriptionController: [getSubId]+ slotIndex=0
+11-06 10:51:25.247  5391  5391 D SubscriptionController: [getSubId]- subIdArr=[I@3b69995
+11-06 10:51:25.247  5391  5391 D Phone   : getImsRegistrationTechnology =-1
+11-06 10:51:25.247  5391  5391 D SubscriptionController: [getSubId]+ slotIndex=0
+11-06 10:51:25.247  5391  5391 D SubscriptionController: [getSubId]- subIdArr=[I@5c8faaa
+11-06 10:51:25.249  5391  5391 I Telephony: isRttCurrentlySupported -- regular acct, hasVoiceAvailability: false
+11-06 10:51:25.249  5391  5391 I Telephony:  isRttSupported: false
+11-06 10:51:25.249  5391  5391 I Telephony:  alwaysAllowWhileRoaming: false
+11-06 10:51:25.249  5391  5391 I Telephony:  isRoaming: false
+11-06 10:51:25.249  5391  5391 I Telephony:  isOnWfc: false
+11-06 10:51:25.249  5391  5391 V PhoneGlobals: handleServiceStateChanged
+11-06 10:51:25.249  5391  5391 D PhoneFactory: getPhone:- phoneId != DEFAULT_PHONE_ID return sPhones[phoneId] phoneId=0 phone=Handler (com.android.internal.telephony.GsmCdmaPhone) {c0fb2b5}
+11-06 10:51:25.249  5391  5391 D NotificationMgr: updateNetworkSelection()...state = 0 new network 
+11-06 10:51:25.249  5391  5391 V PhoneGlobals: subId=1,mDefaultDataSubId=1,ss roaming=false
+11-06 10:51:25.249  5391  5391 V PhoneGlobals: updateDataRoamingStatus
+11-06 10:51:25.249  5391  5391 D PhoneFactory: getPhone:- phoneId != DEFAULT_PHONE_ID return sPhones[phoneId] phoneId=0 phone=Handler (com.android.internal.telephony.GsmCdmaPhone) {c0fb2b5}
+11-06 10:51:25.249  5391  5391 D DCT-C-0 : shouldRestrictDataForEcbm: isInEcm=false isInImsEcm=false
+11-06 10:51:25.249  5391  5391 D SubscriptionController: [getSubId]+ slotIndex=0
+11-06 10:51:25.249  5391  5391 D SubscriptionController: [getSubId]- subIdArr=[I@c6eb69b
+11-06 10:51:25.249  5391  5391 V PhoneGlobals: dataAllowed=true, reasons=Data allowed, reason: NORMAL
+11-06 10:51:25.249  5391  5391 D PhoneFactory: getPhone:- phoneId != DEFAULT_PHONE_ID return sPhones[phoneId] phoneId=0 phone=Handler (com.android.internal.telephony.GsmCdmaPhone) {c0fb2b5}
+11-06 10:51:25.259  5071  5174 W BestClock: java.time.DateTimeException: Missing NTP fix
+11-06 10:51:25.259  5071  5174 I netstats_mobile_sample: [13241,130,20320,190,13241,130,20320,190,12054,94,16610,185,1667703085259]
+11-06 10:51:25.259  5071  5174 I netstats_wifi_sample: [0,0,0,0,0,0,0,0,0,0,0,0,1667703085259]
+11-06 10:51:25.260  5071  5167 W BestClock: java.time.DateTimeException: Missing NTP fix
+11-06 10:51:25.260  5071  5174 D PowerManagerService: releaseWakeLockInternal: lock=106585726 [NetworkStats], flags=0x0
+11-06 10:51:25.260  5071  5174 D PowerManagerService: updateWakeLockSummaryLocked: mWakefulness=Awake, mWakeLockSummary=0x1
+11-06 10:51:25.260  5071  5174 D PowerManagerService: updateUserActivitySummaryLocked: mWakefulness=Awake, mUserActivitySummary=0x1, nextTimeout=2230759999 (in 2146999989 ms)
+11-06 10:51:25.260  5071  5174 D PowerManagerService: updateDisplayPowerStateLocked: mDisplayReady=true, policy=3, mWakefulness=1, mWakeLockSummary=0x1, mUserActivitySummary=0x1, mBootCompleted=true, screenBrightnessOverride=NaN, useAutoBrightness=false, mScreenBrightnessBoostInProgress=false, mIsVrModeEnabled= false, sQuiescent=false
+11-06 10:51:25.273  5391  5417 D SubscriptionController: [getPhoneId] subId=1
+11-06 10:51:25.273  5391  5417 D SubscriptionController: [getPhoneId]- found subId=1 phoneId=0
+11-06 10:51:25.273  5391  5417 D PhoneFactory: getPhone:- phoneId != DEFAULT_PHONE_ID return sPhones[phoneId] phoneId=0 phone=Handler (com.android.internal.telephony.GsmCdmaPhone) {c0fb2b5}
+11-06 10:51:25.273  5071  5174 D ConnectivityService: notifyType CALLBACK_IP_CHANGED for [100 CELLULAR]
+11-06 10:51:25.274  5071  5174 D ConnectivityService:  sending notification for NetworkRequest [ REQUEST id=1, [ Capabilities: INTERNET&NOT_RESTRICTED&TRUSTED&NOT_VPN AdministratorUids: [] RequestorUid: 1000 RequestorPackageName: android] ]
+11-06 10:51:25.274  5071  5174 D ConnectivityService:  sending notification for NetworkRequest [ BACKGROUND_REQUEST id=2, [ Transports: CELLULAR Capabilities: INTERNET&NOT_RESTRICTED&TRUSTED&NOT_VPN AdministratorUids: [] RequestorUid: 1000 RequestorPackageName: android] ]
+11-06 10:51:25.274  5071  5174 D ConnectivityService:  sending notification for NetworkRequest [ LISTEN id=4, [ Capabilities: FOREGROUND AdministratorUids: [] RequestorUid: 1000 RequestorPackageName: android] ]
+11-06 10:51:25.274  5071  5174 D ConnectivityService: sending notification CALLBACK_IP_CHANGED for NetworkRequest [ LISTEN id=4, [ Capabilities: FOREGROUND AdministratorUids: [] RequestorUid: 1000 RequestorPackageName: android] ]
+11-06 10:51:25.274  5071  5174 D ConnectivityService:  sending notification for NetworkRequest [ LISTEN id=5, [ Capabilities: NOT_RESTRICTED&TRUSTED&NOT_VPN&FOREGROUND Uid: 1000 AdministratorUids: [] RequestorUid: 1000 RequestorPackageName: android] ]
+11-06 10:51:25.274  5071  5174 D ConnectivityService: sending notification CALLBACK_IP_CHANGED for NetworkRequest [ LISTEN id=5, [ Capabilities: NOT_RESTRICTED&TRUSTED&NOT_VPN&FOREGROUND Uid: 1000 AdministratorUids: [] RequestorUid: 1000 RequestorPackageName: android] ]
+11-06 10:51:25.274  5071  5174 D ConnectivityService:  sending notification for NetworkRequest [ LISTEN id=6, [ Capabilities: NOT_RESTRICTED&TRUSTED&NOT_VPN Uid: 1000 AdministratorUids: [] RequestorUid: 1000 RequestorPackageName: android] ]
+11-06 10:51:25.274  5071  5174 D ConnectivityService: sending notification CALLBACK_IP_CHANGED for NetworkRequest [ LISTEN id=6, [ Capabilities: NOT_RESTRICTED&TRUSTED&NOT_VPN Uid: 1000 AdministratorUids: [] RequestorUid: 1000 RequestorPackageName: android] ]
+11-06 10:51:25.274  5071  5174 D ConnectivityService:  sending notification for NetworkRequest [ LISTEN id=7, [ Transports: CELLULAR Capabilities: INTERNET&NOT_RESTRICTED&TRUSTED&NOT_VPN Uid: 1000 AdministratorUids: [] RequestorUid: 1000 RequestorPackageName: android] ]
+11-06 10:51:25.274  5071  5174 D ConnectivityService: sending notification CALLBACK_IP_CHANGED for NetworkRequest [ LISTEN id=7, [ Transports: CELLULAR Capabilities: INTERNET&NOT_RESTRICTED&TRUSTED&NOT_VPN Uid: 1000 AdministratorUids: [] RequestorUid: 1000 RequestorPackageName: android] ]
+11-06 10:51:25.274  5071  5174 D ConnectivityService:  sending notification for NetworkRequest [ TRACK_DEFAULT id=9, [ Capabilities: INTERNET&NOT_RESTRICTED&TRUSTED Uid: 1000 AdministratorUids: [] RequestorUid: 1000 RequestorPackageName: android] ]
+11-06 10:51:25.274  5071  5174 D ConnectivityService: sending notification CALLBACK_IP_CHANGED for NetworkRequest [ TRACK_DEFAULT id=9, [ Capabilities: INTERNET&NOT_RESTRICTED&TRUSTED Uid: 1000 AdministratorUids: [] RequestorUid: 1000 RequestorPackageName: android] ]
+11-06 10:51:25.274  5071  5174 D ConnectivityService:  sending notification for NetworkRequest [ TRACK_DEFAULT id=10, [ Capabilities: INTERNET&NOT_RESTRICTED&TRUSTED Uid: 1073 AdministratorUids: [] RequestorUid: 1073 RequestorPackageName: com.android.networkstack] ]
+11-06 10:51:25.275  5071  5174 D ConnectivityService: sending notification CALLBACK_IP_CHANGED for NetworkRequest [ TRACK_DEFAULT id=10, [ Capabilities: INTERNET&NOT_RESTRICTED&TRUSTED Uid: 1073 AdministratorUids: [] RequestorUid: 1073 RequestorPackageName: com.android.networkstack] ]
+11-06 10:51:25.275  5071  5174 D ConnectivityService:  sending notification for NetworkRequest [ REQUEST id=12, [ Capabilities: INTERNET&NOT_RESTRICTED&TRUSTED&NOT_VPN AdministratorUids: [] RequestorUid: 1073 RequestorPackageName: com.android.networkstack] ]
+11-06 10:51:25.276  5071  5174 D ConnectivityService: sending notification CALLBACK_IP_CHANGED for NetworkRequest [ REQUEST id=12, [ Capabilities: INTERNET&NOT_RESTRICTED&TRUSTED&NOT_VPN AdministratorUids: [] RequestorUid: 1073 RequestorPackageName: com.android.networkstack] ]
+11-06 10:51:25.276  5071  5174 D ConnectivityService:  sending notification for NetworkRequest [ TRACK_DEFAULT id=15, [ Capabilities: INTERNET&NOT_RESTRICTED&TRUSTED Uid: 10126 AdministratorUids: [] RequestorUid: 10126 RequestorPackageName: com.android.systemui] ]
+11-06 10:51:25.277  5071  5174 D ConnectivityService: sending notification CALLBACK_IP_CHANGED for NetworkRequest [ TRACK_DEFAULT id=15, [ Capabilities: INTERNET&NOT_RESTRICTED&TRUSTED Uid: 10126 AdministratorUids: [] RequestorUid: 10126 RequestorPackageName: com.android.systemui] ]
+11-06 10:51:25.278  5071  5174 D ConnectivityService:  sending notification for NetworkRequest [ TRACK_DEFAULT id=16, [ Capabilities: INTERNET&NOT_RESTRICTED&TRUSTED Uid: 10126 AdministratorUids: [] RequestorUid: 10126 RequestorPackageName: com.android.systemui] ]
+11-06 10:51:25.278  5071  5174 D ConnectivityService: sending notification CALLBACK_IP_CHANGED for NetworkRequest [ TRACK_DEFAULT id=16, [ Capabilities: INTERNET&NOT_RESTRICTED&TRUSTED Uid: 10126 AdministratorUids: [] RequestorUid: 10126 RequestorPackageName: com.android.systemui] ]
+11-06 10:51:25.279  5071  5174 D ConnectivityService:  sending notification for NetworkRequest [ LISTEN id=18, [ AdministratorUids: [] RequestorUid: 10126 RequestorPackageName: com.android.systemui] ]
+11-06 10:51:25.279  5071  5174 D ConnectivityService: sending notification CALLBACK_IP_CHANGED for NetworkRequest [ LISTEN id=18, [ AdministratorUids: [] RequestorUid: 10126 RequestorPackageName: com.android.systemui] ]
+11-06 10:51:25.280  5071  5174 D ConnectivityService: notifyType CALLBACK_CAP_CHANGED for [100 CELLULAR]
+11-06 10:51:25.280  5071  5174 D ConnectivityService:  sending notification for NetworkRequest [ REQUEST id=1, [ Capabilities: INTERNET&NOT_RESTRICTED&TRUSTED&NOT_VPN AdministratorUids: [] RequestorUid: 1000 RequestorPackageName: android] ]
+11-06 10:51:25.280  5071  5174 D ConnectivityService:  sending notification for NetworkRequest [ BACKGROUND_REQUEST id=2, [ Transports: CELLULAR Capabilities: INTERNET&NOT_RESTRICTED&TRUSTED&NOT_VPN AdministratorUids: [] RequestorUid: 1000 RequestorPackageName: android] ]
+11-06 10:51:25.280  5071  5174 D ConnectivityService:  sending notification for NetworkRequest [ LISTEN id=4, [ Capabilities: FOREGROUND AdministratorUids: [] RequestorUid: 1000 RequestorPackageName: android] ]
+11-06 10:51:25.280  5071  5174 D ConnectivityService: sending notification CALLBACK_CAP_CHANGED for NetworkRequest [ LISTEN id=4, [ Capabilities: FOREGROUND AdministratorUids: [] RequestorUid: 1000 RequestorPackageName: android] ]
+11-06 10:51:25.280  5071  5174 D ConnectivityService:  sending notification for NetworkRequest [ LISTEN id=5, [ Capabilities: NOT_RESTRICTED&TRUSTED&NOT_VPN&FOREGROUND Uid: 1000 AdministratorUids: [] RequestorUid: 1000 RequestorPackageName: android] ]
+11-06 10:51:25.280  5071  5174 D ConnectivityService: sending notification CALLBACK_CAP_CHANGED for NetworkRequest [ LISTEN id=5, [ Capabilities: NOT_RESTRICTED&TRUSTED&NOT_VPN&FOREGROUND Uid: 1000 AdministratorUids: [] RequestorUid: 1000 RequestorPackageName: android] ]
+11-06 10:51:25.281  5071  5174 D ConnectivityService:  sending notification for NetworkRequest [ LISTEN id=6, [ Capabilities: NOT_RESTRICTED&TRUSTED&NOT_VPN Uid: 1000 AdministratorUids: [] RequestorUid: 1000 RequestorPackageName: android] ]
+11-06 10:51:25.281  5071  5174 D ConnectivityService: sending notification CALLBACK_CAP_CHANGED for NetworkRequest [ LISTEN id=6, [ Capabilities: NOT_RESTRICTED&TRUSTED&NOT_VPN Uid: 1000 AdministratorUids: [] RequestorUid: 1000 RequestorPackageName: android] ]
+11-06 10:51:25.281  5071  5174 D ConnectivityService:  sending notification for NetworkRequest [ LISTEN id=7, [ Transports: CELLULAR Capabilities: INTERNET&NOT_RESTRICTED&TRUSTED&NOT_VPN Uid: 1000 AdministratorUids: [] RequestorUid: 1000 RequestorPackageName: android] ]
+11-06 10:51:25.281  5071  5174 D ConnectivityService: sending notification CALLBACK_CAP_CHANGED for NetworkRequest [ LISTEN id=7, [ Transports: CELLULAR Capabilities: INTERNET&NOT_RESTRICTED&TRUSTED&NOT_VPN Uid: 1000 AdministratorUids: [] RequestorUid: 1000 RequestorPackageName: android] ]
+11-06 10:51:25.281  5071  5174 D ConnectivityService:  sending notification for NetworkRequest [ TRACK_DEFAULT id=9, [ Capabilities: INTERNET&NOT_RESTRICTED&TRUSTED Uid: 1000 AdministratorUids: [] RequestorUid: 1000 RequestorPackageName: android] ]
+11-06 10:51:25.281  5071  5174 D ConnectivityService: sending notification CALLBACK_CAP_CHANGED for NetworkRequest [ TRACK_DEFAULT id=9, [ Capabilities: INTERNET&NOT_RESTRICTED&TRUSTED Uid: 1000 AdministratorUids: [] RequestorUid: 1000 RequestorPackageName: android] ]
+11-06 10:51:25.281  5071  5174 D ConnectivityService:  sending notification for NetworkRequest [ TRACK_DEFAULT id=10, [ Capabilities: INTERNET&NOT_RESTRICTED&TRUSTED Uid: 1073 AdministratorUids: [] RequestorUid: 1073 RequestorPackageName: com.android.networkstack] ]
+11-06 10:51:25.281  5071  5174 D ConnectivityService: sending notification CALLBACK_CAP_CHANGED for NetworkRequest [ TRACK_DEFAULT id=10, [ Capabilities: INTERNET&NOT_RESTRICTED&TRUSTED Uid: 1073 AdministratorUids: [] RequestorUid: 1073 RequestorPackageName: com.android.networkstack] ]
+11-06 10:51:25.282  5071  5174 D ConnectivityService:  sending notification for NetworkRequest [ REQUEST id=12, [ Capabilities: INTERNET&NOT_RESTRICTED&TRUSTED&NOT_VPN AdministratorUids: [] RequestorUid: 1073 RequestorPackageName: com.android.networkstack] ]
+11-06 10:51:25.282  5071  5174 D ConnectivityService: sending notification CALLBACK_CAP_CHANGED for NetworkRequest [ REQUEST id=12, [ Capabilities: INTERNET&NOT_RESTRICTED&TRUSTED&NOT_VPN AdministratorUids: [] RequestorUid: 1073 RequestorPackageName: com.android.networkstack] ]
+11-06 10:51:25.282  5071  5174 D ConnectivityService:  sending notification for NetworkRequest [ TRACK_DEFAULT id=15, [ Capabilities: INTERNET&NOT_RESTRICTED&TRUSTED Uid: 10126 AdministratorUids: [] RequestorUid: 10126 RequestorPackageName: com.android.systemui] ]
+11-06 10:51:25.282  5071  5174 D ConnectivityService: sending notification CALLBACK_CAP_CHANGED for NetworkRequest [ TRACK_DEFAULT id=15, [ Capabilities: INTERNET&NOT_RESTRICTED&TRUSTED Uid: 10126 AdministratorUids: [] RequestorUid: 10126 RequestorPackageName: com.android.systemui] ]
+11-06 10:51:25.283  5071  5174 D ConnectivityService:  sending notification for NetworkRequest [ TRACK_DEFAULT id=16, [ Capabilities: INTERNET&NOT_RESTRICTED&TRUSTED Uid: 10126 AdministratorUids: [] RequestorUid: 10126 RequestorPackageName: com.android.systemui] ]
+11-06 10:51:25.283  5071  5174 D ConnectivityService: sending notification CALLBACK_CAP_CHANGED for NetworkRequest [ TRACK_DEFAULT id=16, [ Capabilities: INTERNET&NOT_RESTRICTED&TRUSTED Uid: 10126 AdministratorUids: [] RequestorUid: 10126 RequestorPackageName: com.android.systemui] ]
+11-06 10:51:25.284  5071  5174 D ConnectivityService:  sending notification for NetworkRequest [ LISTEN id=18, [ AdministratorUids: [] RequestorUid: 10126 RequestorPackageName: com.android.systemui] ]
+11-06 10:51:25.284  5071  5174 D ConnectivityService: sending notification CALLBACK_CAP_CHANGED for NetworkRequest [ LISTEN id=18, [ AdministratorUids: [] RequestorUid: 10126 RequestorPackageName: com.android.systemui] ]
+11-06 10:51:25.271  5071  5167 W BestClock: java.time.DateTimeException: Missing NTP fix
+11-06 10:51:25.285  5071  5174 W BestClock: java.time.DateTimeException: Missing NTP fix
+11-06 10:51:26.158  5391  5391 D DCT-C-0 : updateDataActivity: curTxRxSum={txSum=3815 rxSum=2906} preTxRxSum={txSum=3815 rxSum=2906}
+11-06 10:51:26.158  5391  5391 D DCT-C-0 : updateDataActivity: sent=0 received=0
+11-06 10:51:26.169  5071  5752 I commit_sys_config_file: [appops,8]
+11-06 10:51:26.212  5071  5166 D PowerManagerService: acquireWakeLockInternal: lock=106585726, flags=0x1, tag="NetworkStats", ws=null, uid=1000, pid=5071
+11-06 10:51:26.213  5071  5166 D PowerManagerService: updateWakeLockSummaryLocked: mWakefulness=Awake, mWakeLockSummary=0x1
+11-06 10:51:26.213  5071  5166 D PowerManagerService: updateUserActivitySummaryLocked: mWakefulness=Awake, mUserActivitySummary=0x1, nextTimeout=2230759999 (in 2146999036 ms)
+11-06 10:51:26.213  5071  5166 D PowerManagerService: updateDisplayPowerStateLocked: mDisplayReady=true, policy=3, mWakefulness=1, mWakeLockSummary=0x1, mUserActivitySummary=0x1, mBootCompleted=true, screenBrightnessOverride=NaN, useAutoBrightness=false, mScreenBrightnessBoostInProgress=false, mIsVrModeEnabled= false, sQuiescent=false
+11-06 10:51:26.216  5071  5166 D AppOps  : startOperation: allowing code 40 uid 1000 package android
+11-06 10:51:25.285  5071  5174 I chatty  : uid=1000(system) ConnectivitySer identical 1 line
+11-06 10:51:25.285  5071  5174 W BestClock: java.time.DateTimeException: Missing NTP fix
+11-06 10:51:26.219  5071  5166 W BestClock: java.time.DateTimeException: Missing NTP fix
+11-06 10:51:26.230  5071  5166 I netstats_mobile_sample: [13241,130,20320,190,13241,130,20320,190,12054,94,16610,185,1667703086230]
+11-06 10:51:26.230  5071  5166 I netstats_wifi_sample: [0,0,0,0,0,0,0,0,0,0,0,0,1667703086230]
+11-06 10:51:26.230  5071  5166 D PowerManagerService: releaseWakeLockInternal: lock=106585726 [NetworkStats], flags=0x0
+11-06 10:51:26.231  5071  5166 D PowerManagerService: updateWakeLockSummaryLocked: mWakefulness=Awake, mWakeLockSummary=0x1
+11-06 10:51:26.231  5071  5166 D PowerManagerService: updateUserActivitySummaryLocked: mWakefulness=Awake, mUserActivitySummary=0x1, nextTimeout=2230759999 (in 2146999018 ms)
+11-06 10:51:26.231  5071  5166 D PowerManagerService: updateDisplayPowerStateLocked: mDisplayReady=true, policy=3, mWakefulness=1, mWakeLockSummary=0x1, mUserActivitySummary=0x1, mBootCompleted=true, screenBrightnessOverride=NaN, useAutoBrightness=false, mScreenBrightnessBoostInProgress=false, mIsVrModeEnabled= false, sQuiescent=false
+11-06 10:51:26.230  5071  5166 W BestClock: java.time.DateTimeException: Missing NTP fix
+11-06 10:51:26.232  5071  5167 W BestClock: java.time.DateTimeException: Missing NTP fix
+11-06 10:51:26.247  5071  5174 W BestClock: java.time.DateTimeException: Missing NTP fix
+11-06 10:51:26.247  5071  5167 W BestClock: java.time.DateTimeException: Missing NTP fix
+11-06 10:51:26.248  5391  5417 D SubscriptionController: [getPhoneId] subId=1
+11-06 10:51:26.248  5391  5417 D SubscriptionController: [getPhoneId]- found subId=1 phoneId=0
+11-06 10:51:26.248  5391  5417 D PhoneFactory: getPhone:- phoneId != DEFAULT_PHONE_ID return sPhones[phoneId] phoneId=0 phone=Handler (com.android.internal.telephony.GsmCdmaPhone) {c0fb2b5}
+11-06 10:51:27.162  5391  5391 D DCT-C-0 : updateDataActivity: curTxRxSum={txSum=3815 rxSum=2906} preTxRxSum={txSum=3815 rxSum=2906}
+11-06 10:51:27.162  5391  5391 D DCT-C-0 : updateDataActivity: sent=0 received=0
+11-06 10:51:27.224  5071  5752 I commit_sys_config_file: [appops,7]
+11-06 10:51:28.165  5391  5391 D DCT-C-0 : updateDataActivity: curTxRxSum={txSum=3815 rxSum=2906} preTxRxSum={txSum=3815 rxSum=2906}
+11-06 10:51:28.165  5391  5391 D DCT-C-0 : updateDataActivity: sent=0 received=0
+11-06 10:51:29.170  5391  5391 D DCT-C-0 : updateDataActivity: curTxRxSum={txSum=3815 rxSum=2906} preTxRxSum={txSum=3815 rxSum=2906}
+11-06 10:51:29.170  5391  5391 D DCT-C-0 : updateDataActivity: sent=0 received=0
+11-06 10:51:30.174  5391  5391 D DCT-C-0 : updateDataActivity: curTxRxSum={txSum=3815 rxSum=2906} preTxRxSum={txSum=3815 rxSum=2906}
+11-06 10:51:30.175  5391  5391 D DCT-C-0 : updateDataActivity: sent=0 received=0
+11-06 10:51:31.180  5391  5391 D DCT-C-0 : updateDataActivity: curTxRxSum={txSum=3815 rxSum=2906} preTxRxSum={txSum=3815 rxSum=2906}
+11-06 10:51:31.180  5391  5391 D DCT-C-0 : updateDataActivity: sent=0 received=0
+11-06 10:51:32.184  5391  5391 D DCT-C-0 : updateDataActivity: curTxRxSum={txSum=3815 rxSum=2906} preTxRxSum={txSum=3815 rxSum=2906}
+11-06 10:51:32.185  5391  5391 D DCT-C-0 : updateDataActivity: sent=0 received=0
+11-06 10:51:33.189  5391  5391 D DCT-C-0 : updateDataActivity: curTxRxSum={txSum=3815 rxSum=2906} preTxRxSum={txSum=3815 rxSum=2906}
+11-06 10:51:33.190  5391  5391 D DCT-C-0 : updateDataActivity: sent=0 received=0
+11-06 10:51:34.194  5391  5391 D DCT-C-0 : updateDataActivity: curTxRxSum={txSum=3815 rxSum=2906} preTxRxSum={txSum=3815 rxSum=2906}
+11-06 10:51:34.194  5391  5391 D DCT-C-0 : updateDataActivity: sent=0 received=0
+11-06 10:51:35.198  5391  5391 D DCT-C-0 : updateDataActivity: curTxRxSum={txSum=3815 rxSum=2906} preTxRxSum={txSum=3815 rxSum=2906}
+11-06 10:51:35.199  5391  5391 D DCT-C-0 : updateDataActivity: sent=0 received=0
+11-06 10:51:35.729  5071  5105 V StorageStatsService: >>> handling 100
+11-06 10:51:36.114   388   453 D AT      : AT< +CMT: 0
+11-06 10:51:36.114   388   453 D AT      : AT< 00200a81565055212100002211600115832b37b1582c168b05dd64f93b4d06a5e7a030fb1ececf4161d0fc5e2ed3417479394c0f91e76173784e3687c9e6f0dc3c0f9b01
+11-06 10:51:36.116  5391  5497 D RILJ    : [UNSL]< UNSOL_RESPONSE_NEW_SMS [PHONE0]
+11-06 10:51:36.116  5391  5497 V SmsMessage: SMS originating address: 6505551212
+11-06 10:51:36.116  5391  5497 V SmsMessage: SMS TP-PID:0 data coding scheme: 0
+11-06 10:51:36.117  5391  5497 D SmsMessage: SMS SC timestamp: 1667760698000
+11-06 10:51:36.117  5391  5497 V SmsMessage: SMS message body (raw): '111111Android is always a sweet treat!dsafasdfadfasfsaf'
+11-06 10:51:36.117  5391  5518 D GsmInboundSmsHandler: IdleState.processMessage: processing EVENT_NEW_SMS
+11-06 10:51:36.118  5071  6417 D PowerManagerService: acquireWakeLockInternal: lock=128993263, flags=0x1, tag="GsmInboundSmsHandler", ws=null, uid=1001, pid=5391
+11-06 10:51:36.118  5071  6417 D PowerManagerService: updateWakeLockSummaryLocked: mWakefulness=Awake, mWakeLockSummary=0x1
+11-06 10:51:36.118  5071  6417 D PowerManagerService: updateUserActivitySummaryLocked: mWakefulness=Awake, mUserActivitySummary=0x1, nextTimeout=2230759999 (in 2146989131 ms)
+11-06 10:51:36.118  5071  6417 D PowerManagerService: updateDisplayPowerStateLocked: mDisplayReady=true, policy=3, mWakefulness=1, mWakeLockSummary=0x1, mUserActivitySummary=0x1, mBootCompleted=true, screenBrightnessOverride=NaN, useAutoBrightness=false, mScreenBrightnessBoostInProgress=false, mIsVrModeEnabled= false, sQuiescent=false
+11-06 10:51:36.119  5071  6417 D AppOps  : startOperation: allowing code 40 uid 1001 package com.android.phone
+11-06 10:51:36.120  5391  5518 D GsmInboundSmsHandler: IdleState.exit: acquired wakelock, leaving IdleState
+11-06 10:51:36.120  5391  5518 D GsmInboundSmsHandler: DeliveringState.enter: entering DeliveringState
+11-06 10:51:36.120  5391  5518 D GsmInboundSmsHandler: DeliveringState.processMessage: processing EVENT_NEW_SMS
+11-06 10:51:36.121  5391  5518 D SubscriptionController: [getSubId]+ slotIndex=0
+11-06 10:51:36.121  5391  5518 D SubscriptionController: [getSubId]- subIdArr=[I@da92a38
+11-06 10:51:36.121  5391  5518 D PhoneFactory: getPhone:- phoneId != DEFAULT_PHONE_ID return sPhones[phoneId] phoneId=0 phone=Handler (com.android.internal.telephony.GsmCdmaPhone) {c0fb2b5}
+11-06 10:51:36.121  5391  5518 D SubscriptionController: [getSubId]+ slotIndex=0
+11-06 10:51:36.121  5391  5518 D SubscriptionController: [getSubId]- subIdArr=[I@b343a11
+11-06 10:51:36.122  5391  5518 D GsmInboundSmsHandler: created tracker: SmsTracker{timestamp=Mon Nov 07 02:51:38 GMT+08:00 2022 destPort=-1 is3gpp2=false address=6505551212 timestamp=1667760698000 messageBody=111111Android is always a sweet treat!dsafasdfadfasfsaf display_originating_addr=6505551212 refNumber=-1 seqNumber=1 msgCount=1 id=1151593645309242082}
+11-06 10:51:36.123  5071  6417 D AppOps  : noteOperation: allowing code 14 uid 1001 package com.android.phone
+11-06 10:51:36.132  5391  5518 D GsmInboundSmsHandler: addTrackerToRawTable: adding content values to raw table: display_originating_addr=6505551212 message_body=111111Android is always a sweet treat!dsafasdfadfasfsaf address=6505551212 sub_id=1 reference_number=-1 pdu=00200A81565055212100002211600115832B37B1582C168B05DD64F93B4D06A5E7A030FB1ECECF4161D0FC5E2ED3417479394C0F91E76173784E3687C9E6F0DC3C0F9B01 date=1667760698000 count=1 destination_port=196608 sequence=1, id: 1151593645309242082
+11-06 10:51:36.132  5071  6417 D AppOps  : noteOperation: allowing code 15 uid 1001 package com.android.phone
+11-06 10:51:36.137  5071  6417 D ContentService: Notifying update of [content://sms/raw/5] for user -1, observer null, flags 1
+11-06 10:51:36.138  5071  6417 D ContentService: Collecting non-leaf observers @ #0 / sms
+11-06 10:51:36.138  5071  6417 D ContentService: Notifying update of [content://mms-sms/] for user -1, observer null, flags 1
+11-06 10:51:36.139  5071  6417 D ContentService: Collecting non-leaf observers @ #0 / mms-sms
+11-06 10:51:36.139  5071  6417 D ContentService: Collecting leaf observers @ #1, node mms-sms
+11-06 10:51:36.139  5071  6417 D ContentService: Reporting to android.database.ContentObserver$Transport@397f3cc: leaf=true flags=1 desc=false
+11-06 10:51:36.140  5071  6417 D ContentService: Notifying update of [content://mms-sms/conversations/] for user -1, observer null, flags 1
+11-06 10:51:36.141  5071  6417 D ContentService: Collecting non-leaf observers @ #0 / mms-sms
+11-06 10:51:36.141  5071  6417 D ContentService: Collecting non-leaf observers @ #1 / conversations
+11-06 10:51:36.141  5071  6417 D ContentService: Skipping android.database.ContentObserver$Transport@397f3cc: not monitor descendants
+11-06 10:51:36.141  5391  5518 D GsmInboundSmsHandler: addTrackerToRawTable: URI of new row: content://sms/raw/5, id: 1151593645309242082
+11-06 10:51:36.142  5071  6417 D PowerManagerService: acquireWakeLockInternal: lock=5774919, flags=0x1, tag="*telephony-radio*", ws=WorkSource{1001 com.android.phone}, uid=1001, pid=5391
+11-06 10:51:36.142  5071  6417 D PowerManagerService: updateWakeLockSummaryLocked: mWakefulness=Awake, mWakeLockSummary=0x1
+11-06 10:51:36.142  5071  6417 D PowerManagerService: updateUserActivitySummaryLocked: mWakefulness=Awake, mUserActivitySummary=0x1, nextTimeout=2230759999 (in 2146989107 ms)
+11-06 10:51:36.142  5071  6417 D PowerManagerService: updateDisplayPowerStateLocked: mDisplayReady=true, policy=3, mWakefulness=1, mWakeLockSummary=0x1, mUserActivitySummary=0x1, mBootCompleted=true, screenBrightnessOverride=NaN, useAutoBrightness=false, mScreenBrightnessBoostInProgress=false, mIsVrModeEnabled= false, sQuiescent=false
+11-06 10:51:36.142  5391  5518 D RILJ    : [0241]> SMS_ACKNOWLEDGE success = true cause = 0 [PHONE0]
+11-06 10:51:36.142   388   388 D RIL     : onRequest: SMS_ACKNOWLEDGE
+11-06 10:51:36.142   388   388 D RIL     : getSIMStatus()222. sState: 10
+11-06 10:51:36.142   388   388 D AT      : AT> AT+CPIN?
+11-06 10:51:36.142   388   453 D AT      : AT< +CPIN: READY
+11-06 10:51:36.142   388   453 D AT      : AT< OK
+11-06 10:51:36.143   388   388 D AT      : AT> AT+CNMA=1
+11-06 10:51:36.143   388   453 D AT      : AT< OK
+11-06 10:51:36.143   388   388 E RILC    : RIL_onRequestComplete: invalid RIL_Token
+11-06 10:51:36.143  5391  5497 D RILJ    : [0241]< SMS_ACKNOWLEDGE  [PHONE0]
+11-06 10:51:36.143  5391  5518 D GsmInboundSmsHandler: DeliveringState.processMessage: processing EVENT_BROADCAST_SMS
+11-06 10:51:36.145  5071  6417 I am_uid_active: 10066
+11-06 10:51:36.148  5391  5518 D PhoneFactory: getPhone:- phoneId != DEFAULT_PHONE_ID return sPhones[phoneId] phoneId=0 phone=Handler (com.android.internal.telephony.GsmCdmaPhone) {c0fb2b5}
+11-06 10:51:36.148  5391  5518 D SubscriptionController: [getSubId]+ slotIndex=0
+11-06 10:51:36.148  5391  5518 D SubscriptionController: [getSubId]- subIdArr=[I@7e2b1e4
+11-06 10:51:36.148  5391  5518 D PhoneFactory: getPhone:- phoneId != DEFAULT_PHONE_ID return sPhones[phoneId] phoneId=0 phone=Handler (com.android.internal.telephony.GsmCdmaPhone) {c0fb2b5}
+11-06 10:51:36.149  5391  5518 D SubscriptionController: [getDefaultVoiceSubId] subId=1
+11-06 10:51:36.149  5689  6081 D SubscriptionManager: getDefaultVoiceSubscriptionId, sub id = 1
+11-06 10:51:36.149  5391  5518 D SubscriptionController: [getDefaultVoiceSubId] subId=1
+11-06 10:51:36.149  5391  5518 D SubscriptionController: [getDefaultSubId] isVoiceCapable subId=1
+11-06 10:51:36.150  5391  5518 D SubscriptionController: [isActiveSubId]- true
+11-06 10:51:36.150  5391  5518 V SubscriptionController: [getDefaultSubId]- value = 1
+11-06 10:51:36.150  5391  5518 D SubscriptionController: [getPhoneId] subId=1
+11-06 10:51:36.150  5391  5518 D SubscriptionController: [getPhoneId]- found subId=1 phoneId=0
+11-06 10:51:36.150  5391  5518 D PhoneFactory: getPhone:- phoneId != DEFAULT_PHONE_ID return sPhones[phoneId] phoneId=0 phone=Handler (com.android.internal.telephony.GsmCdmaPhone) {c0fb2b5}
+11-06 10:51:36.150  5391  5518 D SubscriptionController: [getSubId]+ slotIndex=0
+11-06 10:51:36.150  5391  5518 D SubscriptionController: [getSubId]- subIdArr=[I@811664d
+11-06 10:51:36.150  5391  5518 D SubscriptionController: [getSlotIndex] subId=1
+11-06 10:51:36.150  5391  5518 V SubscriptionController: [getSlotIndex]- return = 0
+11-06 10:51:36.150  5391  5518 D EmergencyNumberTracker: slotId:0 country:us emergencyNumbers: 
+11-06 10:51:36.150  5391  5518 D EmergencyNumberTracker: System property doesn't provide any emergency numbers. Use embedded logic for determining ones.
+11-06 10:51:36.151  5071  5115 D AppOps  : noteOperation: allowing code 14 uid 1001 package com.android.phone
+11-06 10:51:36.151  5071  5115 D AppOps  : noteOperation: allowing code 14 uid 1000 package android
+11-06 10:51:36.151  5071  5115 D AppOps  : noteOperation: allowing code 14 uid 1001 package com.android.phone
+11-06 10:51:36.151  5071  5115 D AppOps  : noteOperation: allowing code 14 uid 1000 package android
+11-06 10:51:36.151  5391  5518 D SubscriptionController: [getDefaultVoiceSubId] subId=1
+11-06 10:51:36.151  5689  6081 D SubscriptionManager: getDefaultVoiceSubscriptionId, sub id = 1
+11-06 10:51:36.152  5391  5518 D SubscriptionController: [getDefaultVoiceSubId] subId=1
+11-06 10:51:36.152  5391  5518 D SubscriptionController: [getDefaultSubId] isVoiceCapable subId=1
+11-06 10:51:36.152  5391  5518 D SubscriptionController: [isActiveSubId]- true
+11-06 10:51:36.152  5391  5518 V SubscriptionController: [getDefaultSubId]- value = 1
+11-06 10:51:36.152  5391  5518 D SubscriptionController: [getPhoneId] subId=1
+11-06 10:51:36.152  5391  5518 D SubscriptionController: [getPhoneId]- found subId=1 phoneId=0
+11-06 10:51:36.152  5391  5518 D PhoneFactory: getPhone:- phoneId != DEFAULT_PHONE_ID return sPhones[phoneId] phoneId=0 phone=Handler (com.android.internal.telephony.GsmCdmaPhone) {c0fb2b5}
+11-06 10:51:36.152  5391  5518 D SubscriptionController: [getSubId]+ slotIndex=0
+11-06 10:51:36.152  5391  5518 D SubscriptionController: [getSubId]- subIdArr=[I@9223502
+11-06 10:51:36.152  5391  5518 D SubscriptionController: [getSlotIndex] subId=1
+11-06 10:51:36.152  5391  5518 V SubscriptionController: [getSlotIndex]- return = 0
+11-06 10:51:36.153  5391  5518 D EmergencyNumberTracker: slotId:0 country:us emergencyNumbers: 
+11-06 10:51:36.153  5391  5518 D EmergencyNumberTracker: System property doesn't provide any emergency numbers. Use embedded logic for determining ones.
+11-06 10:51:36.158  5391  5518 D PhoneFactory: getPhone:- phoneId != DEFAULT_PHONE_ID return sPhones[phoneId] phoneId=0 phone=Handler (com.android.internal.telephony.GsmCdmaPhone) {c0fb2b5}
+11-06 10:51:36.158  5391  5518 D SubscriptionController: [getSubId]+ slotIndex=0
+11-06 10:51:36.158  5391  5518 D SubscriptionController: [getSubId]- subIdArr=[I@1435e13
+11-06 10:51:36.158  5391  5518 D PhoneFactory: getPhone:- phoneId != DEFAULT_PHONE_ID return sPhones[phoneId] phoneId=0 phone=Handler (com.android.internal.telephony.GsmCdmaPhone) {c0fb2b5}
+11-06 10:51:36.160  5689  6081 I BlockedNumbers: isBlocked: SELECT original_number,e164_number FROM blocked WHERE original_number=?1 OR (?2 != '' AND e164_number=?2)
+11-06 10:51:36.162  5689  6081 I BlockedNumbers: isBlocked: NOT BLOCKED; number=********12, e164=**********12
+11-06 10:51:36.162  5391  5518 D TelecomFramework: BlockedNumberContract: shouldSystemBlockNumber: number=6505551212, caller=com.android.phone, result=not blocked
+11-06 10:51:36.162  5391  5518 D BlockChecker: Blocked number lookup took: 19 ms.
+11-06 10:51:36.162  5391  5518 V TelephonyMetrics: Logged SMS session consisting of 1 parts, over IMS = false blocked = false type = 0 messageId = 1151593645309242082
+11-06 10:51:36.167  5391  5518 V GsmInboundSmsHandler::CarrierServicesSmsFilter: getCarrierAppPackageForFiltering: Unable to find carrierPackages: [] or systemPackages: [], id: 1151593645309242082
+11-06 10:51:36.167  5391  5518 D SubscriptionController: [getSubId]+ slotIndex=0
+11-06 10:51:36.167  5391  5518 D SubscriptionController: [getSubId]- subIdArr=[I@d1b1a49
+11-06 10:51:36.168  5391  5518 I service_manager_stats: [100,93,111287]
+11-06 10:51:36.169  5391  5518 V CarrierSmsUtils: No CarrierImsPackage override found
+11-06 10:51:36.170  5071  5771 D Telecom : Logging: START_SESSION
+11-06 10:51:36.170  5071  5771 V Telecom : Logging: END_SUBSESSION (dur: 0 mS): TSI.gDDP@AHk
+11-06 10:51:36.170  5071  5771 D Telecom : Logging: END_SESSION (dur: 0 ms): TSI.gDDP@AHk
+11-06 10:51:36.171  5071  5771 D Telecom : Logging: START_SESSION
+11-06 10:51:36.171  5071  5771 V Telecom : Logging: END_SUBSESSION (dur: 0 mS): TSI.gDDP@AHo
+11-06 10:51:36.171  5071  5771 D Telecom : Logging: END_SESSION (dur: 0 ms): TSI.gDDP@AHo
+11-06 10:51:36.173  5071  5771 D Telecom : Logging: START_SESSION
+11-06 10:51:36.173  5071  5771 V Telecom : Logging: END_SUBSESSION (dur: 0 mS): TSI.gSDP@AHs
+11-06 10:51:36.173  5071  5771 D Telecom : Logging: END_SESSION (dur: 0 ms): TSI.gSDP@AHs
+11-06 10:51:36.174  5391  5518 D PhoneFactory: getPhone:- phoneId != DEFAULT_PHONE_ID return sPhones[phoneId] phoneId=0 phone=Handler (com.android.internal.telephony.GsmCdmaPhone) {c0fb2b5}
+11-06 10:51:36.174  5391  5518 V SmsMessage: SMS originating address: 6505551212
+11-06 10:51:36.174  5391  5518 V SmsMessage: SMS TP-PID:0 data coding scheme: 0
+11-06 10:51:36.174  5391  5518 D SmsMessage: SMS SC timestamp: 1667760698000
+11-06 10:51:36.174  5391  5518 V SmsMessage: SMS message body (raw): '111111Android is always a sweet treat!dsafasdfadfasfsaf'
+11-06 10:51:36.174  5391  5518 D SubscriptionController: [getSubId]+ slotIndex=0
+11-06 10:51:36.174  5391  5518 D SubscriptionController: [getSubId]- subIdArr=[I@4029f4e
+11-06 10:51:36.176  5391  5518 V SmsMessage: SMS originating address: 6505551212
+11-06 10:51:36.176  5391  5518 V SmsMessage: SMS TP-PID:0 data coding scheme: 0
+11-06 10:51:36.176  5391  5518 D SmsMessage: SMS SC timestamp: 1667760698000
+11-06 10:51:36.176  5391  5518 V SmsMessage: SMS message body (raw): '111111Android is always a sweet treat!dsafasdfadfasfsaf'
+11-06 10:51:36.182  5391  5518 D CellBroadcastUtils: getDefaultCellBroadcastReceiverPackageName: found package: com.android.cellbroadcastreceiver.module
+11-06 10:51:36.185  5071  5771 I AppOps  : uid 1001 OP_READ_SMS := allow by uid 1001
+11-06 10:51:36.186  5071  5103 V PermissionPolicyService: synchronizePackagePermissionsAndAppOpsForUser(com.android.providers.telephony, 0)
+11-06 10:51:36.192  5071  5771 I AppOps  : uid 1001 OP_WRITE_SMS := allow by uid 1001
+11-06 10:51:36.193  5071  5771 I AppOps  : uid 1001 OP_RECEIVE_SMS := allow by uid 1001
+11-06 10:51:36.193  5071  5116 V PermissionPolicyService: sync for com.android.mms.service/0 already scheduled
+11-06 10:51:36.193  5071  5116 V PermissionPolicyService: sync for com.android.ons/0 already scheduled
+11-06 10:51:36.193  5071  5116 V PermissionPolicyService: sync for com.android.stk/0 already scheduled
+11-06 10:51:36.193  5071  5116 V PermissionPolicyService: sync for com.android.service.ims/0 already scheduled
+11-06 10:51:36.194  5071  5116 V PermissionPolicyService: sync for com.android.service.ims.presence/0 already scheduled
+11-06 10:51:36.194  5071  5116 V PermissionPolicyService: sync for com.android.phone/0 already scheduled
+11-06 10:51:36.194  5071  5771 I AppOps  : uid 1001 OP_RECEIVE_WAP_PUSH := allow by uid 1001
+11-06 10:51:36.194  5071  5116 V PermissionPolicyService: sync for com.android.providers.telephony/0 already scheduled
+11-06 10:51:36.194  5071  5116 V PermissionPolicyService: sync for com.android.mms.service/0 already scheduled
+11-06 10:51:36.194  5071  5116 V PermissionPolicyService: sync for com.android.ons/0 already scheduled
+11-06 10:51:36.194  5071  5116 V PermissionPolicyService: sync for com.android.stk/0 already scheduled
+11-06 10:51:36.194  5071  5116 V PermissionPolicyService: sync for com.android.service.ims/0 already scheduled
+11-06 10:51:36.195  5071  5116 V PermissionPolicyService: sync for com.android.service.ims.presence/0 already scheduled
+11-06 10:51:36.195  5071  5116 V PermissionPolicyService: sync for com.android.phone/0 already scheduled
+11-06 10:51:36.195  5071  5771 I AppOps  : uid 1001 OP_SEND_SMS := allow by uid 1001
+11-06 10:51:36.195  5071  5116 V PermissionPolicyService: sync for com.android.providers.telephony/0 already scheduled
+11-06 10:51:36.195  5071  5116 V PermissionPolicyService: sync for com.android.mms.service/0 already scheduled
+11-06 10:51:36.195  5071  5116 V PermissionPolicyService: sync for com.android.ons/0 already scheduled
+11-06 10:51:36.195  5071  5116 V PermissionPolicyService: sync for com.android.stk/0 already scheduled
+11-06 10:51:36.195  5071  5116 V PermissionPolicyService: sync for com.android.service.ims/0 already scheduled
+11-06 10:51:36.196  5071  5116 V PermissionPolicyService: sync for com.android.service.ims.presence/0 already scheduled
+11-06 10:51:36.196  5071  5116 V PermissionPolicyService: sync for com.android.phone/0 already scheduled
+11-06 10:51:36.196  5071  5771 I AppOps  : uid 1001 OP_READ_CELL_BROADCASTS := allow by uid 1001
+11-06 10:51:36.196  5071  5116 V PermissionPolicyService: sync for com.android.providers.telephony/0 already scheduled
+11-06 10:51:36.196  5071  5116 V PermissionPolicyService: sync for com.android.mms.service/0 already scheduled
+11-06 10:51:36.196  5071  5116 V PermissionPolicyService: sync for com.android.ons/0 already scheduled
+11-06 10:51:36.196  5071  5116 V PermissionPolicyService: sync for com.android.stk/0 already scheduled
+11-06 10:51:36.197  5071  5116 V PermissionPolicyService: sync for com.android.service.ims/0 already scheduled
+11-06 10:51:36.197  5071  5116 V PermissionPolicyService: sync for com.android.service.ims.presence/0 already scheduled
+11-06 10:51:36.197  5071  5116 V PermissionPolicyService: sync for com.android.phone/0 already scheduled
+11-06 10:51:36.197  5391  5518 D GsmInboundSmsHandler: Delivering SMS to: com.android.messaging com.android.messaging.receiver.SmsDeliverReceiver, id: 1151593645309242082
+11-06 10:51:36.197  5391  5518 V Telephony:  getMessagesFromIntent sub_id : 1
+11-06 10:51:36.197  5391  5518 V SmsMessage: SMS originating address: 6505551212
+11-06 10:51:36.197  5391  5518 V SmsMessage: SMS TP-PID:0 data coding scheme: 0
+11-06 10:51:36.197  5391  5518 D SmsMessage: SMS SC timestamp: 1667760698000
+11-06 10:51:36.197  5391  5518 V SmsMessage: SMS message body (raw): '111111Android is always a sweet treat!dsafasdfadfasfsaf'
+11-06 10:51:36.199  5071  5771 I am_uid_active: 10109
+11-06 10:51:36.201  5391  5391 D DCT-C-0 : updateDataActivity: curTxRxSum={txSum=3815 rxSum=2906} preTxRxSum={txSum=3815 rxSum=2906}
+11-06 10:51:36.201  5391  5391 D DCT-C-0 : updateDataActivity: sent=0 received=0
+11-06 10:51:36.202  5071  5103 V PermissionPolicyService: synchronizePackagePermissionsAndAppOpsForUser(com.android.mms.service, 0)
+11-06 10:51:36.204  5391  5518 D SubscriptionController: [getSubId]+ slotIndex=0
+11-06 10:51:36.204  5391  5518 D SubscriptionController: [getSubId]- subIdArr=[I@5fbc86f
+11-06 10:51:36.204  5391  5518 D SubscriptionManager: putPhoneIdAndSubIdExtra: phoneId=0 subId=1
+11-06 10:51:36.205  5071  5116 D AppOps  : noteOperation: allowing code 16 uid 10109 package com.android.messaging
+11-06 10:51:36.205  5071  5116 D AppOps  : noteOperation: allowing code 63 uid 10109 package com.android.messaging
+11-06 10:51:36.207  5834  5834 V Telephony:  getMessagesFromIntent sub_id : 1
+11-06 10:51:36.207  5834  5834 V SmsMessage: SMS originating address: 6505551212
+11-06 10:51:36.207  5834  5834 V SmsMessage: SMS TP-PID:0 data coding scheme: 0
+11-06 10:51:36.207  5834  5834 D SmsMessage: SMS SC timestamp: 1667760698000
+11-06 10:51:36.208  5834  5834 V SmsMessage: SMS message body (raw): '111111Android is always a sweet treat!dsafasdfadfasfsaf'
+11-06 10:51:36.208  5391  5417 D SubscriptionController: [getDefaultSmsSubId] subId=1
+11-06 10:51:36.209  5834  5834 V MessagingApp: SmsReceiver.deliverSmsMessages
+11-06 10:51:36.214  5071  6417 D SubscriptionManager: [getActiveSubscriptionInfo]+ subId=1
+11-06 10:51:36.215  5391  5417 D SubscriptionController: [getActiveSubscriptionInfo]+ subId=1 subInfo={id=1 iccId=89014103211118510720 simSlotIndex=0 carrierId=1 displayName=T-Mobile carrierName=Android nameSource=3 iconTint=-16746133 number=+15555215554 dataRoaming=0 iconBitmap=android.graphics.Bitmap@5c71432 mcc=310 mnc=260 countryIso=us isEmbedded=false nativeAccessRules=null cardString=89014103211118510720 cardId=-1 isOpportunistic=false groupUUID=null isGroupDisabled=false profileClass=-1 ehplmns=null hplmns=null subscriptionType=0 groupOwner=null carrierConfigAccessRules=null areUiccApplicationsEnabled=true}
+11-06 10:51:36.216  5071  6417 W CellSignalStrengthCdma: writeToParcel(Parcel, int): CellSignalStrengthCdma: cdmaDbm=2147483647 cdmaEcio=2147483647 evdoDbm=2147483647 evdoEcio=2147483647 evdoSnr=2147483647 level=0
+11-06 10:51:36.216  5071  6417 W CellSignalStrengthGsm: writeToParcel(Parcel, int): CellSignalStrengthGsm: rssi=2147483647 ber=2147483647 mTa=2147483647 mLevel=0
+11-06 10:51:36.216  5071  6417 W CellSignalStrengthWcdma: writeToParcel(Parcel, int): CellSignalStrengthWcdma: ss=2147483647 ber=2147483647 rscp=2147483647 ecno=2147483647 level=0
+11-06 10:51:36.216  5071  6417 W CellSignalStrengthTdscdma: writeToParcel(Parcel, int): CellSignalStrengthTdscdma: rssi=2147483647 ber=2147483647 rscp=2147483647 level=0
+11-06 10:51:36.216  5071  6417 W CellSignalStrengthLte: writeToParcel(Parcel, int): CellSignalStrengthLte: rssi=2147483647 rsrp=-80 rsrq=-20 rssnr=20 cqi=15 ta=50 level=4 parametersUseForLevel=0
+11-06 10:51:36.217  5834  6367 W SignalStrength: Size of signalstrength parcel:784
+11-06 10:51:36.217  5834  6367 W CellSignalStrengthCdma: CellSignalStrengthCdma(Parcel): CellSignalStrengthCdma: cdmaDbm=2147483647 cdmaEcio=2147483647 evdoDbm=2147483647 evdoEcio=2147483647 evdoSnr=2147483647 level=0
+11-06 10:51:36.217  5834  6367 W CellSignalStrengthGsm: CellSignalStrengthGsm(Parcel): CellSignalStrengthGsm: rssi=2147483647 ber=2147483647 mTa=2147483647 mLevel=0
+11-06 10:51:36.217  5834  6367 W CellSignalStrengthWcdma: CellSignalStrengthWcdma(Parcel): CellSignalStrengthWcdma: ss=2147483647 ber=2147483647 rscp=2147483647 ecno=2147483647 level=0
+11-06 10:51:36.217  5834  6367 W CellSignalStrengthTdscdma: CellSignalStrengthTdscdma(Parcel): CellSignalStrengthTdscdma: rssi=2147483647 ber=2147483647 rscp=2147483647 level=0
+11-06 10:51:36.217  5834  6367 W CellSignalStrengthLte: CellSignalStrengthLte(Parcel): CellSignalStrengthLte: rssi=2147483647 rsrp=-80 rsrq=-20 rssnr=20 cqi=15 ta=50 level=4 parametersUseForLevel=0
+11-06 10:51:36.217  5071  5071 D PowerManagerService: acquireWakeLockInternal: lock=249147893, flags=0x1, tag="*job*/com.android.messaging/.datamodel.action.ActionServiceImpl", ws=WorkSource{10109}, uid=1000, pid=5071
+11-06 10:51:36.217  5071  5071 D PowerManagerService: updateWakeLockSummaryLocked: mWakefulness=Awake, mWakeLockSummary=0x1
+11-06 10:51:36.217  5071  5071 D PowerManagerService: updateUserActivitySummaryLocked: mWakefulness=Awake, mUserActivitySummary=0x1, nextTimeout=2230759999 (in 2146989032 ms)
+11-06 10:51:36.217  5071  5071 D PowerManagerService: updateDisplayPowerStateLocked: mDisplayReady=true, policy=3, mWakefulness=1, mWakeLockSummary=0x1, mUserActivitySummary=0x1, mBootCompleted=true, screenBrightnessOverride=NaN, useAutoBrightness=false, mScreenBrightnessBoostInProgress=false, mIsVrModeEnabled= false, sQuiescent=false
+11-06 10:51:36.219  5834  6331 D SubscriptionManager: [getActiveSubscriptionInfo]+ subId=1
+11-06 10:51:36.220  5071  5719 D AppOps  : noteOperation: allowing code 51 uid 10109 package com.android.messaging
+11-06 10:51:36.220  5391  5518 D GsmInboundSmsHandler: WaitingState.enter: entering WaitingState
+11-06 10:51:36.220  5391  5518 D GsmInboundSmsHandler: WaitingState.processMessage: processing EVENT_RETURN_TO_IDLE
+11-06 10:51:36.222  5391  5518 D SubscriptionController: [getSubId]+ slotIndex=0
+11-06 10:51:36.222  5391  5518 D SubscriptionController: [getSubId]- subIdArr=[I@28f4a26
+11-06 10:51:36.222  5391  5518 D SubscriptionManager: putPhoneIdAndSubIdExtra: phoneId=0 subId=1
+11-06 10:51:36.227  5071  6417 W PackageManager: !PackageManagerInternal.isEnabledAndMatches; mFlags=DEBUG_TRIAGED_MISSING|DIRECT_BOOT_AWARE|DIRECT_BOOT_UNAWARE|400; match: ADJUSTMENT_NORMAL|CATEGORY_EMPTY; userId: 0; intent info: ProviderIntentInfo{85b887f}
+11-06 10:51:36.227  5071  6417 W PackageManager: !PackageManagerInternal.isEnabledAndMatches; mFlags=DEBUG_TRIAGED_MISSING|DIRECT_BOOT_AWARE|DIRECT_BOOT_UNAWARE|400; match: ADJUSTMENT_NORMAL|CATEGORY_EMPTY; userId: 0; intent info: ProviderIntentInfo{6bcd538}
+11-06 10:51:36.229  5391  5518 D GsmInboundSmsHandler: WaitingState.processMessage: processing EVENT_UPDATE_TRACKER
+11-06 10:51:36.232  5391  5518 D GsmInboundSmsHandler: successful broadcast, deleting from raw table.
+11-06 10:51:36.237  5071  6417 D AppOps  : noteOperation: allowing code 15 uid 1001 package com.android.phone
+11-06 10:51:36.241  5071  5771 D ContentService: Notifying update of [content://sms/raw] for user -1, observer null, flags 1
+11-06 10:51:36.241  5071  5771 D ContentService: Collecting non-leaf observers @ #0 / sms
+11-06 10:51:36.242  5071  5771 D ContentService: Notifying update of [content://mms-sms/] for user -1, observer null, flags 1
+11-06 10:51:36.242  5071  5771 D ContentService: Collecting non-leaf observers @ #0 / mms-sms
+11-06 10:51:36.242  5071  5771 D ContentService: Collecting leaf observers @ #1, node mms-sms
+11-06 10:51:36.242  5071  5771 D ContentService: Reporting to android.database.ContentObserver$Transport@397f3cc: leaf=true flags=1 desc=false
+11-06 10:51:36.242  5071  5771 D ContentService: Notifying update of [content://mms-sms/conversations/] for user -1, observer null, flags 1
+11-06 10:51:36.243  5071  5771 D ContentService: Collecting non-leaf observers @ #0 / mms-sms
+11-06 10:51:36.243  5071  5771 D ContentService: Collecting non-leaf observers @ #1 / conversations
+11-06 10:51:36.243  5071  5771 D ContentService: Skipping android.database.ContentObserver$Transport@397f3cc: not monitor descendants
+11-06 10:51:36.243  5391  5518 D GsmInboundSmsHandler: Deleted 1 rows from raw table.
+11-06 10:51:36.243  5391  5518 D GsmInboundSmsHandler: ordered broadcast completed in: 80 ms
+11-06 10:51:36.243  5391  5518 D GsmInboundSmsHandler: WaitingState.processMessage: processing EVENT_BROADCAST_COMPLETE
+11-06 10:51:36.243  5391  5518 D GsmInboundSmsHandler: WaitingState.exit: leaving WaitingState:20
+11-06 10:51:36.244  5391  5518 E InboundSmsHandler: setWakeLockTimeout: 
+11-06 10:51:36.244  5391  5518 E InboundSmsHandler: java.lang.Throwable: 20:20
+11-06 10:51:36.244  5391  5518 E InboundSmsHandler: 	at com.android.internal.telephony.InboundSmsHandler.setWakeLockTimeout(InboundSmsHandler.java:1975)
+11-06 10:51:36.244  5391  5518 E InboundSmsHandler: 	at com.android.internal.telephony.InboundSmsHandler.access$500(InboundSmsHandler.java:113)
+11-06 10:51:36.244  5391  5518 E InboundSmsHandler: 	at com.android.internal.telephony.InboundSmsHandler$WaitingState.exit(InboundSmsHandler.java:595)
+11-06 10:51:36.244  5391  5518 E InboundSmsHandler: 	at com.android.internal.telephony.StateMachine$SmHandler.invokeExitMethods(StateMachine.java:1021)
+11-06 10:51:36.244  5391  5518 E InboundSmsHandler: 	at com.android.internal.telephony.StateMachine$SmHandler.performTransitions(StateMachine.java:877)
+11-06 10:51:36.244  5391  5518 E InboundSmsHandler: 	at com.android.internal.telephony.StateMachine$SmHandler.handleMessage(StateMachine.java:819)
+11-06 10:51:36.244  5391  5518 E InboundSmsHandler: 	at android.os.Handler.dispatchMessage(Handler.java:106)
+11-06 10:51:36.244  5391  5518 E InboundSmsHandler: 	at android.os.Looper.loop(Looper.java:223)
+11-06 10:51:36.244  5391  5518 E InboundSmsHandler: 	at android.os.HandlerThread.run(HandlerThread.java:67)
+11-06 10:51:36.244  5391  5391 D SmsDispatchersController: reevaluateTimerStatus: currentTime: 1667703096244 mCurrentWaitElapsedDuration: 521554
+11-06 10:51:36.244  5391  5391 D SmsDispatchersController: handleInService: timer expiry in 85878446ms
+11-06 10:51:36.244  5391  5518 D GsmInboundSmsHandler: DeliveringState.exit: leaving DeliveringState
+11-06 10:51:36.244  5391  5518 D GsmInboundSmsHandler: DeliveringState.enter: entering DeliveringState
+11-06 10:51:36.244  5391  5518 D GsmInboundSmsHandler: DeliveringState.processMessage: processing EVENT_RETURN_TO_IDLE
+11-06 10:51:36.244  5391  5518 D GsmInboundSmsHandler: DeliveringState.exit: leaving DeliveringState
+11-06 10:51:36.244  5391  5518 D GsmInboundSmsHandler: IdleState.enter: entering IdleState
+11-06 10:51:36.245  5071  5103 V PermissionPolicyService: synchronizePackagePermissionsAndAppOpsForUser(com.android.ons, 0)
+11-06 10:51:36.245  5391  5417 D SubscriptionController: [getActiveSubscriptionInfo]+ subId=1 subInfo={id=1 iccId=89014103211118510720 simSlotIndex=0 carrierId=1 displayName=T-Mobile carrierName=Android nameSource=3 iconTint=-16746133 number=+15555215554 dataRoaming=0 iconBitmap=android.graphics.Bitmap@5c71432 mcc=310 mnc=260 countryIso=us isEmbedded=false nativeAccessRules=null cardString=89014103211118510720 cardId=-1 isOpportunistic=false groupUUID=null isGroupDisabled=false profileClass=-1 ehplmns=null hplmns=null subscriptionType=0 groupOwner=null carrierConfigAccessRules=null areUiccApplicationsEnabled=true}
+11-06 10:51:36.248  5391  5417 D SubscriptionController: [getPhoneId] subId=1
+11-06 10:51:36.248  5391  5417 D SubscriptionController: [getPhoneId]- found subId=1 phoneId=0
+11-06 10:51:36.248  5391  5417 D PhoneFactory: getPhone:- phoneId != DEFAULT_PHONE_ID return sPhones[phoneId] phoneId=0 phone=Handler (com.android.internal.telephony.GsmCdmaPhone) {c0fb2b5}
+11-06 10:51:36.250  5071  5103 V PermissionPolicyService: synchronizePackagePermissionsAndAppOpsForUser(com.android.stk, 0)
+11-06 10:51:36.254  5071  5103 V PermissionPolicyService: synchronizePackagePermissionsAndAppOpsForUser(com.android.service.ims, 0)
+11-06 10:51:36.258  5071  5103 V PermissionPolicyService: synchronizePackagePermissionsAndAppOpsForUser(com.android.service.ims.presence, 0)
+11-06 10:51:36.259  5391  5417 D SubscriptionController: [getSubId]+ slotIndex=0
+11-06 10:51:36.259  5391  5417 D SubscriptionController: [getSubId]- subIdArr=[I@895e2b2
+11-06 10:51:36.261  5071  5771 D AppOps  : noteOperation: allowing code 89 uid 10109 package com.android.messaging
+11-06 10:51:36.264  5391  5518 D GsmInboundSmsHandler: IdleState.processMessage: processing EVENT_RELEASE_WAKELOCK
+11-06 10:51:36.271  5071  5103 V PermissionPolicyService: synchronizePackagePermissionsAndAppOpsForUser(com.android.phone, 0)
+11-06 10:51:36.272  5071  5771 D PowerManagerService: releaseWakeLockInternal: lock=128993263 [GsmInboundSmsHandler], flags=0x0
+11-06 10:51:36.272  5071  5771 D PowerManagerService: updateWakeLockSummaryLocked: mWakefulness=Awake, mWakeLockSummary=0x1
+11-06 10:51:36.272  5071  5771 D PowerManagerService: updateUserActivitySummaryLocked: mWakefulness=Awake, mUserActivitySummary=0x1, nextTimeout=2230759999 (in 2146988977 ms)
+11-06 10:51:36.272  5071  5771 D PowerManagerService: updateDisplayPowerStateLocked: mDisplayReady=true, policy=3, mWakefulness=1, mWakeLockSummary=0x1, mUserActivitySummary=0x1, mBootCompleted=true, screenBrightnessOverride=NaN, useAutoBrightness=false, mScreenBrightnessBoostInProgress=false, mIsVrModeEnabled= false, sQuiescent=false
+11-06 10:51:36.272  5391  5518 D GsmInboundSmsHandler: IdleState.processMessage: EVENT_RELEASE_WAKELOCK: mWakeLock released
+11-06 10:51:36.276  5071  5771 D AppOps  : noteOperation: allowing code 51 uid 10109 package com.android.messaging
+11-06 10:51:36.278  5071  5103 V PermissionPolicyService: synchronizePackagePermissionsAndAppOpsForUser(com.android.providers.telephony, 0)
+11-06 10:51:36.280  5391  5563 D SubscriptionController: [getDefaultSmsSubId] subId=1
+11-06 10:51:36.289  5071  5771 D AppOps  : noteOperation: allowing code 14 uid 1001 package com.android.phone
+11-06 10:51:36.289  5071  5771 D AppOps  : noteOperation: allowing code 14 uid 10109 package com.android.messaging
+11-06 10:51:36.292  5071  5771 D AppOps  : noteOperation: allowing code 14 uid 1001 package com.android.phone
+11-06 10:51:36.292  5071  5771 D AppOps  : noteOperation: allowing code 14 uid 10109 package com.android.messaging
+11-06 10:51:36.309  5071  5115 D AppOps  : noteOperation: allowing code 14 uid 1001 package com.android.phone
+11-06 10:51:36.309  5071  5115 D AppOps  : noteOperation: allowing code 14 uid 1000 package android
+11-06 10:51:36.310  5071  5115 D AppOps  : noteOperation: allowing code 14 uid 1001 package com.android.phone
+11-06 10:51:36.310  5071  5115 D AppOps  : noteOperation: allowing code 14 uid 1000 package android
+11-06 10:51:36.315  5071  5771 D AppOps  : noteOperation: allowing code 15 uid 1001 package com.android.phone
+11-06 10:51:36.315  5071  5771 D AppOps  : noteOperation: allowing code 15 uid 10109 package com.android.messaging
+11-06 10:51:36.318  5071  5771 D AppOps  : noteOperation: allowing code 4 uid 10066 package com.android.providers.userdictionary
+11-06 10:51:36.318  5071  5771 D AppOps  : noteOperation: allowing code 4 uid 1001 package com.android.phone
+11-06 10:51:36.319  5071  5771 D AppOps  : noteOperation: allowing code 4 uid 10066 package com.android.providers.userdictionary
+11-06 10:51:36.319  5071  5771 D AppOps  : noteOperation: allowing code 4 uid 1001 package com.android.phone
+11-06 10:51:36.321  5071  5115 D UsageStatsService: User[0] Got usage event for com.android.providers.blockednumber[83770895]: SYSTEM_INTERACTION
+11-06 10:51:36.321  5071  5115 D UsageStatsService: User[0] Got usage event for com.android.providers.userdictionary[83770895]: SYSTEM_INTERACTION
+11-06 10:51:36.321  5071  5115 D UsageStatsService: User[0] Got usage event for com.android.providers.contacts[83770895]: SYSTEM_INTERACTION
+11-06 10:51:36.324  5071  5115 D AppOps  : noteOperation: allowing code 14 uid 1001 package com.android.phone
+11-06 10:51:36.324  5071  5115 D AppOps  : noteOperation: allowing code 14 uid 1000 package android
+11-06 10:51:36.325  5071  5115 D AppOps  : noteOperation: allowing code 14 uid 1001 package com.android.phone
+11-06 10:51:36.325  5071  5115 D AppOps  : noteOperation: allowing code 14 uid 1000 package android
+11-06 10:51:36.334  5071  5115 D AppOps  : noteOperation: allowing code 14 uid 1001 package com.android.phone
+11-06 10:51:36.334  5071  5115 D AppOps  : noteOperation: allowing code 14 uid 1000 package android
+11-06 10:51:36.336  5071  5115 D AppOps  : noteOperation: allowing code 14 uid 1001 package com.android.phone
+11-06 10:51:36.336  5071  5115 D AppOps  : noteOperation: allowing code 14 uid 1000 package android
+11-06 10:51:36.346  5071  5771 D ContentService: Notifying update of [content://sms/15] for user -1, observer null, flags 1
+11-06 10:51:36.347  5071  5771 D ContentService: Collecting non-leaf observers @ #0 / sms
+11-06 10:51:36.348  5071  5771 D ContentService: Notifying update of [content://mms-sms/] for user -1, observer null, flags 1
+11-06 10:51:36.349  5071  5771 D ContentService: Collecting non-leaf observers @ #0 / mms-sms
+11-06 10:51:36.349  5071  5771 D ContentService: Collecting leaf observers @ #1, node mms-sms
+11-06 10:51:36.349  5071  5771 D ContentService: Reporting to android.database.ContentObserver$Transport@397f3cc: leaf=true flags=1 desc=false
+11-06 10:51:36.351  5071  5115 D AppOps  : noteOperation: allowing code 14 uid 1001 package com.android.phone
+11-06 10:51:36.351  5071  5115 D AppOps  : noteOperation: allowing code 14 uid 1000 package android
+11-06 10:51:36.353  5071  5771 D ContentService: Notifying update of [content://mms-sms/conversations/] for user -1, observer null, flags 1
+11-06 10:51:36.353  5071  5771 D ContentService: Collecting non-leaf observers @ #0 / mms-sms
+11-06 10:51:36.353  5071  5771 D ContentService: Collecting non-leaf observers @ #1 / conversations
+11-06 10:51:36.353  5071  5771 D ContentService: Skipping android.database.ContentObserver$Transport@397f3cc: not monitor descendants
+11-06 10:51:36.355  5071  5115 D AppOps  : noteOperation: allowing code 14 uid 1001 package com.android.phone
+11-06 10:51:36.355  5071  5115 D AppOps  : noteOperation: allowing code 14 uid 1000 package android
+11-06 10:51:36.364  5071  5115 D AppOps  : noteOperation: allowing code 14 uid 1001 package com.android.phone
+11-06 10:51:36.364  5071  5115 D AppOps  : noteOperation: allowing code 14 uid 1000 package android
+11-06 10:51:36.365  5071  5115 D AppOps  : noteOperation: allowing code 14 uid 1001 package com.android.phone
+11-06 10:51:36.365  5071  5115 D AppOps  : noteOperation: allowing code 14 uid 1000 package android
+11-06 10:51:36.370  5391  5653 D SubscriptionController: [getDefaultSmsSubId] subId=1
+11-06 10:51:36.374  5834  6331 I MessagingAppDataModel: ReceiveSmsMessageAction: Received SMS message 15 in conversation 3, uri = content://sms/15
+11-06 10:51:36.374  5834  6331 I MessagingAppDataModel: ProcessPendingMessagesAction: Scheduling pending messages
+11-06 10:51:36.381  5071  5771 D AppOps  : noteOperation: allowing code 51 uid 10109 package com.android.messaging
+11-06 10:51:36.382  5071  5771 D AppOps  : noteOperation: allowing code 89 uid 10109 package com.android.messaging
+11-06 10:51:36.383  5071  5771 D AppOps  : noteOperation: allowing code 51 uid 10109 package com.android.messaging
+11-06 10:51:36.376  5391  5653 I chatty  : uid=1001(radio) Binder:5391_D identical 2 lines
+11-06 10:51:36.380  5391  5653 D SubscriptionController: [getDefaultSmsSubId] subId=1
+11-06 10:51:36.386  5391  5563 D SubscriptionController: [getDefaultSmsSubId] subId=1
+11-06 10:51:36.399  5391  5653 D SubscriptionController: [getDefaultSmsSubId] subId=1
+11-06 10:51:36.404  5071  5771 D AppOps  : noteOperation: reject #3 for code 43 (43) uid 1000 package android
+11-06 10:51:36.405  5071  5071 I notification_enqueue: [10109,5834,com.android.messaging,0,com.android.messaging:sms:,0,Notification(channel=null shortcut=null contentView=null vibrate=default sound=content://settings/system/notification_sound tick defaults=0x6 flags=0x11 color=0xff689f38 category=msg vis=PRIVATE),1]
+11-06 10:51:36.409  5433  6195 D androidtc: Initializing SystemTextClassifier, type = System
+11-06 10:51:36.419  5834  6331 I MessagingAppNotif: Notifying for conversation 3; tag = com.android.messaging:sms:, type = 0
+11-06 10:51:36.426  5071  5719 D ContentService: Notifying update of [content://com.android.messaging.datamodel.MessagingContentProvider/messages/conversation/3] for user 0, observer null, flags 1
+11-06 10:51:36.427  5071  5719 D ContentService: Collecting non-leaf observers @ #0 / com.android.messaging.datamodel.MessagingContentProvider
+11-06 10:51:36.427  5071  5719 D ContentService: Collecting non-leaf observers @ #1 / messages
+11-06 10:51:36.427  5071  5719 D ContentService: Collecting non-leaf observers @ #2 / conversation
+11-06 10:51:36.427  5071  5719 D ContentService: Collecting non-leaf observers @ #3 / 3
+11-06 10:51:36.427  5071  5719 D ContentService: Collecting leaf observers @ #4, node 3
+11-06 10:51:36.427  5071  5719 D ContentService: Reporting to android.database.IContentObserver$Stub$Proxy@4417775: leaf=true flags=1 desc=true
+11-06 10:51:36.429  5071  5719 D ContentService: Notifying update of [content://com.android.messaging.datamodel.MessagingContentProvider/conversations] for user 0, observer null, flags 1
+11-06 10:51:36.430  5071  5719 D ContentService: Collecting non-leaf observers @ #0 / com.android.messaging.datamodel.MessagingContentProvider
+11-06 10:51:36.430  5071  5719 D ContentService: Collecting non-leaf observers @ #1 / conversations
+11-06 10:51:36.430  5071  5719 D ContentService: Collecting leaf observers @ #2, node conversations
+11-06 10:51:36.430  5071  5719 D ContentService: Reporting to android.database.IContentObserver$Stub$Proxy@4930556: leaf=true flags=1 desc=true
+11-06 10:51:36.430  5071  5719 D ContentService: Collecting leaf observers @ #3, node 3
+11-06 10:51:36.430  5071  5719 D ContentService: Reporting to android.database.IContentObserver$Stub$Proxy@69c777b: leaf=true flags=1 desc=true
+11-06 10:51:36.432  5071  5719 D ContentService: Notifying update of [content://com.android.messaging.datamodel.MessagingContentProvider/parts] for user 0, observer null, flags 1
+11-06 10:51:36.433  5071  5719 D ContentService: Collecting non-leaf observers @ #0 / com.android.messaging.datamodel.MessagingContentProvider
+11-06 10:51:36.433  5071  5719 D ContentService: Collecting non-leaf observers @ #1 / parts
+11-06 10:51:36.435  5071  5719 D PowerManagerService: releaseWakeLockInternal: lock=249147893 [*job*/com.android.messaging/.datamodel.action.ActionServiceImpl], flags=0x0
+11-06 10:51:36.435  5071  5719 D PowerManagerService: updateWakeLockSummaryLocked: mWakefulness=Awake, mWakeLockSummary=0x1
+11-06 10:51:36.435  5071  5719 D PowerManagerService: updateUserActivitySummaryLocked: mWakefulness=Awake, mUserActivitySummary=0x1, nextTimeout=2230759999 (in 2146988814 ms)
+11-06 10:51:36.436  5071  5719 D PowerManagerService: updateDisplayPowerStateLocked: mDisplayReady=true, policy=3, mWakefulness=1, mWakeLockSummary=0x1, mUserActivitySummary=0x1, mBootCompleted=true, screenBrightnessOverride=NaN, useAutoBrightness=false, mScreenBrightnessBoostInProgress=false, mIsVrModeEnabled= false, sQuiescent=false
+11-06 10:51:36.606  5071  5071 I sysui_multi_action: [757,1501,758,1,793,446377,794,445354,795,202,796,0,797,com.android.messaging:sms:,806,com.android.messaging,858,4,947,0,1500,0,1641,msg,1688,5,1745,2098068913]
+11-06 10:51:36.607  5071  5071 I sysui_multi_action: [757,804,799,note_interruptive,801,0,802,1]
+11-06 10:51:36.614  5071  5719 D PowerManagerService: acquireWakeLockInternal: lock=46878421, flags=0x1, tag="RingtonePlayer", ws=null, uid=10126, pid=5235
+11-06 10:51:36.614  5071  5719 D PowerManagerService: updateWakeLockSummaryLocked: mWakefulness=Awake, mWakeLockSummary=0x1
+11-06 10:51:36.614  5071  5719 D PowerManagerService: updateUserActivitySummaryLocked: mWakefulness=Awake, mUserActivitySummary=0x1, nextTimeout=2230759999 (in 2146988635 ms)
+11-06 10:51:36.614  5071  5719 D PowerManagerService: updateDisplayPowerStateLocked: mDisplayReady=true, policy=3, mWakefulness=1, mWakeLockSummary=0x1, mUserActivitySummary=0x1, mBootCompleted=true, screenBrightnessOverride=NaN, useAutoBrightness=false, mScreenBrightnessBoostInProgress=false, mIsVrModeEnabled= false, sQuiescent=false
+11-06 10:51:36.615  5071  5719 D AppOps  : startOperation: allowing code 40 uid 10126 package com.android.systemui
+11-06 10:51:36.617  5071  5071 I sysui_multi_action: [757,1501,758,1,793,446388,794,445365,795,213,796,0,797,com.android.messaging:sms:,806,com.android.messaging,858,4,947,0,1500,0,1641,msg,1688,5,1745,2098068913]
+11-06 10:51:36.617  5071  5071 I sysui_multi_action: [757,804,799,note_interruptive,801,0,802,1]
+11-06 10:51:36.618  5071  5071 I sysui_multi_action: [757,199,758,1,759,3,793,446389,794,445366,795,214,796,0,797,com.android.messaging:sms:,806,com.android.messaging,858,4,947,0,1500,1,1641,msg,1688,5,1745,2098068913]
+11-06 10:51:36.618  5071  5071 I notification_alert: [0|com.android.messaging|0|com.android.messaging:sms:|10109,1,1,0]
+11-06 10:51:36.620  5071  5115 D UsageStatsService: User[0] Got usage event for com.android.messaging[83771368]: NOTIFICATION_INTERRUPTION
+11-06 10:51:36.621  5071  5071 W NotificationHistory: Attempted to add notif for locked/gone/disabled user 0
+11-06 10:51:36.628  5235  5235 D InterruptionStateProvider: No bubble up: not allowed to bubble: 0|com.android.messaging|0|com.android.messaging:sms:|10109
+11-06 10:51:36.646   382  1785 V MediaPlayerService: Client(6) constructor
+11-06 10:51:36.646   382  1785 V MediaPlayerService: Create new client(6) from pid 5235, uid 10126, 
+11-06 10:51:36.651   382  1785 V MediaPlayerService: setDataSource fd=7 (/data/system_de/0/ringtones/notification_sound_cache), offset=0, length=576460752303423487
+11-06 10:51:36.651   382  1785 V MediaPlayerService: st_dev  = 64288
+11-06 10:51:36.651   382  1785 V MediaPlayerService: st_mode = 33216
+11-06 10:51:36.651   382  1785 V MediaPlayerService: st_uid  = 1000
+11-06 10:51:36.651   382  1785 V MediaPlayerService: st_gid  = 1000
+11-06 10:51:36.652   382  1785 V MediaPlayerService: st_size = 16905
+11-06 10:51:36.652   382  1785 V MediaPlayerService: calculated length = 16905
+11-06 10:51:36.652   382  1785 V MediaPlayerService: player type = 4
+11-06 10:51:36.652   382  1785 V MediaPlayerFactory:  create NuPlayer
+11-06 10:51:36.652   382  1785 D NuPlayerDriver: NuPlayerDriver(0xf5b01600) created, clientPid(5235)
+11-06 10:51:36.655   382  1785 V AudioSink: AudioOutput(25)
+11-06 10:51:36.659   382  1785 V MediaPlayerService:  setDataSource
+11-06 10:51:36.660   382  1785 V MediaPlayerService: [6] setLooping(0)
+11-06 10:51:36.661   382  1785 V MediaPlayerService: [6] setVideoSurfaceTexture(0x0)
+11-06 10:51:36.661   382  1785 V MediaPlayerService: [6] setParameter(1400)
+11-06 10:51:36.661   382  1785 V MediaPlayerService: setAudioAttributes_l() usage=5 content=4 flags=0x800 tags=
+11-06 10:51:36.663   382  1785 V MediaPlayerService: [6] prepareAsync
+11-06 10:51:36.668   382  6439 D GenericSource: FileSource remote
+11-06 10:51:36.672   380  1789 E Utils   : did not find channel-count and/or sample-rate
+11-06 10:51:36.672   380  1789 E Utils   : did not find channel-count and/or sample-rate
+11-06 10:51:36.673   382  6438 V MediaPlayerService: [6] notify (1, 0, 0)
+11-06 10:51:36.678  5071  5719 I MediaFocusControl: requestAudioFocus() from uid/pid 10126/5235 clientId=android.media.AudioManager@bf7bd7f callingPack=com.android.systemui req=3 flags=0x0 sdk=30
+11-06 10:51:36.679  5071  5719 D AppOps  : noteOperation: allowing code 32 uid 10126 package com.android.systemui
+11-06 10:51:36.715  5235  5235 I sysui_multi_action: [757,803,799,note_peek,802,1]
+11-06 10:51:36.718  5071  5719 I sysui_multi_action: [757,127,758,1]
+11-06 10:51:36.718  5071  5719 I sysui_multi_action: [757,804,799,note_load,801,1,802,1]
+11-06 10:51:36.718  5071  5719 I notification_panel_revealed: 1
+11-06 10:51:36.720  5235  5235 D StatusBar: disable<e i a s b h r c s > disable2<q i n >
+11-06 10:51:36.723  5235  5235 W TouchableRegionManager: onHeadsUpPinnedModeChanged
+11-06 10:51:36.772   261   301 D goldfish-address-space: allocate: Ask for block of size 0x7e9000
+11-06 10:51:36.772   261   301 D goldfish-address-space: allocate: ioctl allocate returned offset 0x3f943e000 size 0x7ea000
+11-06 10:51:36.788   261   301 D goldfish-address-space: allocate: Ask for block of size 0x7e9000
+11-06 10:51:36.788   261   301 D goldfish-address-space: allocate: ioctl allocate returned offset 0x3fb3e6000 size 0x7ea000
+11-06 10:51:36.858   261   261 D goldfish-address-space: allocate: Ask for block of size 0x7e9000
+11-06 10:51:36.858   261   261 D goldfish-address-space: allocate: ioctl allocate returned offset 0x3fcce9000 size 0x7ea000
+11-06 10:51:37.138  5071  6435 D VibratorService: Turning vibrator off.
+11-06 10:51:37.139   287   287 I android.hardware.vibrator-service.example: Vibrator off
+11-06 10:51:37.140  5071  6435 D AppOps  : startOperation: allowing code 3 uid 1000 package android
+11-06 10:51:37.152  5071  6441 D PowerManagerService: acquireWakeLockInternal: lock=174198335, flags=0x1, tag="*vibrator*", ws=WorkSource{1000}, uid=1000, pid=5071
+11-06 10:51:37.152  5071  6441 D PowerManagerService: updateWakeLockSummaryLocked: mWakefulness=Awake, mWakeLockSummary=0x1
+11-06 10:51:37.152  5071  6441 D PowerManagerService: updateUserActivitySummaryLocked: mWakefulness=Awake, mUserActivitySummary=0x1, nextTimeout=2230759999 (in 2146988097 ms)
+11-06 10:51:37.152  5071  6441 D PowerManagerService: updateDisplayPowerStateLocked: mDisplayReady=true, policy=3, mWakefulness=1, mWakeLockSummary=0x1, mUserActivitySummary=0x1, mBootCompleted=true, screenBrightnessOverride=NaN, useAutoBrightness=false, mScreenBrightnessBoostInProgress=false, mIsVrModeEnabled= false, sQuiescent=false
+11-06 10:51:37.159  5071  6441 D VibratorService: Turning vibrator on for 350 ms with amplitude 255.
+11-06 10:51:37.159   287   287 I android.hardware.vibrator-service.example: Vibrator on for timeoutMs: 350
+11-06 10:51:37.159   287   287 I android.hardware.vibrator-service.example: Vibrator set amplitude: 1
+11-06 10:51:37.180   382  1785 V MediaPlayerService: [6] setLooping(0)
+11-06 10:51:37.181   382  1785 V MediaPlayerService: [6] setVolume(1.000000, 1.000000)
+11-06 10:51:37.181   382  1785 V AudioSink: setVolume(1.000000, 1.000000)
+11-06 10:51:37.181   382  1785 V MediaPlayerService: [6] setAuxEffectSendLevel(0.000000)
+11-06 10:51:37.181   382  1785 V AudioSink: setAuxEffectSendLevel(0.000000)
+11-06 10:51:37.181   382  1785 V MediaPlayerService: [6] start
+11-06 10:51:37.181   382  6438 I GenericSource: start
+11-06 10:51:37.185  5071  5719 D PowerManagerService: releaseWakeLockInternal: lock=46878421 [RingtonePlayer], flags=0x0
+11-06 10:51:37.185  5071  5719 D PowerManagerService: updateWakeLockSummaryLocked: mWakefulness=Awake, mWakeLockSummary=0x1
+11-06 10:51:37.185  5071  5719 D PowerManagerService: updateUserActivitySummaryLocked: mWakefulness=Awake, mUserActivitySummary=0x1, nextTimeout=2230759999 (in 2146988064 ms)
+11-06 10:51:37.185  5071  5719 D PowerManagerService: updateDisplayPowerStateLocked: mDisplayReady=true, policy=3, mWakefulness=1, mWakeLockSummary=0x1, mUserActivitySummary=0x1, mBootCompleted=true, screenBrightnessOverride=NaN, useAutoBrightness=false, mScreenBrightnessBoostInProgress=false, mIsVrModeEnabled= false, sQuiescent=false
+11-06 10:51:37.192   382  6444 I OMXClient: IOmx service obtained
+11-06 10:51:37.193   385  3360 I OMXMaster: makeComponentInstance(OMX.google.vorbis.decoder) in android.hardwar process
+11-06 10:51:36.400  5391  5653 D SubscriptionController: [getDefaultSmsSubId] subId=1
+11-06 10:51:37.203  5391  5391 D DCT-C-0 : updateDataActivity: curTxRxSum={txSum=3815 rxSum=2906} preTxRxSum={txSum=3815 rxSum=2906}
+11-06 10:51:37.203  5391  5391 D DCT-C-0 : updateDataActivity: sent=0 received=0
+11-06 10:51:37.204   385  3360 E OMXNodeInstance: setConfig(0xf1b815f0:google.vorbis.decoder, ConfigPriority(0x6f800002)) ERROR: Undefined(0x80001001)
+11-06 10:51:37.205   382  6444 I ACodec  : codec does not support config priority (err -2147483648)
+11-06 10:51:37.205   385  3360 E OMXNodeInstance: getConfig(0xf1b815f0:google.vorbis.decoder, ConfigAndroidVendorExtension(0x6f100004)) ERROR: Undefined(0x80001001)
+11-06 10:51:37.206   382  6444 I MediaCodec: MediaCodec will operate in async mode
+11-06 10:51:37.219   382  6442 V AudioSink: close
+11-06 10:51:37.219   382  6442 V AudioSink: setPlaybackRate(1.000000 1.000000 2 0)
+11-06 10:51:37.219   382  6442 V AudioSink: open(48000, 1, 0x1, 0x1, 0, 25 0x0)
+11-06 10:51:37.220   382  6442 V AudioSink: no track available to recycle
+11-06 10:51:37.220   382  6442 V AudioSink: creating new AudioTrack
+11-06 10:51:37.222  5052  5052 D AudioFlinger: Client defaulted notificationFrames to 12213 for frameCount 24426
+11-06 10:51:37.222  5052  5052 D AF::TrackHandle: OpPlayAudio: track:57 usage:5 not muted
+11-06 10:51:37.224   382  6442 V AudioSink: deleteRecycledTrack_l
+11-06 10:51:37.224   382  6442 V AudioSink: setVolume
+11-06 10:51:37.224   382  6442 V AudioSink: updateTrack() DONE status 0
+11-06 10:51:37.224   382  6442 V AudioSink: start
+11-06 10:51:37.227  5071  5719 D PowerManagerService: acquireWakeLockInternal: lock=219913882, flags=0x1, tag="AudioMix", ws=null, uid=1041, pid=0
+11-06 10:51:37.227  5071  5719 D PowerManagerService: updateWakeLockSummaryLocked: mWakefulness=Awake, mWakeLockSummary=0x1
+11-06 10:51:37.227  5071  5719 D PowerManagerService: updateUserActivitySummaryLocked: mWakefulness=Awake, mUserActivitySummary=0x1, nextTimeout=2230759999 (in 2146988022 ms)
+11-06 10:51:37.227  5071  5719 D PowerManagerService: updateDisplayPowerStateLocked: mDisplayReady=true, policy=3, mWakefulness=1, mWakeLockSummary=0x1, mUserActivitySummary=0x1, mBootCompleted=true, screenBrightnessOverride=NaN, useAutoBrightness=false, mScreenBrightnessBoostInProgress=false, mIsVrModeEnabled= false, sQuiescent=false
+11-06 10:51:37.227  5071  5719 D AppOps  : startOperation: allowing code 40 uid 1041 package audioserver
+11-06 10:51:37.227  5071  5719 I system_server: oneway function results will be dropped but finished with status OK and parcel size 4
+11-06 10:51:37.227  5071  5719 D PowerManagerService: updateWakeLockWorkSourceInternal: lock=219913882 [AudioMix], ws=null
+11-06 10:51:37.228  5071  6417 D PowerManagerService: updateWakeLockWorkSourceInternal: lock=219913882 [AudioMix], ws=WorkSource{10126}
+11-06 10:51:37.228  5071  5719 I system_server: oneway function results will be dropped but finished with status OK and parcel size 4
+11-06 10:51:37.228  5071  6417 I system_server: oneway function results will be dropped but finished with status OK and parcel size 4
+11-06 10:51:37.229   382  6442 D AudioTrack: getTimestamp_l(17): device stall time corrected using current time 83771978970868
+11-06 10:51:37.229   382  6438 V MediaPlayerService: [6] notify (6, 0, 0)
+11-06 10:51:37.229   382  1785 V MediaPlayerService: getCurrentPosition
+11-06 10:51:37.229   382  1785 V AudioSink: getPlayedOutDurationUs(0) nowUs(83771979776) frames(0) framesAt(83771979776)
+11-06 10:51:37.229   382  1785 V MediaPlayerService: [6] getCurrentPosition = 0
+11-06 10:51:37.229   382  1785 V MediaPlayerService: [6] isPlaying: 1
+11-06 10:51:37.240  5235  5235 V MediaRouter: Selecting route: RouteInfo{ name=手机, description=null, status=null, category=RouteCategory{ name=系统 types=ROUTE_TYPE_LIVE_AUDIO ROUTE_TYPE_LIVE_VIDEO  groupable=false }, supportedTypes=ROUTE_TYPE_LIVE_AUDIO ROUTE_TYPE_LIVE_VIDEO , presentationDisplay=null }
+11-06 10:51:37.327  5071  5719 I sysui_multi_action: [757,128,758,1,793,447098,794,0,795,923,796,0,797,com.android.messaging:sms:,798,0,806,com.android.messaging,858,4,947,0,1395,2,1500,710,1641,msg,1688,5,1745,2098068913]
+11-06 10:51:37.327  5071  5719 I sysui_multi_action: [757,1501,758,1,793,447098,794,0,795,923,796,0,797,com.android.messaging:sms:,806,com.android.messaging,858,4,947,0,1500,0,1641,msg,1688,5,1745,2098068913]
+11-06 10:51:37.327  5071  5719 I sysui_multi_action: [757,804,799,note_interruptive,801,0,802,1]
+11-06 10:51:37.327  5071  5719 I sysui_multi_action: [757,804,799,note_freshness,801,923,802,1]
+11-06 10:51:37.327  5071  5719 I notification_visibility: [0|com.android.messaging|0|com.android.messaging:sms:|10109,1,447098,923,0,0]
+11-06 10:51:37.327  5071  5115 D UsageStatsService: User[0] Got usage event for com.android.messaging[83772076]: NOTIFICATION_SEEN
+11-06 10:51:37.353  5071  5752 I commit_sys_config_file: [appops,232]
+11-06 10:51:37.390  5052  5089 D AudioFlinger: mixer(0x7b51cbc43040) throttle end: throttle time(100)
+11-06 10:51:37.515   382  6442 V AudioSink: getPlayedOutDurationUs(354100) nowUs(83772265523) frames(16997) framesAt(83772265527)
+11-06 10:51:37.516   382  6438 V MediaPlayerService: [6] notify (211, 0, 0)
+11-06 10:51:37.543  5052  5089 D AudioFlinger: mixer(0x7b51cbc43040) throttle end: throttle time(14)
+11-06 10:51:37.760  5071  6441 D VibratorService: Turning vibrator on for 350 ms with amplitude 255.
+11-06 10:51:37.761   287   287 I android.hardware.vibrator-service.example: Vibrator on for timeoutMs: 350
+11-06 10:51:37.761   287   287 I android.hardware.vibrator-service.example: Vibrator set amplitude: 1
+11-06 10:51:37.785   382  6442 V AudioSink: getPlayedOutDurationUs(619653) nowUs(83772535544) frames(29744) framesAt(83772535557)
+11-06 10:51:37.787  5052  5089 D AudioFlinger: mixer(0x7b51cbc43040) throttle end: throttle time(14)
+11-06 10:51:37.868  5052  5089 D AudioFlinger: mixer(0x7b51cbc43040) throttle end: throttle time(15)
+11-06 10:51:38.056   382  6442 V AudioSink: getPlayedOutDurationUs(885244) nowUs(83772806193) frames(42492) framesAt(83772806199)
+11-06 10:51:38.112  5071  6441 E VibratorService: Vibration finished, cleaning up
+11-06 10:51:38.112  5071  6441 D VibratorService: Turning vibrator off.
+11-06 10:51:38.113   287   287 I android.hardware.vibrator-service.example: Vibrator off
+11-06 10:51:38.113  5071  6441 D PowerManagerService: releaseWakeLockInternal: lock=174198335 [*vibrator*], flags=0x0
+11-06 10:51:38.113  5071  6441 D PowerManagerService: updateWakeLockSummaryLocked: mWakefulness=Awake, mWakeLockSummary=0x1
+11-06 10:51:38.113  5071  6441 D PowerManagerService: updateUserActivitySummaryLocked: mWakefulness=Awake, mUserActivitySummary=0x1, nextTimeout=2230759999 (in 2146987136 ms)
+11-06 10:51:38.113  5071  6441 D PowerManagerService: updateDisplayPowerStateLocked: mDisplayReady=true, policy=3, mWakefulness=1, mWakeLockSummary=0x1, mUserActivitySummary=0x1, mBootCompleted=true, screenBrightnessOverride=NaN, useAutoBrightness=false, mScreenBrightnessBoostInProgress=false, mIsVrModeEnabled= false, sQuiescent=false
+11-06 10:51:38.148  5071  5752 I commit_sys_config_file: [appops,7]
+11-06 10:51:38.207  5391  5391 D DCT-C-0 : updateDataActivity: curTxRxSum={txSum=3815 rxSum=2906} preTxRxSum={txSum=3815 rxSum=2906}
+11-06 10:51:38.208  5391  5391 D DCT-C-0 : updateDataActivity: sent=0 received=0
+11-06 10:51:38.244  5052  5089 D AudioFlinger: mixer(0x7b51cbc43040) throttle end: throttle time(14)
+11-06 10:51:38.315   382  6442 V AudioSink: getPlayedOutDurationUs(1150819) nowUs(83773065140) frames(55240) framesAt(83773065154)
+11-06 10:51:38.582   382  6442 V AudioSink: getPlayedOutDurationUs(1416410) nowUs(83773332848) frames(67988) framesAt(83773332854)
+11-06 10:51:38.582   382  6442 V AudioSink: getPlayedOutDurationUs(1416414) nowUs(83773332916) frames(67988) framesAt(83773332918)
+11-06 10:51:38.583   382  6442 V AudioSink: stop
+11-06 10:51:38.583   382  6442 D AudioTrack: stop(17): called with 82980 frames delivered
+11-06 10:51:38.689  5052  5089 D AudioFlinger: mixer(0x7b51cbc43040) throttle end: throttle time(11)
+11-06 10:51:38.895   382  6438 V MediaPlayerService: [6] notify (2, 0, 0)
+11-06 10:51:38.898  5071  6417 I MediaFocusControl: abandonAudioFocus() from uid/pid 10126/5235 clientId=android.media.AudioManager@bf7bd7f
+11-06 10:51:38.899   382  6442 V AudioSink: pause
+11-06 10:51:38.899   382  6438 V MediaPlayerService: [6] notify (211, 0, 0)
+11-06 10:51:38.900  5235  6436 V MediaPlayer: resetDrmState:  mDrmInfo=null mDrmProvisioningThread=null mPrepareDrmInProgress=false mActiveDrmScheme=false
+11-06 10:51:38.900  5235  6436 V MediaPlayer: cleanDrmObj: mDrmObj=null mDrmSessionId=null
+11-06 10:51:38.901   382  1785 V MediaPlayerService: disconnect(6) from pid 5235
+11-06 10:51:38.901   382  1785 D NuPlayerDriver: reset(0xf5b01600) at state 6
+11-06 10:51:38.901   382  6442 V AudioSink: pause
+11-06 10:51:38.901   382  6442 V AudioSink: flush
+11-06 10:51:38.902   382  6442 V AudioSink: stop
+11-06 10:51:38.906   382  6438 D NuPlayerDriver: notifyResetComplete(0xf5b01600)
+11-06 10:51:38.907   382  1785 W AMessage: failed to post message as target looper for handler 0 is gone.
+11-06 10:51:38.907   382  1785 V MediaPlayerService: Client(6) destructor pid = 5235
+11-06 10:51:38.907   382  1785 V AudioSink: close
+11-06 10:51:38.908   382  1785 V MediaPlayerService: disconnect(6) from pid 5235
+11-06 10:51:38.913  5052  5086 W APM::AudioPolicyEngine: getDevicesForStrategy() unknown strategy: -1
+11-06 10:51:38.914  5071  6417 D PowerManagerService: updateWakeLockWorkSourceInternal: lock=219913882 [AudioMix], ws=null
+11-06 10:51:38.914  5071  6417 D AppOps  : startOperation: allowing code 40 uid 1041 package audioserver
+11-06 10:51:38.914  5071  6417 I system_server: oneway function results will be dropped but finished with status OK and parcel size 4
