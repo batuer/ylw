@@ -8,13 +8,7 @@ adb logcat -b all 2>&1 | tee log.txt
 adb shell setprop persist.sys.hilog.debug.on true
 adb shell settings get secure
 data/system/users/0
-adb shell setprop persist.log.tag.Dialer V & adb shell setprop persist.log.tag.TelecomFramework V  & adb shell setprop persist.log.tag.Telecom V & adb shell setprop persist.log.tag.Telephony V  & adb shell setprop persist.log.tag.SubscriptionController V & adb shell setprop persist.log.tag.SIMRecords V & adb shell setprop persist.log.tag.AdnRecord V
-adb shell setprop persist.log.tag.MmsService V
-adb shell setprop persist.log.tag.NotificationService V  & adb shell setprop persist.log.tag.NotificationRecord V & adb shell setprop persist.log.tag.notification_assistant V & adb shell setprop persist.log.tag.AlertNotifManager V
-adb shell setprop persist.log.tag.Tile V & adb shell setprop persist.log.tag.volume V
-adb shell setprop persist.log.tag.SQLiteQueryBuilder V
-adb shell stop
-adb shell start
+adb shell stop;adb shell start
 adb shell am startservice -n com.android.phone/com.android.phone.TelephonyDebugService --user 0 -a <action>
 adb shell am broadcast -a delete.siminfo
 adb shell dumpsys -l
@@ -25,9 +19,19 @@ adb pull data/data/com.android.providers.contacts/databases
 adb pull data/data/com.android.providers.media/databases
 adb shell pm clear com.android.providers.telephony
 adb shell pm list packages
-adb shell am broadcast -a REFLECT_CHANGE_FILED --es CLASS_NAME "com.android.server.pm.PackageManagerService" --es FILED_NAME "DEBUG_INSTALL" --ez FILED_VALUE false
+adb shell am broadcast --user 0 -a REFLECT_CHANGE_FILED --es CLASS_NAME "com.android.server.pm.PackageManagerService" --es FILED_NAME "DEBUG_INSTALL" --ez FILED_VALUE false --receiver-permission "com.test.permission"
+adb shell am start -n com.android.dialer/com.android.dialer.InCallActivity
 
-DcTracker
+adb root;adb shell "echo --wipe_data > /cache/recovery/command";adb shell "reboot recovery"
+adb shell uiautomator dump/ui.xml
+
+adb shell setprop persist.log.tag.Dialer V & adb shell setprop persist.log.tag.TelecomFramework V & adb shell setprop persist.log.tag.Telecom V & adb shell setprop persist.log.tag.Telephony V  & adb shell setprop persist.log.tag.SubscriptionController V & adb shell setprop persist.log.tag.SIMRecords V & adb shell setprop persist.log.tag.AdnRecord V & adb shell setprop persist.log.tag.QImsService V & adb shell setprop persist.log.tag.AdnRecord V
+adb shell setprop persist.log.tag.MmsService V
+adb shell setprop persist.log.tag.NotificationService V  & adb shell setprop persist.log.tag.NotificationRecord V & adb shell setprop persist.log.tag.notification_assistant V & adb shell setprop persist.log.tag.AlertNotifManager V
+adb shell setprop persist.log.tag.Tile V & adb shell setprop persist.log.tag.volume V
+adb shell setprop persist.log.tag.SQLiteQueryBuilder V
+
+
 
 数据
 updateDataActivity

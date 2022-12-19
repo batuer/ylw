@@ -11,7 +11,7 @@ ConnectivityService框架主要有四个方面组成：
 三 . 路由配置信息的获取（NetworkAgent）
 四 . 网络物理端口的设置（Netd）
 
-![20171114164204441](C:\Users\batue\Desktop\20171114164204441.png)
+![这里写图片描述](https://img-blog.csdn.net/20171114164204441?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvc2p6NDg2MDQwMg==/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/SouthEast)
 
 
 
