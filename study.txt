@@ -25,7 +25,7 @@ adb shell am start -n com.android.dialer/com.android.dialer.InCallActivity
 adb root;adb shell "echo --wipe_data > /cache/recovery/command";adb shell "reboot recovery"
 adb shell uiautomator dump/ui.xml
 
-adb shell setprop persist.log.tag.Dialer V & adb shell setprop persist.log.tag.TelecomFramework V & adb shell setprop persist.log.tag.Telecom V & adb shell setprop persist.log.tag.Telephony V  & adb shell setprop persist.log.tag.SubscriptionController V & adb shell setprop persist.log.tag.SIMRecords V & adb shell setprop persist.log.tag.AdnRecord V & adb shell setprop persist.log.tag.QImsService V & adb shell setprop persist.log.tag.AdnRecord V
+adb shell setprop persist.log.tag.Dialer V & adb shell setprop persist.log.tag.TelecomFramework V & adb shell setprop persist.log.tag.Telecom V & adb shell setprop persist.log.tag.Telephony V  & adb shell setprop persist.log.tag.SubscriptionController V & adb shell setprop persist.log.tag.SIMRecords V & adb shell setprop persist.log.tag.AdnRecord V & adb shell setprop persist.log.tag.QImsService V & adb shell setprop persist.log.tag.AdnRecord V & adb shell setprop persist.log.tag.ImsPhoneCall V
 adb shell setprop persist.log.tag.MmsService V
 adb shell setprop persist.log.tag.NotificationService V  & adb shell setprop persist.log.tag.NotificationRecord V & adb shell setprop persist.log.tag.notification_assistant V & adb shell setprop persist.log.tag.AlertNotifManager V
 adb shell setprop persist.log.tag.Tile V & adb shell setprop persist.log.tag.volume V
