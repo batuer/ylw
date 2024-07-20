@@ -133,3 +133,21 @@ tags:
     - onTouchEvent
 
   ##### super很重要决定事件的下一步走向，不执行super时谨慎使用(如Activity的super.dispatchTouchEvent(ev))。
+
+
+interceptKeyBeforeQueueing:4872, PhoneWindowManager (com.android.server.policy)
+interceptKeyBeforeQueueing:3573, HwPhoneWindowManager (com.android.server.policy)
+interceptKeyBeforeQueueing:189, InputManagerCallback (com.android.server.wm)
+interceptKeyBeforeQueueing:3199, InputManagerService (com.android.server.input)
+injectInputEvent:-1, NativeInputManagerService$NativeImpl (com.android.server.input)
+injectInputEventInternal:1295, InputManagerService (com.android.server.input)
+injectInputEventToTarget:1254, InputManagerService (com.android.server.input)
+onTransact:790, IInputManager$Stub (android.hardware.input)
+execTransactInternal:1371, Binder (android.os)
+execTransact:1310, Binder (android.os)
+
+
+interceptKeyBeforeDispatching:3725, PhoneWindowManager (com.android.server.policy)
+interceptKeyBeforeDispatching:4518, HwPhoneWindowManager (com.android.server.policy)
+interceptKeyBeforeDispatching:207, InputManagerCallback (com.android.server.wm)
+interceptKeyBeforeDispatching:3234, InputManagerService (com.android.server.input)

@@ -1,0 +1,38 @@
+1.Android启动流程
+Loader：芯片启动Boot ROM，Bootloader（硬件初始化，内存空间映射）
+kernel：设置缓存，加载驱动，找到init.rc
+native: init进程启动rc文件配置的服务logd、servicemanager、mediaserver、netd、zygote...
+framework：zygote启动system_server(AMS，WMS，PMS)...
+app：system_server启动开机启动程序(SystemUI,Launch,Phone...)
+
+2.AMS
+管理四大组件，增删改，四大组件依赖进程，间接也管理进程的增删。
+
+Activity启动流程
+1. startActivity
+2. ATMS 接收请求
+3. ActivityController委托ActivityStarter.execute()
+4. 根据launchmode启动Activity
+5. RootWindowContainer.requestFocusedTasksTopActivity 检查判断Activity是否存在和是否Resume状态
+6. 没有新建，先判断进程是否存在(不存在调用ATMS.startProcess -> Process.startProcess -> Zygote fork进程 -> ActivityThread.main() 反射创建，初始化Application )
+7. 生成ActivtyRecord回调给应用
+8. 生命周期执行
+
+3.WMS
+为Window分配Surface，并且管理window的大小位置、层级，以及窗口动画
+
+4.PMS
+管理所有应用apk、apex包的解析安装、卸载、权限控制等
+
+安装apk：前期准备、安装、后期收尾
+前期准备：拷贝临时目录，完整性校验，解析apk，提取nativelibs，版本号
+安装：准备（完全解析 manifest ParsedPackage，签名保存验证，权限验证，重命名，杀死已有进程），扫描，调和，提交（PackageSettings，ParsePackage）
+后期收尾：创建目录，dex优化，删除apk，发送广播
+
+5.App启动流程
+
+6.事件分发
+硬件触发
+驱动封装Event写入dev/input/event节点
+IMS服务启动InputReader和InputDispatcher线程，InputRead线程循环读取节点数据，通过WMS找到目标窗口，通过Socket通信InputChannel传递给window应用
+ViewRootImpl DecoreView Activity PhoneWindow ViewGroup View

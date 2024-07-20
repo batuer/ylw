@@ -43,3 +43,11 @@
 ### SystemServer进程启动
 
 ### Launcher进程启动
+
+
+设备上电
+loader 芯片启动BootROM Bootloader（硬件初始化，内存控件映射）
+kernel 加载驱动，找到init.rcc
+native 启动init进程 init进程启动配置的服务:servicemanager，logd，zygote，mediaserver
+framework zygote启动system_server(核心服务：AMS，WMS，PMS...)
+app system_server启动配置开机启动的应用:SystemUI、Launch、Phone...

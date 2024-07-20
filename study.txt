@@ -1,11 +1,12 @@
 chmod -R a+x ./
 
 adb shell setenforce 1
+adb shell settings put global stay_on_while_plugged_in 1 & adb shell settings put system screen_off_timeout 360000
+adb shell settings put system screen_off_timeout 600000
 adb shell debuggerd -b processId
 adb shell screencap -p | sed 's/\r$//' > screen.png
-adb shell screencap -p /sdcard/screen.png
+adb shell screencap -p /sdcard/screen.png;adb pull sdcard/screen.png
 adb logcat -b all 2>&1 | tee log.txt
-adb shell setprop persist.sys.hilog.debug.on true
 adb shell settings get secure
 data/system/users/0
 adb shell stop;adb shell start
@@ -19,38 +20,85 @@ adb pull data/data/com.android.providers.contacts/databases
 adb pull data/data/com.android.providers.media/databases
 adb shell pm clear com.android.providers.telephony
 adb shell pm list packages
+adb shell getprop ro.product.locale
+adb shell echo $CUST_POLICY_DIRS
+
+// Debug调试
+adb shell setprop persist.debug.dalvik.vm.jdwp.enabled 1
+
 adb shell am broadcast --user 0 -a REFLECT_CHANGE_FILED --es CLASS_NAME "com.android.server.pm.PackageManagerService" --es FILED_NAME "DEBUG_INSTALL" --ez FILED_VALUE false --receiver-permission "com.test.permission"
+adb shell am broadcast  -a Ylw_test --el value
 adb shell am start -n com.android.dialer/com.android.dialer.InCallActivity
+adb shell am start -n com.android.phone/com.android.phone.MSimCallFeaturesSetting
+adb shell am start -n com.android.phone/com.android.phone.CallFeaturesSetting
+adb shell am start -n "com.android.settings/com.android.settings.Settings$BiometricLockSettingsActivity"
 
 adb root;adb shell "echo --wipe_data > /cache/recovery/command";adb shell "reboot recovery"
-adb shell uiautomator dump/ui.xml
+adb shell uiautomator dump sdcard/ui.xml
 
-adb shell setprop persist.log.tag.Dialer V & adb shell setprop persist.log.tag.TelecomFramework V & adb shell setprop persist.log.tag.Telecom V & adb shell setprop persist.log.tag.Telephony V  & adb shell setprop persist.log.tag.SubscriptionController V & adb shell setprop persist.log.tag.SIMRecords V & adb shell setprop persist.log.tag.AdnRecord V & adb shell setprop persist.log.tag.QImsService V & adb shell setprop persist.log.tag.AdnRecord V & adb shell setprop persist.log.tag.ImsPhoneCall V
+adb shell pm dump pkg
+adb shell getprop ro.product.cpu.abi
+adb shell getprop ro.product.cpu.abilist
+片区信息
+fastboot getvar vendorcountry
+adb shell cat /data/custom.bin
+adb shell cat /data/product.bin
+
+ProtoLog:
+adb shell wm logging start
+adb shell wm logging status
+adb shell cmd window logging enable-text WM_DEBUG_IME
+
+adb shell setprop msc.config.log true;adb shell setprop msc.config.module_log true
+adb shell setprop persist.sys.hilog.debug.on true
+
+adb shell setprop persist.log.tag.Dialer V & adb shell setprop persist.log.tag.TelecomFramework V & adb shell setprop persist.log.tag.Telecom V & adb shell setprop persist.log.tag.Telephony V  & adb shell setprop persist.log.tag.SubscriptionController V & adb shell setprop persist.log.tag.SIMRecords V & adb shell setprop persist.log.tag.AdnRecord V & adb shell setprop persist.log.tag.QImsService V & adb shell setprop persist.log.tag.AdnRecord V & adb shell setprop persist.log.tag.GsmCdmaPhone V
+adb shell setprop persist.log.tag.Dialer V ; adb shell setprop persist.log.tag.TelecomFramework V ; adb shell setprop persist.log.tag.Telecom V ; adb shell setprop persist.log.tag.Telephony V  ; adb shell setprop persist.log.tag.SubscriptionController V ; adb shell setprop persist.log.tag.SIMRecords V ; adb shell setprop persist.log.tag.AdnRecord V ; adb shell setprop persist.log.tag.QImsService V ; adb shell setprop persist.log.tag.AdnRecord V ; adb shell setprop persist.log.tag.GsmCdmaPhone V;adb shell setprop persist.log.tag.PstnIncomingCallNotifier V;adb shell setprop persist.vendor.log.tel_dbg 1;adb shell setprop persist.log.tag.ImsServiceCT V;
 adb shell setprop persist.log.tag.MmsService V
 adb shell setprop persist.log.tag.NotificationService V  & adb shell setprop persist.log.tag.NotificationRecord V & adb shell setprop persist.log.tag.notification_assistant V & adb shell setprop persist.log.tag.AlertNotifManager V
+adb shell setprop persist.log.tag.NotificationService V  ; adb shell setprop persist.log.tag.NotificationRecord V ; adb shell setprop persist.log.tag.notification_assistant V ; adb shell setprop persist.log.tag.AlertNotifManager V
 adb shell setprop persist.log.tag.Tile V & adb shell setprop persist.log.tag.volume V
+adb shell setprop persist.log.tag.NetworkController V 
 adb shell setprop persist.log.tag.SQLiteQueryBuilder V
 
-
-
+adb shell "cat /proc/config.gz | gzip -d | grep FINAL_RELEASE"
+ 
 数据
 updateDataActivity
 SETUP_DATA_CALL|trySetupData for APN type|setupData: apnContext=|setupData: dc=|setupData: initing|trySetupData failed|connect: carrier=|bringUp: apnContext=|setupDataCall
+UserDataEnabled changed to |saveNetworkModeToDB|SETUP_DATA_CALL|DEACTIVATE_DATA_CALL|: Data evaluation:|: deactivateDataCall|onServiceStateChanged: changed to |Found .* data profiles
 关闭数据业务
 UserDataEnabled|EVENT_DATA_ENABLED_CHANGED|onDataEnabledChanged|cleanUpAllConnectionsInternal: |teardownForDun: APNs|cleanUpConnectionInternal|EVENT_DISCONNECT|deactivateDataCall|DEACTIVATE_DATA_CALL
 开启数据业务
 UserDataEnabled|EVENT_DATA_ENABLED_CHANGED|onDataEnabledChanged|reevaluate restricted state|setupDataOnAllConnectableApns|tearDown: apnContext|trySetupData|SETUP_DATA_CALL|getPreferredApn|onDataSetupComplete
 
+Android13开机卡加载完毕开启数据
+EVENT_IMSI_READY|EVENT_RECORDS_LOADED|tryFastAttach|unsatisfied network requests in.*IMSI_READY|unsatisfied network requests in.*RECORDS_LOADED|DNC-.*Data evaluation: evaluation reason:IMSI_READY|DNC-.*Data evaluation: evaluation reason:RECORDS_LOADED|onSetupDataNetwork: dataProfile=|DSM-C.* : setupDataCall|CellularDataService: setupDataCall|> SETUP_DATA_CALL
+设置关闭移动数据
+setDataEnable|Set user data enabled to|notifyDataEnabledChanged: enabled=|onDataEnabledChanged: enabled=|Re-evaluating |tearDownGracefully: Safe|onTearDown: reason=|deactivateDataCall|> DEACTIVATE_DATA_CALL
+设置开启移动数据
+setDataEnabled|Set user data enabled to|notifyDataEnabledChanged: enabled=|Re-evaluating|onSetupDataNetwork: dataProfile=|DSM-C.* : setupDataCall|CellularDataService: setupDataCall|> SETUP_DATA_CALL
+
 挂断电话
 end call button clicked|endCallClicked|REQUEST_DISCONNECT|TelephonyConnectionService: disconnect|> HANGUP|< HANGUP|< GET_CURRENT_CALLS|ImsCallSessionImpl : terminate|GsmCdmaConnection: onDisconnect|UNSOL_RESPONSE_CALL_STATE_CHANGED|handleCalls|callSessionTerminated
 end call button clicked|endCallClicked|TelecomAdapter: disconnectCall|InCallAdapter: disconnectCall|REQUEST_DISCONNECT|CallsManager: disconnectCall|Call: Send disconnect to connection service for call|: disconnect|InCallController: Sending updateCall|TelephonyConnectionService: disconnect|onDisconnect|ImsCall : terminate|ImsCallSessionImpl : terminate|> HANGUP|< HANGUP
 
+断开原因
+Adapter set disconnected DisconnectCause|processCallStateChange state=DISCONNECTED|Sip callFailCause|onCallTerminated reasonCode|Disconnect: cause|< LAST_CALL_FAIL_CAUSE
+
+响铃
+handlePlay: Play ringtone|Stop ringtone|Telecom: Ringer|CallsManager: setCallState
+
 拒接
 Decline
 
-主叫
+主叫  990453000
 UNSOL_RESPONSE_CALL_STATE_CHANGED|CALLOUT from|onCreateOutgoingConnection,subId|placeOutgoingConnection|UserCallIntentProcessor: processOutgoingCallIntent|TelephonyConnectionService: createConnection|> DIAL|< DIAL|Dial Request - address|Telecom: UserCallIntentProcessor: handleOutgoingCall|onTransact add new outgoing call|handle MSG_NEW_OUTGOING_CALL|processOutgoingCallIntent -> subId=|processOutgoingCallIntent -> slotId=|sosEmergencyDialType = |startOutgoingCall|CallsManager: addCall|onCallAdded|defaultDialer: |Skipping binding to|handleCreateConnectionSuccessful|onUpdate -|startOrFinishUi|Broadcasting intent:|Received new-outgoing-call-broadcast|attemptNextPhoneAccount|Trying attempt|telecom.*?createConnection|Service bound|RecordServiceClient: onServiceConnected|TelecomCallCallback onStateChanged call=|ringState|CallCardFragment: videoState
 01FF5.*?DisconnectCause|01FF5.*?gateway|01FF5.*?callForwardState
+
+通话音频
+AudioManager: setMode|UNSOL_RESPONSE_CALL_STATE_CHANGED|abandonAudioFocusForCall|MediaFocusControl: requestAudioFocus|AudioManager: dispatching onAudioFocusChange|onCallStateChanged: callState|end call button clicked|endCallClicked
+AudioManager: setMode|abandonAudioFocusForCall|MediaFocusControl: requestAudioFocus|AudioManager: dispatching onAudioFocusChange|AudioFlinger: stop output|AudioFlinger: start output|wm_on_resume_called
 
 CALLOUT from|UserCallIntentProcessor: processOutgoingCallIntent|UserCallIntentProcessor: handleOutgoingCall|TelecomServiceImpl: handle MSG_NEW_OUTGOING_CALL|CallIntentProcessor: processOutgoingCallIntent|CallsManager: addCall|InCallController: onCallAdded|InCallController: mInCallServiceConnection isConnected|startOutgoingCall
 
@@ -60,6 +108,10 @@ onCreateOutgoingConnection,subId|placeOutgoingConnection|MSG_PRECISE_CALL_STATE_
 showDisableVolteHdCallsDialog|processOutgoingCallIntent videoState = |handleOutgoingCall|CallForward onTransact|onTransact add new outgoing call|handle MSG_NEW_OUTGOING_CALL|dual number is not support in roaming, stop call|processOutgoingCallIntent -> subId=|processOutgoingCallIntent -> slotId=|processOutgoingCallIntent - phoneAccountHandleId is valid, set subId to|deviceType = |sosEmergencyDialType = |startOutgoingCall|CallsManager: addCall|onCallAdded|defaultDialer: |Attempting to bind to InCall|Skipping binding to|onConnected|handleCreateConnectionComplete|handleCreateConnectionSuccessful|setCallState|Sending updateCall|Components updated:
 （3）InCallUI
 onCallAdded|onUpdate - |onCallListChange|startOrFinishUi|showInCall|onCreate()... this =|Broadcasting intent:|Received new-outgoing-call-broadcast|attemptNextPhoneAccount|Trying attempt|createConnection|Service bound|onServiceConnected|TelecomCallCallback onStateChanged call=|ringState|videoState|DisconnectCause|gateway|callForwardState
+
+PS主叫
+attemptNextPhoneAccount|perform create connectio|Telecom : ServiceBinder: bind|Service bound |createConnection, callManagerAccount|createConnection, connection:|handleCreateConnectionComplete|> dial|Trying IMS PS call|dialInternal: dialing|< IMS_REGISTRATION_STATE|dial clirMode=|MultiIdentity Line info in Dial Request|makeCall :: profile|ImsCall : start|start rtt mode
+attemptNextPhoneAccount|perform create connectio|Telecom : ServiceBinder: bind|Service bound |createConnection, callManagerAccount|createConnection, connection:|handleCreateConnectionComplete|> dial|Trying IMS PS call|dialInternal: dialing|< IMS_REGISTRATION_STATE|dial clirMode=|MultiIdentity Line info in Dial Request|makeCall :: profile|ImsCall : start|start rtt mode|GET_CURRENT_CALL|< IMS_REGISTRATION_STATE|UNSOL_RESPONSE_CALL_STATE_CHANGED|< DIAL
 
 被叫
 handleNewRingingConnection|UNSOL_RESPONSE_CALL_STATE_CHANGED|complete Relayout Window.*?InCallActivity|_start_.*?InCallActivity|_resume.*?InCallActivity|InCallActivity: onStart|InCallActivity: onResume|WindowManager: addWindow: Window.*InCallActivity|startActivityMayWait.*?InCallActivity|GET_CURRENT_CALLS|CallList: onIncoming
@@ -77,14 +129,75 @@ UNSOL_INCOMING_IMS_SMS|UNSOL_RESPONSE_NEW_SMS|SMS_DELIVER|addTrackerToRawTable|D
  notification_
  发送彩信
  MmsService: onCreate|MmsSender: Sending MMS|MmsService: sendMessage|MmsNetworkManager: start new network request|trySetupData for APN type mms|SETUP_DATA_CALL|MmsService: NetworkCallbackListener|HTTP: .*PDU size|content://mms
+ MmsService|Loading APN using name|NetworkCallbackListener.onCapabilitiesChanged|SETUP_DATA|DEACTIVATE_DATA|got request NetworkRequest|onAddNetworkRequest|ConnectingState: setupData|respStatus:
  接收彩信
  _SMS|WAP_PUSH_DELIVER_ACTION|ReceiveMmsMessageAction: Received MMS message
  
 接听
 REQUEST_ANSWER|GlowPadAnswerFragment: onClick|Telecom: ActionAnswerCall: perform answer call for|CallsManager: answerCall: Incoming call
 
-信号强度
-RIL_UNSOL_HW_SIGNAL_STRENGTH
+呼叫等待、恢复
+callForwardText:|UNSOL_RESPONSE_CALL_STATE_CHANGED|getSuppServiceMessage: |SET_SUPP_SVC_NOTIFICATION|notifySuppSvcNotification: suppSvc =|onCallResumeReceived supp.type:|onCallHoldReceived supp.type|ImsCall : callSessionHoldReceived|ImsCall : callSessionResumeReceived
+callForwardText:|UNSOL_RESPONSE_CALL_STATE_CHANGED|getSuppServiceMessage: |SET_SUPP_SVC_NOTIFICATION|notifySuppSvcNotification: suppSvc =|clearOriginalConnection; clearing=|registerForCallEvents; phone=|ew TelephonyConnection, originalConnection|placeOutgoingConnection phoneId=
+
+信号强度（TX、RX视频接收发送）
+RIL_UNSOL_HW_SIGNAL_STRENGTH|notifySignalStrength.*phoneId|< SIGNAL_STRENGTH|UNSOL_SIGNAL_STRENGTH
+
+InCallUI点击
+GlowPadAnswerFragment: onClick|CallButtonFragment: onTouch
+
+Vowifi
+Phone Id|carrier_default_wfc_ims_enabled_bool|vowifi_menu_hide|carrier_vowifi_hd_icon_flag|carrier_wfc_ims_available_bool|mConfigFromDefaultApp
+
+Volte
+Phone Id|mConfigFromDefaultApp|carrier_volte_hd_icon_flag|carrier_volte_available_bool|carrier_default_volte_switch_on_bool|carrier_volte_show_switch_bool
+
+Phone Id|mConfigFromDefaultApp|carrier_volte_hd_icon_flag|carrier_volte_available_bool|carrier_default_volte_switch_on_bool|carrier_volte_show_switch_bool|carrier_default_wfc_ims_enabled_bool|vowifi_menu_hide|carrier_vowifi_hd_icon_flag|carrier_wfc_ims_available_bool|carrier_vt_available_bool|carrier_cust_viwifi_disable
+
+Volte和Vowifi开关
+REQUEST_IMS_REG_STATE_CHANGE|< REQUEST_SET_SERVICE_STATUS|setWfcSettingInternal slotId|changeMmTelCapability: changing capabilities for sub|: turnOnIms|enableIms :: slotId|disableIms :: slotId=|Vowifi sim adp : Device
+
+呼叫转移
+CALL_FORWARD_STATUS|IMS_REGISTRATION_STATE|setCallForwardingOption|wm_on_resume_called.*GsmUmtsCallForwardOptions|UNSOL_RESPONSE_IMS_NETWORK_STATE_CHANGED|wm_on_resume_called|handleImsStateChanged isImsRegistered is|mImsStateReceiver::mIsImsRegistered|SERVICE_STATUS|HwTelephonyManagerInner: sendSimMatchedOperatorInfo slotId =|useSsOverIms: isUtEnabled|MmTel Capabilities
+
+ims注册状态广播
+UNSOL_RESPONSE_IMS_NETWORK_STATE_CHANGED|handleImsStateChanged isImsRegistered is|mImsStateReceiver::mIsImsRegistered|SERVICE_STATUS|HwTelephonyManagerInner: sendSimMatchedOperatorInfo slotId =
+ImsRegistrationOemPluginImpl: broadcastImsRegistration
+notifyImsStateOrVowifiState: imsRegState.*isNotifyImsState = true|ImsRegistrationOemPluginImpl: broadcastImsRegistration|updateCardIcon info is isSimCardInactiveState|state is subscription|sim card state:|updateSimState isCtCard
+
+状态栏
+点击飞行模式：setNewState: setEnabled start isEnabled is|ActivityManager_broadcast: sendBroadcast.*android.intent.action.AIRPLANE_MODE|airplane mIsAirplaneMode|Airplane mode change. Value
+点击切换数据卡：start set default data by tile,handleClick switchToSlot|in setDefault4GSlotId for slotId
+
+状态栏运营商名称
+SERVICE_PROVIDERS_UPDATED|updateOperatorNameByIntent|HwONM   : onReceive|updateSpnDisplay: updateSpnDisplay|getCfgCustDisplayParams|carrierNameDisplayCondition
+
+网络
+SET_PREFERRED_NETWORK_TYPE
+
+视频通话入口
+msc.config.vtlte_on
+carrier_vt_available_bool
+updateVtLteBySlotId slotId|IMS_REGISTRATION_STATE
+contact detail onchange: vton|contact detail resume|updateVtLteBySlotId slotId
+
+视频通话能力
+updateVideoCallFeatureValue: available
+
+视频通话
+VIDEO_STATE_CHANGED
+IMS_RILA:|processCallStateChange state|useImsForCall=|makeCall :: profile|> IMS_DIAL|< IMS_DIAL|< CALL_INFO_INDICATION|processCallStateChange| createCallSession|: call number is:|GET_CURRENT_CALLS|video state|isCallModeUpdated|updateCallType
+
+InCallUI视频通话
+UNSOL_RESPONSE_CALL_STATE_CHANGED|SUPPORTS_VT_LOCAL_BIDIRECTIONAL|SUPPORTS_VT_REMOTE_BIDIRECTIONAL|..canVideoCall :|Peer Ability|showVideoAnswerButton
+
+网络
+ConnectivityService
+ConnectivityService:.*EVENT_NETWORK_INFO_CHANGED| ConnectivityService:.*validation|isCaptivePortal: isSuccessful|NETWORK_LINGER_COMPLETE|SETUP_DATA_CALL|DEACTIVATE_DATA_CALL
+ConnectivityService:.*EVENT_NETWORK_INFO_CHANGED| ConnectivityService:.*validation|isCaptivePortal: isSuccessful|handleLingerComplete for|NETWORK_LINGER_COMPLETE|releaseNetwork left with|onDisableApn: apnType=
+网速
+getTetherStats statsSize|mIsNetworkSpeedEnabled =|NetworkSpeedView: .*speed= 
+mIsWifiNoInternet|isCaptivePortal:|WifiNl80211Manager: Noise|Tcp result|ActivityManager_activity: Resume ActivityRecord|getTetherStats statsSize|mIsNetworkSpeedEnabled =|NetworkSpeedView: .*speed=|NetworkSpeedMa: value=
 
 亮屏
 窗口绘制  finishKeyguardDrawn -> waitForAllWindowsDrawn|All windows ready for display
@@ -92,10 +205,216 @@ LCD上电  screen state: state   Setting power mode
 计算背光  Enable LightSensor  Animating brightness: target
 Unblocked screen on after|screen turning on|complete Relayout Window.*?InCallActivity|onWakeUp: reason|Waking up from|RingerDecodeUtil.*?Duration|All windows ready for display
 viewVisibilityChanged changed reason
-run cts -m CtsTelecomTestCases -t android.telecom.cts.PhoneAccountSuggestionServiceTest#testPartialSuggestions
+
+Going to sleep due to|Unblocked screen o|Waking up from|power_screen_state
+SensorService:.* removeFd fd|PowerManagerNotifier: onWake.*PSensor|UNSOL_RESPONSE_CALL_STATE_CHANGED|ACTION_HEADSET_PLUG|Going to sleep due to|Unblocked screen o|Waking up from
+
+PSensor: Turning o|AudioDeviceManager: ACTION_HEADSET_PLUG
+SensorService: Proximity|PowerManagerNotifier: onWake.*PSensor|UNSOL_RESPONSE_CALL_STATE_CHANGED|ACTION_HEADSET_PLUG
+
 
 PowerManagerService.*Sleep|ActivityTaskManager: START|AmDialogActivity:|UNSOL_RESPONSE_CALL_STATE_CHANGED|sysui_heads_up_escalation|releaseWakeLock|acquireWakeLock|stopForegroundNotification|notification_.*dialer|REQUEST_ANSWER|GlowPadAnswerFragment: onClick|StatusBarNotifier.buildAndSendNotification - notificationType=2
 
 开机流程
 entered the android system|boot_progress|start proc.*systemui|start proc.*launcher|RIL Daemon Started|wm_create_activity|init first stage started
 
+testRadioPowerToggle|TelephonyManagerTestOnMockModem: Radio state|getRadioPowerState|UNSOL_RESPONSE_RADIO_STATE_CHANGED|setRadioState: |handleShellCommand:|setRadioPower power |toggleRadioOnOffForSubscriber| MRMDM   :
+
+RadioPower关闭流程
+android.telephony.TelephonyManager#toggleRadioOnOff
+com.android.phone.PhoneInterfaceManager#toggleRadioOnOffForSubscriber
+com.android.internal.telephony.GsmCdmaPhone#setRadioPowerForReason
+com.android.internal.telephony.ServiceStateTracker#setRadioPowerForReason
+com.android.internal.telephony.ServiceStateTracker#setPowerStateToDesired(boolean, boolean, boolean)
+com.android.internal.telephony.ServiceStateTracker#powerOffRadioSafely
+com.android.internal.telephony.data.DataNetworkController#tearDownAllDataNetworks
+com.android.internal.telephony.data.DataNetworkController#onTearDownAllDataNetworks
+com.android.internal.telephony.data.DataNetworkController#tearDownGracefully
+com.android.internal.telephony.data.DataNetwork#tearDown
+com.android.internal.telephony.data.DataNetwork.ConnectedState#processMessage#EVENT_TEAR_DOWN_NETWORK
+com.android.internal.telephony.data.DataNetwork#onTearDown
+com.android.internal.telephony.data.DataServiceManager#deactivateDataCall
+com.android.internal.telephony.data.CellularDataService.CellularDataServiceProvider#deactivateDataCall
+com.android.internal.telephony.RIL#deactivateDataCall
+
+com.android.internal.telephony.data.DataNetwork#onDeactivateResponse
+com.android.internal.telephony.data.DataNetwork.DisconnectedState#enter
+com.android.internal.telephony.data.DataNetwork.DataNetworkCallback#onDisconnected
+com.android.internal.telephony.data.DataNetworkController#onDataNetworkDisconnected
+com.android.internal.telephony.data.DataNetworkController.DataNetworkControllerCallback#onAnyDataNetworkExistingChanged
+com.android.internal.telephony.ServiceStateTracker#hangupAndPowerOff
+com.android.internal.telephony.RIL#setRadioPower
+
+呼叫等待上报流程
+UNSOL_SUPP_SVC_NOTIFICATION|handleSuppSvcUnsol suppNotification= |callSessionHoldReceived :: profile=|ON_HOLD_TONE_START
+
+org.codeaurora.ims.ImsSenderRxr.ImsRadioIndication#onSuppServiceNotification
+org.codeaurora.ims.ImsServiceSub.ImsServiceSubHandler#handleMessage#EVENT_SUPP_SRV_UPDATE
+org.codeaurora.ims.ImsServiceSub#handleSuppSvc
+org.codeaurora.ims.ImsServiceClassTracker#handleSuppSvcUnsol
+org.codeaurora.ims.ImsCallSessionImpl#updateSuppServiceInfo
+org.codeaurora.ims.ImsCallSessionCallbackHandler#callSessionHoldReceived
+android.telephony.ims.ImsCallSessionListener#callSessionHoldReceived
+android/telephony/ims/aidl/IImsCallSessionListener#callSessionHoldReceived
+android.telephony.ims.ImsCallSession.IImsCallSessionListenerProxy#callSessionHoldReceived
+com.android.ims.ImsCall.ImsCallSessionListenerProxy#callSessionHoldReceived
+com.android.ims.ImsCall.Listener#onCallHoldReceived
+com.android.internal.telephony.imsphone.ImsPhoneCallTracker#onCallHoldReceived
+com.android.internal.telephony.imsphone.ImsPhone#notifySuppSvcNotification
+com.android.services.telephony.TelephonyConnection#mHandler#handleMessage#MSG_SUPP_SERVICE_NOTIFY
+com.android.services.telephony.TelephonyConnection#showForwardMessage
+
+ecc_withcard---有卡紧急呼叫号码
+ecc_nocard---无卡紧急呼叫号码
+ecc_fake---有卡 假 紧急呼叫号码"
+cust/global/carrier/network/xml/globalMatchs-conf.xml
+geoCountryCodeForMccMnc|< GET_SIM_STATUS|UNSOL_EMERGENCY_NUMBER_LIST|ecc_withcard
+
+漫游
+notifyServiceStateForSubId: mRegistryMgr|< GET_SIM|< DATA_REG
+updateRoamingState|Poll ServiceState done:  oldSS
+
+
+丢帧卡顿
+skipping transaction|Choreographer: Skipped |binder thread pool|BlockMonitor:|Slow operation|dvm_lock_sample
+
+Wifi 偏好设置选择项
+Phone Id|carrier_default_wfc_ims_mode_int|carrier_wfc_supports_cellular_preferred_bool|carrier_wfc_supports_cellular_preferred_bool|CARRIER_WFC_SUPPORTS_WIFI_ONLY_BOOL|vowifi_pref_domestic
+
+电话会议
+mIsSaveParticipantList|Adding participant|getConferenceParticipants|CAPABILITY_MANAGE_CONFERENCE|save_ims_conf_participants|ims_conference_reported_participants_optimize|ims_conference_participants_be_consistent
+
+手动搜网
+networkSetting:|UNSOL_NETWORK_SCAN_RESULT|QUERY_AVAILABLE_NETWORKS|EF_PNN|Available Networks List Size
+
+10.145.16.33 f8^TOoqQ^ONd
+
+adb shell pm dump pkg
+adb shell getprop ro.product.cpu.abi
+adb shell getprop ro.product.cpu.abilist
+
+片区信息
+fastboot getvar vendorcountry
+adb shell cat /data/custom.bin
+adb shell cat /data/product.bin
+
+
+解压并查看属性
+adb shell "cat /proc/config.gz | gzip -d | grep FINAL_RELEASE"
+
+qcom高通来电
+--new incoming
+org.codeaurora.ims.ImsSenderRxr.ImsRadioIndication#onCallStateChanged
+org.codeaurora.ims.ImsServiceSub.ImsServiceSubHandler#handleMessage#EVENT_CALL_STATE_CHANGE
+org.codeaurora.ims.ImsServiceSub#handleCalls
+org.codeaurora.ims.ImsServiceClassTracker#handleCalls
+org.codeaurora.ims.ImsServiceClassTracker#reportIncomingCall
+org.codeaurora.ims.ImsServiceSub#handleNotifyIncomingCall
+android.telephony.ims.feature.MmTelFeature#notifyIncomingCall(android.telephony.ims.stub.ImsCallSessionImplBase, android.os.Bundle)
+com.android.internal.telephony.imsphone.ImsPhoneCallTracker.MmTelFeatureListener#processIncomingCall
+
+--uptadateCall
+org.codeaurora.ims.ImsSenderRxr.ImsRadioIndication#onCallStateChanged
+org.codeaurora.ims.ImsServiceSub.ImsServiceSubHandler#handleMessage#EVENT_CALL_STATE_CHANGE
+org.codeaurora.ims.ImsServiceSub#handleCalls
+org.codeaurora.ims.ImsServiceClassTracker#handleCalls
+org.codeaurora.ims.ImsCallSessionImpl#updateCall
+org.codeaurora.ims.ImsCallSessionImpl#maybeTriggerCallSessionUpdate(org.codeaurora.ims.DriverCallIms, boolean)
+org.codeaurora.ims.ImsCallSessionCallbackHandler#callSessionUpdated
+android.telephony.ims.ImsCallSessionListener#callSessionUpdated
+android.telephony.ims.ImsCallSession.IImsCallSessionListenerProxy#callSessionUpdated
+com.android.ims.ImsCall.ImsCallSessionListenerProxy#callSessionUpdated
+com.android.ims.ImsCall.Listener#onCallUpdated
+
+
+mtk来电：
+< CALL_INFO_INDICATION|> DIAL|< DIAL|processCallStateChange|incoming satellite|Adding new incoming call with phoneAccountHandle|EVENT_CALL_INFO_INDICATION|ImsCallSessionProxy.*receive message|processIncomingCall:|onCallTerminated reasonCode
+onIncomingCall encryptFlag =|processCallStateChange state=|processIncomingCall: incoming call intent|TelephonyConnectionService: answer|acceptCall: incoming|accept :: callType=|accept.*original call Type:|IMS_RILA: .* ANSWER |isValidRingingCall|updatePhoneState pendingMo|setLastCallType: slotId|clearOriginalConnection; clearing|ImsPhoneConnection objId: |< CALL_INFO_INDICATION
+
+--new incoming
+com.mediatek.ims.ril.ImsRadioIndication#callInfoIndication
+com.mediatek.ims.ImsCallSessionProxy.MyHandler#handleMessage#EVENT_CALL_INFO_INDICATION
+com.mediatek.ims.ImsService#notifyIncomingCallSession
+android.telephony.ims.feature.MmTelFeature#notifyIncomingCallSession
+android.telephony.ims.feature.MmTelFeature#notifyIncomingCall(android.telephony.ims.stub.ImsCallSessionImplBase, android.os.Bundle)
+com.android.internal.telephony.imsphone.ImsPhoneCallTracker.MmTelFeatureListener#processIncomingCall
+
+--updateCall
+com.mediatek.ims.ril.ImsRadioIndication#callInfoIndication
+com.mediatek.ims.ImsCallSessionProxy.MyHandler#handleMessage#EVENT_CALL_INFO_INDICATION
+android.telephony.ims.ImsCallSession.IImsCallSessionListenerProxy#callSessionInitiated
+com.android.ims.ImsCall.ImsCallSessionListenerProxy#callSessionStarted
+com.android.ims.ImsCall.Listener#onCallStarted
+com.android.internal.telephony.imsphone.ImsPhoneCallTracker#processCallStateChange(com.android.ims.ImsCall, com.android.internal.telephony.imsphone.ImsPhoneCall.State, int)#ACTIVE
+
+mtk去电： 
+useImsForCall=|makeCall :: profile|> IMS_DIAL|< IMS_DIAL|< CALL_INFO_INDICATION|processCallStateChange| createCallSession|: call number is:
+com.android.internal.telephony.GsmCdmaPhone#dial
+com.android.internal.telephony.imsphone.ImsPhone#dial
+com.android.internal.telephony.imsphone.ImsPhone#dialInternal
+com.android.internal.telephony.imsphone.ImsPhoneCallTracker#dial(java.lang.String, com.android.internal.telephony.imsphone.ImsPhone.ImsDialArgs)
+com.android.internal.telephony.imsphone.ImsPhoneCallTracker#dialInternal(com.android.internal.telephony.imsphone.ImsPhoneConnection, int, int, int, int, android.os.Bundle)
+android.telephony.ims.ImsCallSession#start(java.lang.String, android.telephony.ims.ImsCallProfile)
+com.mediatek.ims.ImsCallSessionProxy#start
+com.mediatek.ims.ril.ImsRILAdapter#start
+
+
+
+飞行模式下紧急呼叫
+REQUEST_IMS_REG_STATE_CHANGE|< REQUEST_SET_SERVICE_STATUS|setWfcSettingInternal slotId|changeMmTelCapability: changing capabilities for sub|: turnOnIms|enableIms :: slotId|disableIms :: slotId=|Vowifi sim adp : Device|ImsServiceProxy is not ready to accept commands|processCallStateChange|ImsServiceProxy is not ready to accept commands|isBinderReady:mIsAvailable|setNewState: setEnabled start isEnabled is|> DIAL|TelecomServiceImpl: CallingUid:|UNSOL_RESPONSE_CALL_STATE_CHANGED|broadcastImsRegistration |< IMS_REGISTRATION_STATE
+
+热插拔卡
+UNSOL_HW_SIM_HOTPLUG
+
+HD图标：
+MTK: ImsService: notifyRegistrationStateChange|< IMS_REGIS|state is subscription
+Qcom: notifyImsStateOrVowifiState: imsRegState =.*isNotifyImsState = true|updateCardIcon info is isSimCardInactiveState|updateVolteVowifi: rule=|state is subscription
+
+MediaFocusControl: requestAudioFocus|AudioFlinger: start output|AudioTrace play|I InputEvent|Changing focus from |wm_crea|AudioManager: requestAudioFocus|wm_on_create_called|audio.*13691| getStreamVolume streamType|vol.VolumeDialogControl: onReceive VOLUME_CHANGED_ACTION stream=3
+
+彩振来电
+Crstype =
+
+GlowPadAnswerFragment: onClick.*answerbutton|CallButtonFragment: mEndCallButton|CallButtonPresenter: onCallStateChanged|CallsManager: setCallState|mEndCallButton onAnimation|endDrawable is AnimatedVectorDrawable
+
+截屏
+KEYCODE_VOLUME_DOWN KEYCODE_POWER|Screenshot post request|hardware_keys|TakeScreenshotService|setKnuckleScreenShot|double_knock|Screenshot post request|hardware_keys|ontileclick.*截屏|MultiScreenShotService|HnGestureActionHandler: |Fetch gesture has Response|trigger the snapshot|save file|takeScreenshot| down:true interactive:true 
+
+
+网络制式
+setNewState: setEnabled start isEnabled is|< DATA_REGISTRATION_STATE|< VOICE_REGISTRATION_STATE| HwMobileSignalController.*onServiceStateChanged|updateDataType, dataNetType|onDisplayInfoChanged  telephonyDisplayInfo |notifyServiceStateForSubId:|TelephonyDisplayInfo changed from
+
+
+MTK：./build_system.sh system_ext_mtk variant=user update_api=no export_para=UNSAFE_DISABLE_HIDDENAPI_FLAGS:true export_para=RELEASE_SIGN:true
+Qcom： ./build_system.sh magic variant=user update_api=no system_ext=single export_para=RELEASE_SIGN:false root_perf_main=main
+
+
++8617391693550
+
+I inputEvent|WindowManager_visibility: complete Relayout Window|I InputReader|Changing focus from |INTENT_STATUSBAR_VISIBLE_CHANGE sended, EXTRA_VISIBLE|wm_on_resume_called
+
+
+./build_system.sh magic variant=user update_api=no system_ext=single export_para=RELEASE_SIGN:true root_perf_main=main export_para=TARGET_PRODUCT_APK_OVERLAY_PRODUCT_NAME:LSA_China export_para=TARGET_PRODUCT_APK_OVERLAY_MODULE_NAME:frameworkResOverlay frameworkResOverlay
+./build_system.sh magic variant=user update_api=no system_ext=single export_para=RELEASE_SIGN:true root_perf_main=main export_para=TARGET_PRODUCT_APK_OVERLAY_PRODUCT_NAME:CLKL_Oversea export_para=TARGET_PRODUCT_APK_OVERLAY_MODULE_NAME:frameworkResOverlay frameworkResOverlay
+./build_system.sh magic variant=user update_api=no system_ext=single export_para=RELEASE_SIGN:true root_perf_main=main export_para=TARGET_PRODUCT_APK_OVERLAY_PRODUCT_NAME:LLYL_Oversea export_para=TARGET_PRODUCT_APK_OVERLAY_MODULE_NAME:frameworkResOverlay frameworkResOverlay
+
+
+carrier_volte_available_bool|carrier_volte_hd_icon_flag|carrier_volte_show_switch_bool|carrier_default_volte_switch_on_bool|show_volte_switch_in_nsa
+carrier_volte_hd_icon_flag
+carrier_volte_show_switch_bool
+carrier_default_volte_switch_on_bool
+show_volte_switch_in_nsa
+
+carrier_default_wfc_ims_mode_int 【VoWiFi】优选模式默认值配置
+carrier_default_wfc_ims_roaming_mode_int 	【VoWiFi】漫游下优选模式默认值配置
+
+69 telcel_mx
+212 inusacell_mx
+
+
+DRM-0   : Scheduled data retry |DRM-0   : onAlarmIntentRetry: found| SETUP_DATA_CALL.*PHONE0
+
+
+P-Asserted-Identity
+
+select contact_id, mimetype, data1, data2, data3, data4, data5, data6, data7, data8, data9, data10, data11, data12, data13, data14 FROM data  JOIN mimetypes ON (data.mimetype_id = mimetypes._id) JOIN raw_contacts ON (data.raw_contact_id = raw_contacts._id) JOIN accounts ON (raw_contacts.account_id = accounts._id) WHERE raw_contacts.deleted=0

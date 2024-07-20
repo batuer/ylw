@@ -1,0 +1,83 @@
+硬件抽象层( Hardware Abstraction Layer,HAL) ：硬件抽象层 (HAL) 提供标准界面，向更高级别的 Java API 框架显示设备硬件功能。HAL 包含多个库模块，其中每个模块都为特定类型的硬件组件实现一个界面，、
+例如：Audio音频模块，BlueTooth：蓝牙模块，Camera：相机模块，Sensors:传感器。系统内置对传感器的支持达13种，他们分别是：加速度传感器(accelerometer)、磁力传感器(magnetic field)、方向传感器(orientation)、陀螺仪(gyroscope)、环境光照传感器(light)、
+压力传感器(pressure)、温度传感器(temperature)和距离传感器(proximity)等。当框架 API 要求访问设备硬件时，Android 系统将为该硬件组件加载库模块。厂商会在这层定义自己的HAL接口。
+
+app--->frameworks--->hardware--->kernel驱动
+app->app_manager->service(java)->service(jni)->HAL来调用
+frameworks通过JNI调用 hw_get_module()得 HAL 对应的模块
+
+
+HAL 屏蔽了不同硬件设备的差异，为 Android 提供了统一的访问硬件设备的接口。不同的硬件厂商遵循 HAL 标准来实现自己的硬件控制逻辑，Framework 开发者不必关心不同硬件设备的差异，只需要按照 HAL 提供的标准接口访问硬件就可以了。
+HAL 层帮助硬件厂商隐藏了设备相关模块的核心细节。硬件厂商处于利益考虑，不希望公开硬件设备相关的实现细节；有了HAL层之后，他们可以把一些核心的算法之类的东西的实现放在 HAL 层，而 HAL 层位于用户空间，不属于 linux 内核，和 android 源码一样遵循的是 Apache license 协议，这个是可以不开源的
+
+HIDL的实现：C++、Java
+
+
+Android 经过多年的迭代，HAL 层也经历了三个阶段：
+
+Android 8 以前的 HAL，我们称之为传统 HAL
+Android 8 到 Android 10 的 HAL，为了更好的解耦 google 和硬件厂商之间的代码，Android 8 在 HAL 中引入了 HIDL，这个阶段的 HAL，我们称之为 HIDL HAL
+Android 11 开始，又引入了 AIDL 来简化 HDIL HAL，我们称之为 AIDL HAL
+
+app -> frameworksservice -> jni -> hal （so） -> kernel -> 硬件
+在这个阶段，HAL 层以 so 库的形式存在，Framework 层通过 JNI 加载到这些 so 库，然后 Framework 层通过 Binder 服务的形式向 App 提供操作硬件的接口。
+
+app -> frameworkservice -> jni so -> hwbinder hal -> kernel -> 硬件
+在这个阶段，HAL 层以进程加 Binder 服务的形式存在，Framework 层通过 HIDL 调用到 HAL 层的 Binder 服务，然后 Framework 层通过 Binder 服务的形式向 App 提供操作硬件的接口。
+
+app -> hal -> kernel -> 硬件
+在这个阶段，HAL 层以进程加 Binder 服务的形式存在，App 直接通过 AIDL 访问到 HAL 层的 Binder 服务来操作硬件。
+
+
+HAL 硬件抽象层，
+上层控制硬件的适配层。 
+硬件厂商提供具体so
+遵循接口标准开发，不用关注硬件的具体差异
+隐藏实现
+
+三个阶段：
+1. app -> frameworkservice -> jni so(hal) -> kernel -> 硬件  （hal以so形式存在） 传统hal
+2. app -> frameworkservice -> jni -> hal(hwbinder + 服务) -> kernel -> 硬件 （hal以服务+hwbinder） HIDL hal
+3. app -> hal -> kernel -> 硬件 （hal hwbinder+服务） AIDL hal
+
+
+
+hal 开发
+1.Overview
+	build/make/target/product/base_vendor.mk   PRODUCT_PACKAGES +=
+2.Define HAL Interface
+3.Configure build 
+  aidl_interface 
+  mmm hardware/interfaces/invcase/
+  m android.hardware.invcase-update-api
+  mmm hardware/interfaces/invcase/
+  build/make/target/product/base_vendor.mk	PRODUCT_PACKAGES += \
+4.Implement HAL
+  hardware/interfaces/invcase/aidl/default/Invcase.h
+  hardware/interfaces/invcase/aidl/default/Invcase.cpp
+5.Implement HAL Service
+  hardware/interfaces/invcase/aidl/default/service.cpp
+  Build Service  
+    hardware/interfaces/invcase/aidl/default/Android.bp  cc_binary 
+    build/make/target/product/base_vendor.mk  PRODUCT_PACKAGES +=
+  Run Service
+    hardware/interfaces/invcase/aidl/default/android.hardware.invcase-service.rc
+	hardware/interfaces/invcase/aidl/default/android.hardware.invcase-service.xml
+6.Define SELinux Policy for HAL service
+  Declare new type
+     system/sepolicy/prebuilts/api/32.0/public/hwservice.te
+     system/sepolicy/public/hwservice.te
+     type hal_invcase_hwservice, hwservice_manager_type;
+  Add service path
+     system/sepolicy/vendor/file_contexts
+	 /(vendor|system/vendor)/bin/hw/android\.hardware\.invcase-service u:object_r:hal_invcase_service_exec:s0
+  Declare attribute:
+  Define default domain:
+  Set binder policy:
+  Declare system_server as client of HAL service:
+7.Deliver HAL module
+8.User App
+9.Permission
+10.Build and Run  
+	
+  

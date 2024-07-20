@@ -1,0 +1,64 @@
+system/etc/init/lmkd.rc
+service lmkd /system/bin/lmkd
+    class core
+    user lmkd
+    group lmkd system readproc
+    capabilities DAC_OVERRIDE KILL IPC_LOCK SYS_NICE SYS_RESOURCE
+    critical
+    socket lmkd seqpacket+passcred 0660 system system
+    task_profiles ServiceCapacityLow
+
+on property:lmkd.reinit=1
+    exec_background /system/bin/lmkd --reinit
+
+# reinitialize lmkd after device finished booting if experiments set any flags during boot
+on property:sys.boot_completed=1 && property:lmkd.reinit=0
+    setprop lmkd.reinit 1
+
+# properties most likely to be used in experiments
+# setting persist.device_config.* property either triggers immediate lmkd re-initialization
+# if the device finished booting or sets lmkd.reinit=0 to re-initialize lmkd after boot completes
+on property:persist.device_config.lmkd_native.debug=*
+    setprop lmkd.reinit ${sys.boot_completed:-0}
+
+on property:persist.device_config.lmkd_native.kill_heaviest_task=*
+    setprop lmkd.reinit ${sys.boot_completed:-0}
+
+on property:persist.device_config.lmkd_native.kill_timeout_ms=*
+    setprop lmkd.reinit ${sys.boot_completed:-0}
+
+on property:persist.device_config.lmkd_native.swap_free_low_percentage=*
+    setprop lmkd.reinit ${sys.boot_completed:-0}
+
+on property:persist.device_config.lmkd_native.psi_partial_stall_ms=*
+    setprop lmkd.reinit ${sys.boot_completed:-0}
+
+on property:persist.device_config.lmkd_native.psi_complete_stall_ms=*
+    setprop lmkd.reinit ${sys.boot_completed:-0}
+
+on property:persist.device_config.lmkd_native.thrashing_limit=*
+    setprop lmkd.reinit ${sys.boot_completed:-0}
+
+on property:persist.device_config.lmkd_native.thrashing_limit_decay=*
+    setprop lmkd.reinit ${sys.boot_completed:-0}
+
+on property:persist.device_config.lmkd_native.thrashing_limit_critical=*
+    setprop lmkd.reinit ${sys.boot_completed:-0}
+
+on property:persist.device_config.lmkd_native.swap_util_max=*
+    setprop lmkd.reinit ${sys.boot_completed:-0}
+
+on property:persist.device_config.lmkd_native.filecache_min_kb=*
+    setprop lmkd.reinit ${sys.boot_completed:-0}
+
+
+1.杀用户空间进程
+2.何时杀:内存紧张
+	1.PSI（ProessureStallInformation）监控CPU、内存及IO性能异常的内核功能
+
+3.收集要杀的进程
+	1.oom_adj_source [-1000,1000]
+	2.数组存储进程
+	1.AMS评分Java进程
+	2.init评分native进程
+4.杀谁 ，分数高排序

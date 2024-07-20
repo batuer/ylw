@@ -1,0 +1,17 @@
+1. 应用层，媒体播放器、相机等
+2. 应用框架层：提供应用层的API和服务，如MediaCOdec、Camera
+3. 多媒体框架层： 提供音视频编解码，音视频输入输出等接口服务。AudioTrack、MediaPlayer、CameraService等。
+4. 硬件抽象层hal：提供了硬件密切相关的接口和服务，并对不同硬件进行了抽象，例如CameraHal、AudioPolicy等。
+5. 驱动层：音视频相机驱动，
+5. 硬件：摄像头、播放器等。
+
+
+
+MediaPlayer 和AudioTrack 
+1. MediaPlayer可以播放多种格式声音文件。
+2. AudioTrack只播放已经解码的PCM流（WAV格式）.
+3. MediaPlayer最终还是会创建AudioTrack，把解码后的PCM流传递给AudioTrack，AudioTrack传递给AudioFlinger进行婚姻，然后传递硬件播放。
+
+AudioPolicy 和AudioFlinger 音频策略
+1. AudioPolicy 音频输出输入设备策略的制定者。
+2. AudioFlinger 音频输出输入设备的策略的执行者，多个音频的混音。
