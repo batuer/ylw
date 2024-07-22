@@ -1,0 +1,47 @@
+性能优化:合理充分使用硬件资源(内存/功耗)
+1. 耗电
+	模块耗电功率*时长
+	power_profile.xml 定义模块耗电功率
+	Doze模式:低功耗模式, 系统和白名单外的应用
+		DeepDoze:非充电静止灭屏进入, 不能访问网络,  Wake lock忽略,  Alarm,Job任务被推迟下一个窗口期, Wifi/GPS不扫描
+		LightDoze:非充电,灭屏进入,网络JobAlarm
+	功耗分块治理: CPU/GPU/网络/定位/Audio/Camera/Video/Sensor.
+	
+2.内存优化
+    虚拟内存:相对真实物理内存而言.
+	虚拟内存和物理内存都是按照页来管理和映射的,一页大小为4KB.
+	虚拟内存都由应用程序(用户空间/独占)和操作系统(内核空间/共享)两部分组成.
+  
+   App运行时内存
+   adb shell dumpsys meminfo pkg/pid
+   PSS 实际占用物理内存
+   
+   *Java堆内存优化(堆内存有限512M)
+		1.减少加载进Java堆的数据. 
+			(1) 合理使用缓存Lrucache 
+			(2) 按需加载数据
+			(3)转移数据(Native内存,多进程分担)
+		2.清理数据
+			(1)关注生命周期,及时清理无用资源
+			(2)解决内存泄漏
+		3.增加堆空间
+			largeHeap
+			Hook ART虚拟机扩展堆内存
+   *so库申请的内存优化(Native内存优化)
+		NativeHook  malloc
+			PLT Hook
+			InLine Hook
+   *Bitmap内存优化
+		对Bitmap 创建hook(ASM/Lancet)
+		裁剪压缩,及时释放,
+   *虚拟内存优化
+		*多线程多进程优化
+			*空线程也会申请 1M 的虚拟空间来作为栈空间大小. 控制线程数量,合理使用线程池创建线程.
+			*独立的业务(Webiew,小程序)多进程实现.
+	*速度优化
+		*多线程预加载
+		*CPU 层面加速,合理使用CPU
+			*多线程
+			*优化代码逻辑算法.
+		*任务调度优化, 线程优先级,绑定大核
+		*GC抑制:GC 抢占CPU 资源
