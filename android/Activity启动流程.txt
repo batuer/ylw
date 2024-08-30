@@ -1,0 +1,260 @@
+Activity启动流程
+------- 当前Resume Activity 进程
+	1.startActivity //向ATMS发请求
+	
+------- system_server 进程
+	2.com.android.server.wm.ActivityTaskManagerService#startActivityAsUser //ATMS接受请求
+	3.com.android.server.wm.ActivityStartController#obtainStarter //ActivityStartController 委托ActivityStarter.execute()
+	4.com.android.server.wm.ActivityStarter#execute	//
+	5.com.android.server.wm.ActivityStarter#executeRequest // 找出目标ActivityInfo 并生成 ActivityRecord
+	6.com.android.server.wm.ActivityStarter#startActivityInner
+	7_1.com.android.server.wm.ActivityStarter#deliverToCurrentTopIfNeeded // 启动模式处理
+	7_2.com.android.server.wm.RootWindowContainer#resumeFocusedTasksTopActivities //
+	8.com.android.server.wm.Task#resumeTopActivityUncheckedLocked 
+	9.com.android.server.wm.Task#resumeTopActivityInnerLocked
+	10.com.android.server.wm.TaskFragment#resumeTopActivity 
+	11_1.com.android.server.wm.TaskDisplayArea#pauseBackTasks //pause当前Activity
+	11_2.com.android.server.wm.ActivityTaskManagerService#startProcessAsync // 判断进程如不存在启动新进程,ActivityThread反射创建，bindApplication初始化Application
+	12. ...
+	13.com.android.server.wm.TaskFragment#startPausing
+	14.com.android.server.wm.TaskFragment#schedulePauseActivity //pause 当前resume状态ActivityRecord，生成 ClientTransaction#mLifecycleStateRequest =PauseActivityItem
+	15.com.android.server.wm.ClientLifecycleManager#scheduleTransaction // 下发ClientTransaction PauseActivityItem 给当前resume执行
+	
+------- 当前ResumeActivity 进程
+	16.android.app.servertransaction.PauseActivityItem#execute // 调用onPause
+	17.android.app.servertransaction.PauseActivityItem#postExecute
+	18.android.app.ActivityClient#activityPaused // 向System_server 回调pause完成
+	
+------- system_server 进程
+	19.com.android.server.wm.ActivityClientController#activityPaused
+	20.com.android.server.wm.ActivityRecord#activityPaused
+	21.com.android.server.wm.TaskFragment#completePause // pause 完成
+	22.com.android.server.wm.RootWindowContainer#resumeFocusedTasksTopActivities // 拉起目标ActivityRecord
+	23.com.android.server.wm.Task#resumeTopActivityUncheckedLocked
+	24.com.android.server.wm.Task#resumeTopActivityInnerLocked
+	25.com.android.server.wm.TaskFragment#resumeTopActivity
+	26.com.android.server.wm.ActivityTaskSupervisor#startSpecificActivityLocked
+	27.com.android.server.wm.ActivityTaskSupervisor#realStartActivityLocked //生成 ClientTransaction#mActivityCallbacks.add(LaunchActivityItem) 和ClientTransaction#mLifecycleStateRequest = ResumeActivityItem
+	28.com.android.server.wm.ClientLifecycleManager#scheduleTransaction  // 下发ClientTransaction LaunchActivityItem，ResumeActivityItem
+
+------- 目标CreateActivity 进程
+	29.android.app.servertransaction.LaunchActivityItem#execute //调用onCreate 和onStart
+	30.android.app.servertransaction.ResumeActivityItem#execute //调用onResume
+	
+	
+
+obtain:76, PauseActivityItem (android.app.servertransaction)
+schedulePauseActivity:2150, TaskFragment (com.android.server.wm)
+startPausing:2072, TaskFragment (com.android.server.wm)
+startPausing:1962, TaskFragment (com.android.server.wm)
+lambda$pauseBackTasks$5:1740, TaskDisplayArea (com.android.server.wm)
+$r8$lambda$5ms_QJXsreXlQlgSW9ZnP7EFk3U:0, TaskDisplayArea (com.android.server.wm)
+accept:0, TaskDisplayArea$$ExternalSyntheticLambda6 (com.android.server.wm)
+forAllLeafTaskFragments:2346, TaskFragment (com.android.server.wm)
+lambda$pauseBackTasks$7:1736, TaskDisplayArea (com.android.server.wm)
+$r8$lambda$kUMVNgVCc5YkjfojxYMlkyxrL6w:0, TaskDisplayArea (com.android.server.wm)
+accept:0, TaskDisplayArea$$ExternalSyntheticLambda4 (com.android.server.wm)
+forAllLeafTasks:4377, Task (com.android.server.wm)
+forAllLeafTasks:2236, WindowContainer (com.android.server.wm)
+pauseBackTasks:1720, TaskDisplayArea (com.android.server.wm)
+resumeTopActivity:1462, TaskFragment (com.android.server.wm)
+resumeTopActivityInnerLocked:6935, Task (com.android.server.wm)
+resumeTopActivityUncheckedLocked:6830, Task (com.android.server.wm)
+resumeFocusedTasksTopActivities:2801, RootWindowContainer (com.android.server.wm)
+startActivityInner:2762, ActivityStarter (com.android.server.wm)
+startActivityUnchecked:2007, ActivityStarter (com.android.server.wm)
+executeRequest:1776, ActivityStarter (com.android.server.wm)
+executeRequest:353, HwActivityStarter (com.android.server.wm)
+execute:990, ActivityStarter (com.android.server.wm)
+execute:684, HwActivityStarter (com.android.server.wm)
+startActivityAsUser:1562, ActivityTaskManagerService (com.android.server.wm)
+startActivityAsUser:1513, ActivityTaskManagerService (com.android.server.wm)
+startActivity:1488, ActivityTaskManagerService (com.android.server.wm)
+onTransact:983, IActivityTaskManager$Stub (android.app)
+onTransact:6638, ActivityTaskManagerService (com.android.server.wm)
+execTransactInternal:1366, Binder (android.os)
+execTransact:1310, Binder (android.os)
+
+startProcessAsync:6115, ActivityTaskManagerService (com.android.server.wm)
+resumeTopActivity:1494, TaskFragment (com.android.server.wm)
+resumeTopActivityInnerLocked:6935, Task (com.android.server.wm)
+resumeTopActivityUncheckedLocked:6830, Task (com.android.server.wm)
+resumeFocusedTasksTopActivities:2801, RootWindowContainer (com.android.server.wm)
+startActivityInner:2762, ActivityStarter (com.android.server.wm)
+startActivityUnchecked:2007, ActivityStarter (com.android.server.wm)
+executeRequest:1776, ActivityStarter (com.android.server.wm)
+executeRequest:353, HwActivityStarter (com.android.server.wm)
+execute:990, ActivityStarter (com.android.server.wm)
+execute:684, HwActivityStarter (com.android.server.wm)
+startActivityAsUser:1562, ActivityTaskManagerService (com.android.server.wm)
+startActivityAsUser:1513, ActivityTaskManagerService (com.android.server.wm)
+startActivity:1488, ActivityTaskManagerService (com.android.server.wm)
+onTransact:983, IActivityTaskManager$Stub (android.app)
+onTransact:6638, ActivityTaskManagerService (com.android.server.wm)
+execTransactInternal:1366, Binder (android.os)
+execTransact:1310, Binder (android.os)
+
+
+
+obtain:146, LaunchActivityItem (android.app.servertransaction)
+realStartActivityLocked:1029, ActivityTaskSupervisor (com.android.server.wm)
+startSpecificActivityLocked:1197, ActivityTaskSupervisor (com.android.server.wm)
+startSpecificActivity:1178, ActivityTaskSupervisor (com.android.server.wm)
+resumeTopActivity:1919, TaskFragment (com.android.server.wm)
+resumeTopActivityInnerLocked:6935, Task (com.android.server.wm)
+resumeTopActivityUncheckedLocked:6830, Task (com.android.server.wm)
+resumeFocusedTasksTopActivities:2801, RootWindowContainer (com.android.server.wm)
+resumeFocusedTasksTopActivities:2780, RootWindowContainer (com.android.server.wm)
+completePause:2232, TaskFragment (com.android.server.wm)
+activityPaused:7804, ActivityRecord (com.android.server.wm)
+activityPaused:295, ActivityClientController (com.android.server.wm)
+onTransact:691, IActivityClientController$Stub (android.app)
+onTransact:212, ActivityClientController (com.android.server.wm)
+execTransactInternal:1366, Binder (android.os)
+execTransact:1310, Binder (android.os)
+
+
+
+obtain:96, ResumeActivityItem (android.app.servertransaction)
+realStartActivityLocked:1050, ActivityTaskSupervisor (com.android.server.wm)
+startSpecificActivityLocked:1197, ActivityTaskSupervisor (com.android.server.wm)
+startSpecificActivity:1178, ActivityTaskSupervisor (com.android.server.wm)
+resumeTopActivity:1919, TaskFragment (com.android.server.wm)
+resumeTopActivityInnerLocked:6935, Task (com.android.server.wm)
+resumeTopActivityUncheckedLocked:6830, Task (com.android.server.wm)
+resumeFocusedTasksTopActivities:2801, RootWindowContainer (com.android.server.wm)
+resumeFocusedTasksTopActivities:2780, RootWindowContainer (com.android.server.wm)
+completePause:2232, TaskFragment (com.android.server.wm)
+activityPaused:7804, ActivityRecord (com.android.server.wm)
+activityPaused:295, ActivityClientController (com.android.server.wm)
+onTransact:691, IActivityClientController$Stub (android.app)
+onTransact:212, ActivityClientController (com.android.server.wm)
+execTransactInternal:1366, Binder (android.os)
+execTransact:1310, Binder (android.os)
+
+
+startProcessAsync:6115, ActivityTaskManagerService (com.android.server.wm)
+resumeTopActivity:1494, TaskFragment (com.android.server.wm)
+resumeTopActivityInnerLocked:6935, Task (com.android.server.wm)
+resumeTopActivityUncheckedLocked:6830, Task (com.android.server.wm)
+resumeFocusedTasksTopActivities:2801, RootWindowContainer (com.android.server.wm)
+startActivityInner:2762, ActivityStarter (com.android.server.wm)
+startActivityUnchecked:2007, ActivityStarter (com.android.server.wm)
+executeRequest:1776, ActivityStarter (com.android.server.wm)
+executeRequest:353, HwActivityStarter (com.android.server.wm)
+execute:990, ActivityStarter (com.android.server.wm)
+execute:684, HwActivityStarter (com.android.server.wm)
+startActivityAsUser:1562, ActivityTaskManagerService (com.android.server.wm)
+startActivityAsUser:1513, ActivityTaskManagerService (com.android.server.wm)
+startActivity:1488, ActivityTaskManagerService (com.android.server.wm)
+onTransact:983, IActivityTaskManager$Stub (android.app)
+onTransact:6638, ActivityTaskManagerService (com.android.server.wm)
+execTransactInternal:1366, Binder (android.os)
+execTransact:1310, Binder (android.os)
+
+
+resumeFocusedTasksTopActivities:2787, RootWindowContainer (com.android.server.wm)
+startActivityInner:2762, ActivityStarter (com.android.server.wm)
+startActivityUnchecked:2007, ActivityStarter (com.android.server.wm)
+executeRequest:1776, ActivityStarter (com.android.server.wm)
+executeRequest:353, HwActivityStarter (com.android.server.wm)
+execute:990, ActivityStarter (com.android.server.wm)
+execute:684, HwActivityStarter (com.android.server.wm)
+startActivityAsUser:1562, ActivityTaskManagerService (com.android.server.wm)
+startActivityAsUser:1513, ActivityTaskManagerService (com.android.server.wm)
+startActivity:1488, ActivityTaskManagerService (com.android.server.wm)
+onTransact:983, IActivityTaskManager$Stub (android.app)
+onTransact:6638, ActivityTaskManagerService (com.android.server.wm)
+execTransactInternal:1366, Binder (android.os)
+execTransact:1310, Binder (android.os)
+
+startProcessAsync:6115, ActivityTaskManagerService (com.android.server.wm)
+resumeTopActivity:1494, TaskFragment (com.android.server.wm)
+resumeTopActivityInnerLocked:6935, Task (com.android.server.wm)
+resumeTopActivityUncheckedLocked:6830, Task (com.android.server.wm)
+resumeFocusedTasksTopActivities:2801, RootWindowContainer (com.android.server.wm)
+startActivityInner:2762, ActivityStarter (com.android.server.wm)
+startActivityUnchecked:2007, ActivityStarter (com.android.server.wm)
+executeRequest:1776, ActivityStarter (com.android.server.wm)
+executeRequest:353, HwActivityStarter (com.android.server.wm)
+execute:990, ActivityStarter (com.android.server.wm)
+execute:684, HwActivityStarter (com.android.server.wm)
+startActivityAsUser:1562, ActivityTaskManagerService (com.android.server.wm)
+startActivityAsUser:1513, ActivityTaskManagerService (com.android.server.wm)
+startActivity:1488, ActivityTaskManagerService (com.android.server.wm)
+onTransact:983, IActivityTaskManager$Stub (android.app)
+onTransact:6638, ActivityTaskManagerService (com.android.server.wm)
+execTransactInternal:1366, Binder (android.os)
+execTransact:1310, Binder (android.os)
+
+
+startProcessAsync:6115, ActivityTaskManagerService (com.android.server.wm)
+startSpecificActivityLocked:1247, ActivityTaskSupervisor (com.android.server.wm)
+startSpecificActivity:1178, ActivityTaskSupervisor (com.android.server.wm)
+resumeTopActivity:1919, TaskFragment (com.android.server.wm)
+resumeTopActivityInnerLocked:6935, Task (com.android.server.wm)
+resumeTopActivityUncheckedLocked:6830, Task (com.android.server.wm)
+resumeFocusedTasksTopActivities:2801, RootWindowContainer (com.android.server.wm)
+resumeFocusedTasksTopActivities:2780, RootWindowContainer (com.android.server.wm)
+completePause:2232, TaskFragment (com.android.server.wm)
+activityPaused:7804, ActivityRecord (com.android.server.wm)
+activityPaused:295, ActivityClientController (com.android.server.wm)
+onTransact:691, IActivityClientController$Stub (android.app)
+onTransact:212, ActivityClientController (com.android.server.wm)
+execTransactInternal:1366, Binder (android.os)
+execTransact:1310, Binder (android.os)
+
+
+startProcessAsync:6115, ActivityTaskManagerService (com.android.server.wm)
+startSpecificActivityLocked:1247, ActivityTaskSupervisor (com.android.server.wm)
+startSpecificActivity:1178, ActivityTaskSupervisor (com.android.server.wm)
+resumeTopActivity:1919, TaskFragment (com.android.server.wm)
+resumeTopActivityInnerLocked:6935, Task (com.android.server.wm)
+resumeTopActivityUncheckedLocked:6830, Task (com.android.server.wm)
+resumeFocusedTasksTopActivities:2801, RootWindowContainer (com.android.server.wm)
+resumeFocusedTasksTopActivities:2780, RootWindowContainer (com.android.server.wm)
+completePause:2232, TaskFragment (com.android.server.wm)
+activityPaused:7804, ActivityRecord (com.android.server.wm)
+activityPaused:295, ActivityClientController (com.android.server.wm)
+onTransact:691, IActivityClientController$Stub (android.app)
+onTransact:212, ActivityClientController (com.android.server.wm)
+execTransactInternal:1366, Binder (android.os)
+execTransact:1310, Binder (android.os)
+
+
+
+startProcessAsync:6115, ActivityTaskManagerService (com.android.server.wm)
+startSpecificActivityLocked:1247, ActivityTaskSupervisor (com.android.server.wm)
+startSpecificActivity:1178, ActivityTaskSupervisor (com.android.server.wm)
+makeVisibleAndRestartIfNeeded:330, EnsureActivitiesVisibleHelper (com.android.server.wm)
+setActivityVisibilityState:249, EnsureActivitiesVisibleHelper (com.android.server.wm)
+process:166, EnsureActivitiesVisibleHelper (com.android.server.wm)
+updateActivityVisibilities:1321, TaskFragment (com.android.server.wm)
+lambda$ensureActivitiesVisible$24:6725, Task (com.android.server.wm)
+$r8$lambda$lrUtitxxjVExA_qqZsRbUp0wrds:0, Task (com.android.server.wm)
+accept:0, Task$$ExternalSyntheticLambda31 (com.android.server.wm)
+forAllLeafTasks:4377, Task (com.android.server.wm)
+ensureActivitiesVisible:6724, Task (com.android.server.wm)
+lambda$ensureActivitiesVisible$55:8199, DisplayContent (com.android.server.wm)
+$r8$lambda$tLBXbGiVfPPUgJc-eTh59uznMok:0, DisplayContent (com.android.server.wm)
+accept:0, DisplayContent$$ExternalSyntheticLambda48 (com.android.server.wm)
+forAllRootTasks:4389, Task (com.android.server.wm)
+forAllRootTasks:2271, WindowContainer (com.android.server.wm)
+forAllRootTasks:2271, WindowContainer (com.android.server.wm)
+forAllRootTasks:2271, WindowContainer (com.android.server.wm)
+forAllRootTasks:2271, WindowContainer (com.android.server.wm)
+forAllRootTasks:2271, WindowContainer (com.android.server.wm)
+forAllRootTasks:2271, WindowContainer (com.android.server.wm)
+forAllRootTasks:2264, WindowContainer (com.android.server.wm)
+ensureActivitiesVisible:8198, DisplayContent (com.android.server.wm)
+ensureActivitiesVisible:2249, RootWindowContainer (com.android.server.wm)
+ensureActivitiesVisible:2230, RootWindowContainer (com.android.server.wm)
+completePause:2257, TaskFragment (com.android.server.wm)
+activityPaused:7804, ActivityRecord (com.android.server.wm)
+activityPaused:295, ActivityClientController (com.android.server.wm)
+onTransact:691, IActivityClientController$Stub (android.app)
+onTransact:212, ActivityClientController (com.android.server.wm)
+execTransactInternal:1366, Binder (android.os)
+execTransact:1310, Binder (android.os)
+
+

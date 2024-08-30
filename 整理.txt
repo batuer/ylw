@@ -1,38 +1,76 @@
 1.Android启动流程
-Loader：芯片启动Boot ROM，Bootloader（硬件初始化，内存空间映射）
-kernel：设置缓存，加载驱动，找到init.rc
-native: init进程启动rc文件配置的服务logd、servicemanager、mediaserver、netd、zygote...
-framework：zygote启动system_server(AMS，WMS，PMS)...
-app：system_server启动开机启动程序(SystemUI,Launch,Phone...)
+	Loader：设备上电 BootRom 引导启动BootLoader（硬件初始化，内存空间映射）
+	kernel：bootloader启动kernel，设置缓存，加载驱动，找到init.rc 启动init进程
+	native：init 初始化工作（启动Selinux,挂在分区，解析rc并执行配置启动服务logd，zygote，netd...）
+	framework：zygote启动system_server，启动AMS、PMS、WMS...
+	app：启动laucher、systemui、phone...
 
 2.AMS
 管理四大组件，增删改，四大组件依赖进程，间接也管理进程的增删。
 
-Activity启动流程
-1. startActivity
-2. ATMS 接收请求
-3. ActivityController委托ActivityStarter.execute()
-4. 根据launchmode启动Activity
-5. RootWindowContainer.requestFocusedTasksTopActivity 检查判断Activity是否存在和是否Resume状态
-6. 没有新建，先判断进程是否存在(不存在调用ATMS.startProcess -> Process.startProcess -> Zygote fork进程 -> ActivityThread.main() 反射创建，初始化Application )
-7. 生成ActivtyRecord回调给应用
-8. 生命周期执行
+	Activity启动流程
+		1. startActivity
+		2. ATMS 接收请求
+		3. ActivityController委托ActivityStarter.execute()
+		4. 根据launchmode启动Activity
+		5. RootWindowContainer.requestFocusedTasksTopActivity 检查判断Activity是否存在和是否Resume状态
+		6. 没有新建，先判断进程是否存在(不存在调用ATMS.startProcess -> Process.startProcess -> Zygote fork进程 -> ActivityThread.main() 反射创建，初始化Application )
+		7. 生成ActivtyRecord回调给应用
+		8. 生命周期执行
 
 3.WMS
 为Window分配Surface，并且管理window的大小位置、层级，以及窗口动画
+	
+	Activity的Window加载流程
+		1.Activity#setContentView(int)   -> installDecor -> new DecoreView 生成根试图
+		2.ActivityThread#handleResumeActivity 
+		3.WindowManagerImpl#addView(DecoreView )
+		4.WindowManagerGlobal#addView()   -> new ViewRootImpl
+		5.ViewRootImpl#setView()
+		6.Session#addToDisplayAsUser(ViewRootIml$W ,displayId, windowAttributes...) // WindowManagerGlobal#getWindowSession
+		App 进程中创建 PhoneWindow 后会创建 ViewRootImpl。ViewRootImpl 的创建会创建一个 Surface，这个 Surface 其实是空的，通过与 WindowManagerService 通信 copyFrom() 一个NativeSurface 与 SurfaceFlinger 通信时
+　　　　　　ViewRootImpl持有一个Java层的Surface对象（mSurface）。
+　　　　　　ViewRootImpl向WindowManagerService发起relayout请求，此时mSurface被赋予真正的有效值，将辗转生成的SurfaceControl通过Surface.copyFrom()函数复制到mSurface中。
+　　　　由此，Surface由SurfaceControl管理，SurfaceControl由SurfaceComposerClient创建。SurfaceComposerClient获得的匿名Binder是ISurfaceComposerISurfaceComposer，其服务端实现是SurfaceFlinger。而Surface依赖的IGraphicBufferProducer对象在Service端的实现是BufferQueue。
 
 4.PMS
 管理所有应用apk、apex包的解析安装、卸载、权限控制等
 
-安装apk：前期准备、安装、后期收尾
-前期准备：拷贝临时目录，完整性校验，解析apk，提取nativelibs，版本号
-安装：准备（完全解析 manifest ParsedPackage，签名保存验证，权限验证，重命名，杀死已有进程），扫描，调和，提交（PackageSettings，ParsePackage）
-后期收尾：创建目录，dex优化，删除apk，发送广播
-
-5.App启动流程
+	安装apk：前期准备、安装、后期收尾
+		前期准备：拷贝临时目录，完整性校验，解析apk，提取nativelibs，版本号验证
+			PackageInstallSerSession生成Session拷贝apk到临时目录data/app/***.temp/base.apk
+			完整性校验：用摘要算法校验apk签名打包是否完整被改动，同时提取保存签名信息
+			解析apk：从AndroidManifest.xml解析包名，版本，安装路径，架构，native libs存放PackageLite对象
+			提取Native libs：包含so的apk
+			版本号验证：检查新安装还是升级
+		安装：准备（完全解析 manifest ParsedPackage，签名保存验证，权限验证，重命名，杀死已有进程），扫描，调和，提交（PackageSettings，ParsePackage）
+			完全解析：AndroidManifest.xml 解析四大组件，permisiion，meta-data等，将完整信息存放ParsedPackage对象
+			签名验证：升级apk
+			权限验证：系统权限
+			重命名：data/app/***
+			扫描：ParsedPackage的信息同步更新给Settings的PackageSettings对象中持久序列化到packages.xml
+			提交：ParsedPackage和PackageSetting提交给Settings和PMS，PMS保存ParsedPackage, PackageManagerService#mComponentResolver存储四大组件信息
+		后期收尾：创建目录data/data/app，dex优化，删除apk，发送广播
 
 6.事件分发
-硬件触发
-驱动封装Event写入dev/input/event节点
-IMS服务启动InputReader和InputDispatcher线程，InputRead线程循环读取节点数据，通过WMS找到目标窗口，通过Socket通信InputChannel传递给window应用
-ViewRootImpl DecoreView Activity PhoneWindow ViewGroup View
+	硬件触发
+	驱动封装Event写入dev/input/event节点
+	IMS服务启动InputReader和InputDispatcher线程，InputRead线程循环读取节点数据，通过WMS找到目标窗口，通过Socket通信InputChannel传递给window应用
+	ViewRootImpl DecoreView Activity PhoneWindow ViewGroup View
+
+7.多媒体
+	1. 应用层，媒体播放器、相机等
+	2. 应用框架层：提供应用层的API和服务，如MediaCOdec、Camera
+	3. 多媒体框架层： 提供音视频编解码，音视频输入输出等接口服务。AudioTrack、MediaPlayer、CameraService等。
+	4. 硬件抽象层hal：提供了硬件密切相关的接口和服务，并对不同硬件进行了抽象，例如CameraHal、AudioPolicy等。
+	5. 驱动层：音视频相机驱动，
+	5. 硬件：摄像头、播放器等。
+
+	MediaPlayer 和AudioTrack 
+		1. MediaPlayer可以播放多种格式声音文件。
+		2. AudioTrack只播放已经解码的PCM流（WAV格式）.
+		3. MediaPlayer最终还是会创建AudioTrack，把解码后的PCM流传递给AudioTrack，AudioTrack传递给AudioFlinger进行处理，然后传递硬件播放。
+
+	AudioPolicy 和AudioFlinger 音频策略
+		1. AudioPolicy 音频输出输入设备策略的制定者。
+		2. AudioFlinger 音频输出输入设备的策略的执行者，多个音频的混音。

@@ -161,7 +161,7 @@ REQUEST_IMS_REG_STATE_CHANGE|< REQUEST_SET_SERVICE_STATUS|setWfcSettingInternal 
 CALL_FORWARD_STATUS|IMS_REGISTRATION_STATE|setCallForwardingOption|wm_on_resume_called.*GsmUmtsCallForwardOptions|UNSOL_RESPONSE_IMS_NETWORK_STATE_CHANGED|wm_on_resume_called|handleImsStateChanged isImsRegistered is|mImsStateReceiver::mIsImsRegistered|SERVICE_STATUS|HwTelephonyManagerInner: sendSimMatchedOperatorInfo slotId =|useSsOverIms: isUtEnabled|MmTel Capabilities
 
 ims注册状态广播
-UNSOL_RESPONSE_IMS_NETWORK_STATE_CHANGED|handleImsStateChanged isImsRegistered is|mImsStateReceiver::mIsImsRegistered|SERVICE_STATUS|HwTelephonyManagerInner: sendSimMatchedOperatorInfo slotId =
+intent.action.IMS_SERVICE_VOWIFI_STATE_CHANGED|intent.action.IMS_SERVICE_STATE_CHANGED|UNSOL_RESPONSE_IMS_NETWORK_STATE_CHANGED|handleImsStateChanged isImsRegistered is|mImsStateReceiver::mIsImsRegistered|SERVICE_STATUS|HwTelephonyManagerInner: sendSimMatchedOperatorInfo slotId =
 ImsRegistrationOemPluginImpl: broadcastImsRegistration
 notifyImsStateOrVowifiState: imsRegState.*isNotifyImsState = true|ImsRegistrationOemPluginImpl: broadcastImsRegistration|updateCardIcon info is isSimCardInactiveState|state is subscription|sim card state:|updateSimState isCtCard
 
@@ -367,7 +367,7 @@ REQUEST_IMS_REG_STATE_CHANGE|< REQUEST_SET_SERVICE_STATUS|setWfcSettingInternal 
 UNSOL_HW_SIM_HOTPLUG
 
 HD图标：
-MTK: ImsService: notifyRegistrationStateChange|< IMS_REGIS|state is subscription
+MTK: ImsService: notifyRegistrationStateChange|< IMS_REGIS|ActivityManager_broadcast: sendBroadcast.*intent.action.IMS_SERVICE_STATE_CHANGED|state is subscription
 Qcom: notifyImsStateOrVowifiState: imsRegState =.*isNotifyImsState = true|updateCardIcon info is isSimCardInactiveState|updateVolteVowifi: rule=|state is subscription
 
 MediaFocusControl: requestAudioFocus|AudioFlinger: start output|AudioTrace play|I InputEvent|Changing focus from |wm_crea|AudioManager: requestAudioFocus|wm_on_create_called|audio.*13691| getStreamVolume streamType|vol.VolumeDialogControl: onReceive VOLUME_CHANGED_ACTION stream=3
@@ -376,6 +376,9 @@ MediaFocusControl: requestAudioFocus|AudioFlinger: start output|AudioTrace play|
 Crstype =
 
 GlowPadAnswerFragment: onClick.*answerbutton|CallButtonFragment: mEndCallButton|CallButtonPresenter: onCallStateChanged|CallsManager: setCallState|mEndCallButton onAnimation|endDrawable is AnimatedVectorDrawable
+
+launcher 点击
+HnLauncher: Launcher onclick begin 
 
 截屏
 KEYCODE_VOLUME_DOWN KEYCODE_POWER|Screenshot post request|hardware_keys|TakeScreenshotService|setKnuckleScreenShot|double_knock|Screenshot post request|hardware_keys|ontileclick.*截屏|MultiScreenShotService|HnGestureActionHandler: |Fetch gesture has Response|trigger the snapshot|save file|takeScreenshot| down:true interactive:true 
@@ -388,8 +391,9 @@ setNewState: setEnabled start isEnabled is|< DATA_REGISTRATION_STATE|< VOICE_REG
 MTK：./build_system.sh system_ext_mtk variant=user update_api=no export_para=UNSAFE_DISABLE_HIDDENAPI_FLAGS:true export_para=RELEASE_SIGN:true
 Qcom： ./build_system.sh magic variant=user update_api=no system_ext=single export_para=RELEASE_SIGN:false root_perf_main=main
 
+source init_system_ext_mtk.sh
+make -k -j32 ImsService
 
-+8617391693550
 
 I inputEvent|WindowManager_visibility: complete Relayout Window|I InputReader|Changing focus from |INTENT_STATUSBAR_VISIBLE_CHANGE sended, EXTRA_VISIBLE|wm_on_resume_called
 
